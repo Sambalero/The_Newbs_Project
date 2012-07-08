@@ -1,0 +1,321 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"getNumWheels"
+			],
+			[
+				"h",
+				"h2"
+			],
+			[
+				"d",
+				"dl"
+			],
+			[
+				"he",
+				"header"
+			],
+			[
+				"cont",
+				"contact"
+			],
+			[
+				"conta",
+				"commentary"
+			],
+			[
+				"td",
+				"td"
+			],
+			[
+				"table",
+				"table"
+			],
+			[
+				"textarea",
+				"<textarea name=\"$1001\" id=\"$1002\" cols=\"30\" rows=\"10\">${1003:$SELECTION}</textarea>"
+			],
+			[
+				"label",
+				"<label for=\"$1001\">${1002:$SELECTION}</label>"
+			],
+			[
+				"b",
+				"br"
+			],
+			[
+				"u",
+				"ul"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 292.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 579.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/Gemfile",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/config/routes.rb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/mysql2psql.yml",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/Gemfile.lock",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/db/models.rb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/app/noobs.rb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/app/views/admin.erb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/app/views/welcome.erb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/app/controllers/users_controller.rb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/views/welcome.erb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/app/controllers/init.rb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/Rakefile",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/db/migrate/20120629221012_create_users.rb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/views/users.erb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/noobs.rb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/public/javascripts/html5placeholder.jquery.js",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/public/reset.css",
+		"/Users/Kevin/Desktop/h5bp-html5-boilerplate-1ac32b7/css/style.css",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/views/commentary.erb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/views/layout.erb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/.gitignore",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/public/background.css",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/sinatra.log",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/config.ru",
+		"/Users/Kevin/prog/ruby/tdd/tdd",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/views/not_found.erb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/views/not-found.erb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/myLoggerMiddleWare.rb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/views/thankYou.erb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/oldviews/welcome.haml",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/newviews/commentary.erb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/newviews/layout.erb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/newviews/not-found.erb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/newviews/page2.erb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/newviews/welcome.erb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/newviews/html",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/views/commentary.haml",
+		"/Users/Kevin/Desktop/HTML.html",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/views/KPS Sublime Cheat",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/views/thankYou.haml",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/views/welcome.haml",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/test.rb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/lib/post.rb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/lib/pony_gmail.rb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/data/comments.json",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/views/layout.haml",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/views/page2.haml",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/views/not-found.haml",
+		"/Users/Kevin/prog/ruby/Sinatra/DoIt/main.rb",
+		"/Users/Kevin/prog/ruby/Sinatra/Noobs/.gem",
+		"/Users/Kevin/prog/ruby/Rails/h33/spec/requests/static_pages_spec2.rb",
+		"/Users/Kevin/prog/ruby/Rails/h33/spec/support/utilities.rb",
+		"/Users/Kevin/prog/ruby/Rails/h33/app/views/layouts/application.html.erb",
+		"/Users/Kevin/prog/ruby/Rails/h33/app/views/static_pages/about.html.erb",
+		"/Users/Kevin/prog/ruby/Rails/h33/app/views/layouts/_shim.html.erb",
+		"/Users/Kevin/prog/ruby/Rails/h33/app/views/layouts/_header.html.erb copy",
+		"/Users/Kevin/prog/ruby/Rails/h33/spec/requests/static_pages_spec1.rb",
+		"/Users/Kevin/prog/ruby/Rails/h33/spec/requests/static_pages_spec.rb",
+		"/Users/Kevin/prog/ruby/Rails/h33/.gitignore",
+		"/Users/Kevin/prog/ruby/Rails/h33/app/views/static_pages/home.html.erb",
+		"/Users/Kevin/prog/ruby/Rails/h33/app/views/layouts/_header.html.erb",
+		"/Users/Kevin/prog/ruby/Rails/h33/app/controllers/static_pages_controller.rb",
+		"/Users/Kevin/prog/ruby/Rails/h33/config/routes.rb",
+		"/Users/Kevin/prog/ruby/Rails/h33/Gemfile",
+		"/Users/Kevin/prog/ruby/Rails/h33/app/views/static_pages/help.html.erb",
+		"/Users/Kevin/prog/ruby/Rails/h33/app/assets/stylesheets/custom.css.scss",
+		"/Users/Kevin/prog/ruby/Rails/h33/app/views/static_pages/contact.html.erb",
+		"/Users/Kevin/prog/ruby/Rails/h33/app/helpers/application_helper.rb",
+		"/Users/Kevin/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/Kevin/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/Kevin/prog/ruby/Sinatra/Noobs",
+			"/Users/Kevin/prog/ruby/Rails/coupr/,-/Users/Kevin/prog/ruby/Rails/coupr/coverage/"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"support",
+			"development",
+			"group",
+			"block",
+			"del",
+			"a:",
+			"htm",
+			"formattng",
+			"dl",
+			"li>",
+			"haml",
+			"	",
+			"		",
+			"Select",
+			"opening",
+			"⌃",
+			"￼￼￼Editing - Sublime Text 2\nText Manipulation - Sublime Text 2\nGeneral - Sublime Text 2\n￼￼￼Keypress\n⌘ + X\n⌘ + ↩\n⌘ + ⇧ + ↩ ⌘ + ⌃ + ↑ ⌘ + ⌃ + ↓ ⌘ + L\n⌘ + D\n⌃ + M\n⌃ + ⇧ + M ⌘ + K, ⌘ +\nK\n⌘ + K + ⌫ ⌘ + ]\n⌘ + [\n⌘ + ⇧ + D ⌘ + J\n⌘ + /\n⌘ + ⌥ + / ⌘ + ⇧ + V\nCommand\nDelete line\nInsert line after\nInsert line before\nMove line/selection up\nMove line/selection down\nSelect line (repeatable)\nSelect word (repeatable)\nJump to closing parentheses (repea table)\nSelect contents of current parentheses Delete from cursor to end of line\nDelete from cursor to start of line Indent current line(s)\nUn-indent current line(s) Duplicate line(s)\nJoin line below to current line Comment/un-comment line/selection Block comment current selection Paste and indent correctly\nKeypress\n⌘ + K, ⌘ + U ⌘ + K, ⌘ + L\nCommand\nTransform to Uppercase Transform to Lowercase\nKeypress\n⌘ + P\n⌘ + K, ⌘ + B ⌥ + ⌘ + 2 ⌥ + ⌘ + 1\nCommand\nQuick-open files by name Toggle side bar\nSplit editor into two columns Revert editor to single column\n￼￼￼Find / Replace - Sublime Text 2\nKeypress Command\n⌘+F Find ⌘+⌥+F Replace\n￼￼￼￼￼￼⌘ + ⇧ + F\nFind in files\n￼￼￼￼￼￼￼￼￼￼",
+			"^",
+			"->",
+			"<-",
+			" + ",
+			"+",
+			"body",
+			"mail",
+			"%p",
+			"Name:",
+			"\"name\"",
+			"\"Anonymous\"",
+			"  ",
+			"%",
+			"page.",
+			"Help",
+			"help"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"tr>",
+			"td>",
+			"erb",
+			"	",
+			"ctrl",
+			"rightarrow",
+			"leftarrow",
+			"",
+			".",
+			"comment",
+			"contact",
+			"%br/",
+			"Comment:",
+			"Contact:",
+			"\"comment\"",
+			"\"contact\"",
+			"\"\"",
+			"",
+			"Home",
+			"home"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.755748600746,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 201.0,
+	"status_bar_visible": true
+}

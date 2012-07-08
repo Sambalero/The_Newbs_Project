@@ -1,4 +1,27 @@
 Newbies::Application.routes.draw do
+
+  root to: "visitors#welcome"
+
+  get "page2" => "visitors#page2"
+
+  get "visitors/home"
+
+  get "visitors/page2"
+
+  get "visitors/thankYou"
+
+  resources :comments
+
+  resources :users
+
+# GET /users  index page to list all users
+# GET /users/1  show  page to show user with id 1
+# GET /users/new  new page to make a new user
+# POST  /users  create  create a new user
+# GET /users/1/edit edit  page to edit user with id 1
+# PUT /users/1  update  update user with id 1
+# DELETE  /users/1  destroy delete user with id 1
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

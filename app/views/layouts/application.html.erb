@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Newbies</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en"> 
+	<head>  
+  		<meta charset="utf8">  
+		<title>Noobies!</title>
+		<link href="assets/reset.css" rel="stylesheet">  
+  		<link href="assets/style.css" rel="stylesheet">  
+	</head> 
+	<body>
 
-<%= yield %>
-
-</body>
+		
+		<div id="main">
+			<%= yield %>
+		</div>
+		<footer>  
+    		<p><small>Image taken from http://hdwallpaperpics.com/picture/stock-photo/abstract.</small><img class="floatright" src="assets/bkg.jpg" alt="" width="100" height="100"></p> 
+    		<p><small>Let me know if you find something more appropriate. Thanks!</small></p>  
+  		</footer>
+  		 
+	</body>
 </html>
+  
+
