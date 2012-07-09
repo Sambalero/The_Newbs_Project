@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.6'
 gem 'pg'
 gem 'thin'
-gem 'pony'
+gem 'pony' #switch to actionmailer or don't load am
 gem 'jquery-rails'      
 gem 'bootstrap-sass'  
 
@@ -39,11 +39,9 @@ end
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+# gem 'capistrano'  
 
-# To use debugger
+group :development, :test do
   gem 'debugger'
-
-#group :development, :test do
 #  gem "ruby-debug19", require: "ruby-debug"
-#end   
+end   

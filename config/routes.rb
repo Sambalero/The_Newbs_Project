@@ -2,8 +2,6 @@ Newbies::Application.routes.draw do
 
   root to: "visitors#welcome"
 
-  get "page2" => "visitors#page2"
-
   get "visitors/home"
 
   get "visitors/page2"
@@ -14,13 +12,24 @@ Newbies::Application.routes.draw do
 
   resources :users
 
-# GET /users  index page to list all users
-# GET /users/1  show  page to show user with id 1
-# GET /users/new  new page to make a new user
-# POST  /users  create  create a new user
-# GET /users/1/edit edit  page to edit user with id 1
-# PUT /users/1  update  update user with id 1
-# DELETE  /users/1  destroy delete user with id 1
+#             root        /                            visitors#welcome
+#     visitors_home GET    /visitors/home(.:format)     visitors#home
+#    visitors_page2 GET    /visitors/page2(.:format)    visitors#page2
+# visitors_thankYou GET    /visitors/thankYou(.:format) visitors#thankYou
+#          comments GET    /comments(.:format)          comments#index
+#                   POST   /comments(.:format)          comments#create
+#       new_comment GET    /comments/new(.:format)      comments#new
+#      edit_comment GET    /comments/:id/edit(.:format) comments#edit
+#           comment GET    /comments/:id(.:format)      comments#show
+#                   PUT    /comments/:id(.:format)      comments#update
+#                   DELETE /comments/:id(.:format)      comments#destroy
+#             users GET    /users(.:format)             users#index
+#                   POST   /users(.:format)             users#create
+#          new_user GET    /users/new(.:format)         users#new
+#         edit_user GET    /users/:id/edit(.:format)    users#edit
+#              user GET    /users/:id(.:format)         users#show
+#                   PUT    /users/:id(.:format)         users#update
+#                   DELETE /users/:id(.:format)         users#destroy
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -79,3 +88,4 @@ Newbies::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 end
+

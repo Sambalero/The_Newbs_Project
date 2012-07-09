@@ -11,8 +11,8 @@ class VisitorsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get thankYou" do
-    get :thankYou
+  test "should get thank_you" do
+    get :thank_you
     assert_response :success
   end
 

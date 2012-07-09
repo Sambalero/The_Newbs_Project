@@ -54,7 +54,7 @@ class CommentsController < ApplicationController
     end
   end
 
-  def sendCommentNotice(commenthash)
+  def sendCommentNotice(commenthash)#move config to config file; make asynchronous - use resque, sidekiq or delayed job
     puts "sendcommentstart, params"
     puts commenthash.inspect
     Pony.mail(

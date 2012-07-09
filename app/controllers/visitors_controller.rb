@@ -5,7 +5,7 @@ class VisitorsController < ApplicationController
   def page2
   end
 
-  def thankYou
+  def thank_you
   end
 
   def welcome
