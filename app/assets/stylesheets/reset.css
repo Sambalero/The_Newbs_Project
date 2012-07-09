@@ -292,7 +292,7 @@ input[type="checkbox"] { vertical-align: bottom; }
 /* font normalization inspired by  from the YUI Library's fonts.css: developer.yahoo.com/yui/ */
 
 select, input, textarea, button { font:99% sans-serif; }
-* =============================================================================
+/* =============================================================================
    Tables
    ========================================================================== */
 
