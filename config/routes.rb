@@ -12,6 +12,8 @@ Newbies::Application.routes.draw do
 
   resources :users
 
+match '/admin' => 'visitors#admin'
+
 #             root        /                            visitors#welcome
 #     visitors_home GET    /visitors/home(.:format)     visitors#home
 #    visitors_page2 GET    /visitors/page2(.:format)    visitors#page2
