@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 	<head>  
-  		<meta charset="utf8">  
+  	<meta charset="utf8">  
 		<title>Noobies!</title>
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
@@ -10,6 +10,21 @@
   	<link href="/assets/style.css" rel="stylesheet">  
 	</head> 
 	<body>
+    <header class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <nav>
+            <ul class="nav pull-left">
+              <li><%= link_to "Home",    '#' %></li>
+              <li><%= link_to "Help",    '#' %></li>
+              <li><%= link_to "Sign in", '#' %></li>
+              <li> <%= link_to "Apply now!", '#', class: "btn btn-large btn-primary" %></li>
+              <li class="floatright">Deployment 0.0.24</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
 
 		
 		<div id="main">
