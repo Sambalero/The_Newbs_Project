@@ -10,16 +10,36 @@
   	<link href="/assets/style.css" rel="stylesheet">  
 	</head> 
 	<body>
+		<div class="topbar">
+			<div class="container">
+				<div class="hero-unit">
+				  <h1>The Noobs Project</h1>
+				  <p>The Company of and for Blossoming Professionals</p>
+				  <p>Providing Work for Students and Entry Level Professionals</p>
+				  <p>Offering Great Products and Services at Low Prices</p>
+				</div>
+			</div>
+		</div>
     <header class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <nav>
             <ul class="nav pull-left">
-              <li><%= link_to "Home",    '#' %></li>
-              <li><%= link_to "Help",    '#' %></li>
-              <li><%= link_to "Sign in", '#' %></li>
-              <li> <%= link_to "Apply now!", '#', class: "btn btn-large btn-primary" %></li>
-              <li class="floatright">Deployment 0.0.24</li>
+              <li> <%= link_to "Join Us!", '#', class: "btn btn-large btn-primary" %></li>            	
+            	<% unless @current_controller + @current_action == "visitorswelcome" %>
+              	<li><%= link_to "Home", '/' %></li>
+              <% end %>
+              <% unless @current_controller + @current_action == "commentsindex" %>
+              	<li><%= link_to "Comments", '/comments' %></li>
+              <% end %>
+              <% unless @current_controller + @current_action == "visitorspage2" %>
+              	<li><%= link_to "Comments", '/comments' %></li>
+              <% end %>
+              	<li><%= link_to "Sign in", '#' %></li> 
+            </ul>
+            <ul class="nav pull-right">
+              	<li><%= link_to "Deployment 0.0.24", '#' %></li>
+             		<li><%= link_to "Hire Us!", '#', class: "btn btn-large btn-primary" %></li>
             </ul>
           </nav>
         </div>
