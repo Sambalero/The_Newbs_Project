@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    sendCommentNotice(params[:comment])
+
     @comment = Comment.new(params[:comment])
 
     respond_to do |format|
@@ -52,29 +52,9 @@ class CommentsController < ApplicationController
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
+    AdminMailer.comment_added(params[:comment]).deliver
   end
 
-  def sendCommentNotice(commenthash)#move config to config file; make asynchronous - use resque, sidekiq or delayed job
-    puts "sendcommentstart, params"
-    puts commenthash.inspect
-    Pony.mail(
-      :from => "Noobs",
-      :to => 'kpswallow2@gmail.com',
-      :subject => commenthash[:name],
-      :body => "comment: " + commenthash[:comment] +"\n from: " + commenthash[:contact],
-      :port => '587',
-      :via => :smtp,
-      :via_options => {
-        :address => 'smtp.sendgrid.net',
-        :port => '587',
-        :domain => 'swallowsnest.net',
-        :user_name => 'app5287164@heroku.com',
-        :password => '2tc2jutb',
-        :authentication => :plain,
-        :enable_starttls_auto => true
-    })
-    puts "sendcommentdone"
-  end
 
   # PUT /comments/1
   # PUT /comments/1.json
