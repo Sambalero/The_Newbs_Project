@@ -12,4 +12,4 @@
 NoobsRelated*
 db/development.db
 .rvmrc
-requirements.txt
+requirements*.txt
