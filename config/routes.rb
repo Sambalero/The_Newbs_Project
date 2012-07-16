@@ -1,12 +1,16 @@
 Newbies::Application.routes.draw do
 
-  root to: "visitors#welcome"
+  root to: "visitors#home"
 
-  get "visitors/home"
+  get "visitors/welcome"
 
-  get "visitors/page2"
+  get "visitors/how_it_works"
 
-  get "visitors/thankYou"
+  get "visitors/thank_you"
+
+  match '/join' => 'comments#join'
+
+  match '/hire' => 'comments#hire'
 
   resources :comments
 
@@ -17,7 +21,7 @@ match '/admin' => 'visitors#admin'
 #             root        /                            visitors#welcome
 #     visitors_home GET    /visitors/home(.:format)     visitors#home
 #    visitors_page2 GET    /visitors/page2(.:format)    visitors#page2
-# visitors_thankYou GET    /visitors/thankYou(.:format) visitors#thankYou
+# visitors_thankYou GET    /visitors/thankYou(.:format) visitors#thank_you
 #          comments GET    /comments(.:format)          comments#index
 #                   POST   /comments(.:format)          comments#create
 #       new_comment GET    /comments/new(.:format)      comments#new

@@ -23,7 +23,27 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   # GET /comments/new.json
+
+  def join
+    @title = "Sign Me Up"
+    @content = "Skill Set"
+    @note = "We may request additional information."
+    @comment = Comment.new
+    render "comments/new"
+  end
+
+  def hire
+    @title = "Job Request"
+    @content = "Job Description"
+    @note = "We may request additional information."
+    @comment = Comment.new
+    render "comments/new"
+  end
+
   def new
+    @title = @title || "Comment Form"
+    @content = @content|| "Comment"
+    @note = @note || ""
     @comment = Comment.new
 
     respond_to do |format|

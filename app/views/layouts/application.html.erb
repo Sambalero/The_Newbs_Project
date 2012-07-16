@@ -6,58 +6,76 @@
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-		<link href="/assets/reset.css" rel="stylesheet">  
   	<link href="/assets/style.css" rel="stylesheet">  
 	</head> 
-	<body style="margin-top: 217px;">
-    <div class="topbar" id="topbar">
-      <div class="container">
-        <div class="hero-unit" style="padding-bottom: 5px; padding-left: 10px;margin-left: 110px; background-color: rgba(164, 77, 193, 0.7)">
-          <h1>The Noobs Project</h1>
-          <p style="color: white">The Company of and for Blossoming Professionals</p>
-          <p style="color: white">Providing Work for Students and Entry Level Professionals</p>
-          <p style="color: white">Offering Great Products and Services at Low Prices</p>
+
+  <header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+
+        <nav>
+          <ul class="nav pull-left">
+            <li> <a href="/comments/new" class="btn btn-large btn-primary">Join Us!</a></li>              
+              <li><a href="/comments">Comments</a></li>
+              <li><a href="/visitors/page2">Page Two</a></li>
+              <li><a href="#">Sign in</a></li> 
+          </ul>
+          <ul class="nav pull-right">
+              <li><a href="#">Deployment 0.0.24</a></li>
+              <li><a href="/comments/new" class="btn btn-large btn-primary">Hire Us!</a></li>
+          </ul>
+        </nav>
+
+    </div>
+  </header>
+
+  <body>
+
+    <div class="container-fluid" id="topbar">
+      <div class="row-fluid">
+        <div class="span2">
+          <div id="topcorner">
+           <p>Cool Image Here</p>
+          </div>
+        </div>
+          <div class="span10">
+            <div class="hero-unit" id="myhero">
+              <h1>The Newbs Project</h1>
+              <p>The Company of and for Blossoming Professionals</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <header class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <nav>
-            <ul class="nav pull-left">
-              <li> <a href="#" class="btn btn-large btn-primary">Join Us!</a></li>              
-                <li><a href="/comments">Comments</a></li>
-                <li><a href="/visitors/page2">Page Two</a></li>
-                <li><a href="#">Sign in</a></li> 
-            </ul>
-            <ul class="nav pull-right">
-                <li><a href="#">Deployment 0.0.24</a></li>
-                <li><a href="#" class="btn btn-large btn-primary">Hire Us!</a></li>
-            </ul>
-          </nav>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+          <div id="topcorner">
+           <p>Links Here</p>
+          </div>
+        </div>
+          <div class="span10">
+            <div id="main">
+              <%= yield %>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
+    </div>
+
+
+
+
+
 
     
-    <div id="main">
-      <header><h1>Welcome!</h1></header>
 
-<p>Hello. I'm Kevin Swallow, and this is my first website.</p>
 
-<p>Having determined that I was going to learn web development, I needed to find a project. Something that didn't require that I really know much about what I was doing, that was simple but either not the same as or not as simple as the tutorial sample projects that I had been studying. The perfect project would somehow make the world a better place, if even in a very small remote way, and would have some vague potential for remuneration, if only through advertising. The obvious thing to do was to look on the web. I thought I would be sure to find suggestions for possible websites there. It was late, and I was tired, and I decided to do that in the morning. When I awoke the next day, it was in my head that I was not the only person in this situation, and that it would be nice if there were a site intended for people like me.</p>
-<p>Rather than look for such a site, I decided to create one. In fact, why not create a site that would bring people together, and that might possibly lead to an organization of people dedicated to providing "newbies" with an opportunity to practice the craft that they are learning?</p>
-<p>The next deployment will feature:</p>
-<ul><li>Something on Page 2.</li></ul>
-<p></p>
-<h4>If you have a comment or suggestion, please share it! <a href="/comments/new"><span>Click Here</span></a></h4>
-    <p></p>
-<p>(If appropriate I'll respond or post it on the commentary page.)</p>
-    </div>
-    <footer>  
-        <p><img class="floatright" src="/assets/bkg.jpg" alt="" width="100" height="100"><small>Image taken from http://hdwallpaperpics.com/picture/stock-photo/abstract.</small></p> 
-        <p><small>Let me know if you find something more appropriate. Thanks!</small></p>  
-      </footer>
+    <footer> 
+        <h4 class="center"><img class="floatright" id="newby" alt: "Noo Power!" src="/assets/bkg.jpg">If you have a comment or suggestion, please share it! <a href="/comments/new"><span>Click Here</span></a></h4>
+        <p class="center">(If appropriate I'll respond or post it on the commentary page.)</p> 
+        <p class="right"><small>Image taken from http://hdwallpaperpics.com/picture/stock-photo/abstract.</small></p> 
+        <p class="right"><small>Let me know if you find something more appropriate. Thanks!</small></p>  
+    </footer>
 	</body>
 </html>
   
