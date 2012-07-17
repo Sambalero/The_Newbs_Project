@@ -8,6 +8,8 @@ Newbies::Application.routes.draw do
 
   get "visitors/thank_you"
 
+   get "visitors/help_wanted"
+
   match '/join' => 'comments#join'
 
   match '/hire' => 'comments#hire'

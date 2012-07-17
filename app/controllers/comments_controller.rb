@@ -25,9 +25,11 @@ class CommentsController < ApplicationController
   # GET /comments/new.json
 
   def join
-    @title = "Sign Me Up"
-    @content = "Skill Set"
+    @title = "Sign Up Form"
+    @content = "My Skill Set"
     @note = "We may request additional information."
+    @source = "join"
+    @button_label = "Sign Me Up!"
     @comment = Comment.new
     render "comments/new"
   end
@@ -36,6 +38,8 @@ class CommentsController < ApplicationController
     @title = "Job Request"
     @content = "Job Description"
     @note = "We may request additional information."
+    @source = "hire"
+    @button_label = "Send Job Request"
     @comment = Comment.new
     render "comments/new"
   end
@@ -44,6 +48,8 @@ class CommentsController < ApplicationController
     @title = @title || "Comment Form"
     @content = @content|| "Comment"
     @note = @note || ""
+    @source = @note || "comment"
+    @button_label = @button_label || "Submit Comment"
     @comment = Comment.new
 
     respond_to do |format|
