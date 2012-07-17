@@ -4,6 +4,11 @@ class CommentsController < ApplicationController
   def index
     @comments = Comment.all
 
+    @comments.delete_if {|comment| !comment.approved}
+    @comments.delete_if {|comment| comment.source == "hire"}
+    @comments.delete_if {|comment| comment.source == "join"}
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @comments }
