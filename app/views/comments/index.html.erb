@@ -1,6 +1,37 @@
-<!DOCTYPE html>
-<html>
+<% if @admin then %>
 
+<header><h1>Admin</h1></header>
+
+<table>
+  <tr>
+    <th>OK?</th>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Source</th>
+    <th>Contact</th>
+    <th>Date</th>
+    <th>Approved?</th>
+  </tr>
+
+<% @comments.each do |comment| %>
+  <tr>
+    <td><a href="/comments/<%= comment.id %>/edit" class="btn">EDIT</a></td>
+    <td><%= comment.id %></td>
+    <td><%= comment.name %></td>
+    <td><%= comment.source %></td>
+    <td><%= comment.contact %></td>
+    <td><%= comment.created_at %></td>
+    <td><%= comment.approved %></td>
+  </tr>
+  <tr>
+    <td><%= comment.comment %></td>
+  </tr>
+<% end %>
+
+</table>
+
+
+<% else %>
 <header><h1>Commentary</h1></header>
 
 <h1>What you said...</h1>
@@ -22,5 +53,5 @@
 <% end %>
 </table>
 
-<br />
+<% end %>
 

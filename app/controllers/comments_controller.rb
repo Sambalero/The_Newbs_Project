@@ -1,6 +1,12 @@
 class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
+  def admin
+    @admin = true
+    @comments = Comment.all
+    render "comments/index"
+  end
+
   def index
     @comments = Comment.all
 
@@ -54,7 +60,7 @@ class CommentsController < ApplicationController
     @content = @content|| "Comment"
     @note = @note || ""
     @source = @note || "comment"
-    @button_label = @button_label || "Submit Comment"
+    @button_label = @button_label || "Submit"
     @comment = Comment.new
 
     respond_to do |format|
@@ -63,9 +69,14 @@ class CommentsController < ApplicationController
     end
   end
 
+
+
+
   # GET /comments/1/edit
   def edit
+    @admin = true
     @comment = Comment.find(params[:id])
+    @content = "content"
   end
 
   # POST /comments

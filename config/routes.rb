@@ -18,7 +18,7 @@ Newbies::Application.routes.draw do
 
   resources :users
 
-  match '/admin' => 'visitors#admin'
+  match '/admin' => 'comments#admin'
 
 #             root        /                            visitors#welcome
 #     visitors_home GET    /visitors/home(.:format)     visitors#home
