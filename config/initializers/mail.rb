@@ -1,3 +1,4 @@
+if Rails.env == 'production' then
 ActionMailer::Base.smtp_settings = {
   :address        => 'smtp.sendgrid.net',
   :port           => '587',
@@ -8,3 +9,17 @@ ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true
 }
 ActionMailer::Base.delivery_method = :smtp
+
+else
+ActionMailer::Base.smtp_settings = {
+  :address        => 'smtp.sendgrid.net',
+  :port           => '587',
+  :authentication => :plain,
+  :user_name      => "app5795628@heroku.com",
+  :password       => "aqhvp7hv",
+  :domain         => 'heroku.com',
+  :enable_starttls_auto => true
+}
+ActionMailer::Base.delivery_method = :smtp
+
+end

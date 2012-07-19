@@ -1,12 +1,14 @@
 class CommentsController < ApplicationController
-  # GET /comments
-  # GET /comments.json
+ 
+
+  # GET /admin
   def admin
     @admin = true
     @comments = Comment.all
     render "comments/index"
   end
 
+  # GET /comments
   def index
     @comments = Comment.all
 
@@ -14,27 +16,14 @@ class CommentsController < ApplicationController
     @comments.delete_if {|comment| comment.source == "hire"}
     @comments.delete_if {|comment| comment.source == "join"}
 
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @comments }
-    end
   end
 
-  # GET /comments/1
-  # GET /comments/1.json
+  # GET /comments/:id
   def show
     @comment = Comment.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @comment }
-    end
   end
 
-  # GET /comments/new
-  # GET /comments/new.json
-
+  # GET /join
   def join
     @title = "Sign Up Form"
     @content = "My Skill Set"
@@ -45,6 +34,7 @@ class CommentsController < ApplicationController
     render "comments/new"
   end
 
+  # GET /hire
   def hire
     @title = "Job Request"
     @content = "Job Description"
@@ -55,24 +45,20 @@ class CommentsController < ApplicationController
     render "comments/new"
   end
 
+  # GET /comments/new
   def new
     @title = @title || "Comment Form"
     @content = @content|| "Comment"
     @note = @note || ""
     @source = @note || "comment"
-    @button_label = @button_label || "Submit"
+    @button_label = @button_label || "Send Message"
     @comment = Comment.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @comment }
-    end
   end
 
 
 
 
-  # GET /comments/1/edit
+  # GET /comments/:id/edit
   def edit
     @admin = true
     @comment = Comment.find(params[:id])
@@ -80,49 +66,43 @@ class CommentsController < ApplicationController
   end
 
   # POST /comments
-  # POST /comments.json
   def create
 
     @comment = Comment.new(params[:comment])
 
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render json: @comment, status: :created, location: @comment }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+
+    if @comment.save
+      AdminMailer.comment_notice(@comment.notice("comment created")).deliver
+      redirect_to @comment, notice: 'Comment was successfully created.' 
+    else
+      AdminMailer.comment_notice(@comment.notice("comment creation attempted")).deliver
+      render action: "new" 
     end
-    AdminMailer.comment_added(params[:comment]).deliver
   end
 
 
   # PUT /comments/1
-  # PUT /comments/1.json
   def update
     @comment = Comment.find(params[:id])
 
-    respond_to do |format|
-      if @comment.update_attributes(params[:comment])
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+    if @comment.update_attributes(params[:comment])
+      AdminMailer.comment_notice(@comment.notice("comment updated")).deliver
+      redirect_to @comment, notice: 'Comment was successfully updated.' 
+    else
+       AdminMailer.comment_notice(@comment.notice("comment update attempted")).deliver
+      render action: "edit" 
     end
   end
 
   # DELETE /comments/1
-  # DELETE /comments/1.json
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
+    AdminMailer.comment_notice(@comment.notice("comment destroyed")).deliver
 
-    respond_to do |format|
-      format.html { redirect_to comments_url }
-      format.json { head :no_content }
-    end
+    redirect_to comments_url
   end
+
+
+
 end
