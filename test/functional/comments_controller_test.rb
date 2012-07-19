@@ -2,7 +2,9 @@ require 'test_helper'
 
 class CommentsControllerTest < ActionController::TestCase
   setup do
-    @comment = comments(:one)
+    @comment1 = comments(:one)
+    @comment2 = comments(:two)
+
   end
 
 #includes application controller test
@@ -25,10 +27,11 @@ class CommentsControllerTest < ActionController::TestCase
   test "should create comment" do
     assert_difference('Comment.count') do
       post :create, comment: { 
-        approved: @comment.approved, 
-        comment: @comment.comment, 
-        contact: @comment.contact, 
-        name: @comment.name 
+        approved: @comment1.approved, 
+        comment: @comment1.comment, 
+        contact: @comment1.contact, 
+        name: @comment1.name, 
+        source: "comment"
       }
     end
 
@@ -36,23 +39,23 @@ class CommentsControllerTest < ActionController::TestCase
   end
 
   test "should show comment" do
-    get :show, id: @comment
+    get :show, id: @comment1
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @comment
+    get :edit, id: @comment1
     assert_response :success
   end
 
   test "should update comment" do
-    put :update, id: @comment, comment: { approved: @comment.approved, comment: @comment.comment, contact: @comment.contact, name: @comment.name }
+    put :update, id: @comment1, comment: { approved: @comment1.approved, comment: @comment1.comment, contact: @comment1.contact, name: @comment1.name }
     assert_redirected_to comment_path(assigns(:comment))
   end
 
   test "should destroy comment" do
     assert_difference('Comment.count', -1) do
-      delete :destroy, id: @comment
+      delete :destroy, id: @comment1
     end
 
     assert_redirected_to comments_path
@@ -61,16 +64,33 @@ class CommentsControllerTest < ActionController::TestCase
 # 
 
   test "admin sees all comments" do
+    get :admin
+    assert_response :success
+    assert(assigns(:comments).include?(@comment1))
   end
+
   test "others don't see hire or join posts" do
+    @comment1[:source] = "hire"
+    @comment2[:source] = "join"
+    assert_response :success
+    assert_nil(assigns(:comments))
   end
+
   test "join, hire show appropriate labels in comments form" do
+    get :join
+    assert_equal(assigns(:button_label), "Sign Me Up!")
+
+    get :hire
+    assert_equal(assigns(:button_label), "Send Job Request")   
   end
+
   test "create redirects with appropriate notices" do
   end
   test "create sends appropriate email" do
   end
   test "update sends appropriate email" do
+  end
+  test "destroy sends appropriate email" do
   end
 
 end

@@ -1,13 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  contact: MyString
-  comment: MyText
+  name: MyName1
+  contact: MyContact1
+  comment: MyText1
   approved: false
+  source: comment
 
 two:
-  name: MyString
-  contact: MyString
-  comment: MyText
-  approved: false
+  name: MyName2
+  contact: MyContact2 
+  comment: MyText2
+  approved: true
+  source: comment
+
+
+

@@ -48,9 +48,9 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @title = @title || "Comment Form"
-    @content = @content|| "Comment"
+    @content = @content || "Comment"
     @note = @note || ""
-    @source = @note || "comment"
+    @source = @source || "comment"
     @button_label = @button_label || "Send Message"
     @comment = Comment.new
   end
@@ -71,8 +71,9 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
 
 
+
     if @comment.save
-      AdminMailer.comment_notice(@comment.notice("comment created")).deliver
+      AdminMailer.comment_notice(@comment.notice(@comment.source + "created")).deliver 
       redirect_to @comment, notice: 'Comment was successfully created.' 
     else
       AdminMailer.comment_notice(@comment.notice("comment creation attempted")).deliver

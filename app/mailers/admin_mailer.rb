@@ -4,7 +4,7 @@ class AdminMailer < ActionMailer::Base
   	
   mail( from: 'Noobs', 
 		  	to: 'kpswallow2@gmail.com', 
-		  	subject: notice[:name] + notice[:action], 
-		  	body: "comment: " + notice[:comment] +"\n from: " + notice[:contact])
+		  	subject: notice[:name] + " " + notice[:action], 
+		  	body: "comment: " + notice[:comment] +"\n \n from: " + notice[:contact])
 	end
 end
