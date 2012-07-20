@@ -14,7 +14,7 @@
 
         <nav>
           <ul class="nav pull-left">
-            <li> <a href="/join" class="btn btn-large btn-primary">Join Us!</a></li>  
+            <li> <a href="/join" class="btn btn-primary">Join Us!</a></li>  
 
             <% unless @current_controller + @current_action == "visitorshome" %>
               <li><%= link_to "Home", '/' %></li>
@@ -38,8 +38,8 @@
 
           </ul>
           <ul class="nav pull-right">
-              <li><a href="#">Deployment 0.0.24</a></li>
-              <li><a href="/hire" class="btn btn-large btn-primary">Hire Us!</a></li>
+              <li><a href="#">Deployment 0.0.26</a></li>
+              <li><a href="/hire" class="btn btn-primary">Hire Us!</a></li>
           </ul>
         </nav>
 
@@ -94,10 +94,9 @@
 
 
     <footer> 
-        <h4 class="center"><img class="floatright" id="newby" alt: "Noo Power!" src="/assets/bkg.jpg">If you have a comment or suggestion, please share it! <a href="/comments/new"><span>Click Here</span></a></h4>
+        <h4 class="center"><img class="floatleft" id="newby" alt: "Noo Power!" src="/assets/bkg.jpg">If you have a comment or suggestion, please share it! <a href="/comments/new" id="footer-link"><span>Click Here</span></a></h4>
         <p class="center">(If appropriate I'll respond or post it on the commentary page.)</p> 
-        <p class="right"><small>Image taken from http://hdwallpaperpics.com/picture/stock-photo/abstract.</small></p> 
-        <p class="right"><small>Let me know if you find something more appropriate. Thanks!</small></p>  
+        <p id="left-small"><small>Image taken from http://hdwallpaperpics.com/picture/stock-photo/abstract.   Let me know if you find something more appropriate. Thanks!</small></p>  
     </footer>
 	</body>
 </html>
