@@ -6,8 +6,8 @@ class VisitorsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get page2" do
-    get :page2
+  test "should get how_it_works" do
+    get :how_it_works
     assert_response :success
   end
 
@@ -21,4 +21,8 @@ class VisitorsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get help_wanted" do
+    get :help_wanted
+    assert_response :success
+  end
 end

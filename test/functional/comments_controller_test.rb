@@ -63,6 +63,11 @@ class CommentsControllerTest < ActionController::TestCase
 
 # 
 
+  test "should get admin" do
+    get :admin
+    assert_response :success
+  end
+
   test "admin sees all comments" do
     get :admin
     assert_response :success
@@ -85,9 +90,43 @@ class CommentsControllerTest < ActionController::TestCase
   end
 
   test "create redirects with appropriate notices" do
+    post :create, comment: { 
+      approved: false, 
+      comment: "here's a job", 
+      contact: @comment1.contact, 
+      name: @comment1.name, 
+      source: "hire"
+    }
+    assert_redirected_to comment_path(assigns(:comment))
+    assert_equal(flash[:notice], "hire was successfully created.")  
+
+    post :create, comment: { 
+      approved: false, 
+      comment: "hire me", 
+      contact: @comment1.contact, 
+      name: @comment1.name, 
+      source: "join"
+    }
+    assert_redirected_to comment_path(assigns(:comment))
+    assert_equal(flash[:notice], "join was successfully created.")  
+
+    post :create, comment: { 
+      approved: @comment1.approved, 
+      comment: @comment1.comment, 
+      contact: @comment1.contact, 
+      name: @comment1.name, 
+      source: "comment"
+    }
+    assert_equal(flash[:notice], "comment was successfully created.")  
+
   end
+
+  test "create sends email" do
+  end
+
   test "create sends appropriate email" do
   end
+  
   test "update sends appropriate email" do
   end
   test "destroy sends appropriate email" do

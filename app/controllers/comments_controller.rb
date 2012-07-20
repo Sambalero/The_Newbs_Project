@@ -71,10 +71,9 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
 
 
-
     if @comment.save
       AdminMailer.comment_notice(@comment.notice(@comment.source + "created")).deliver 
-      redirect_to @comment, notice: 'Comment was successfully created.' 
+      redirect_to @comment, notice: @comment.source + " was successfully created." 
     else
       AdminMailer.comment_notice(@comment.notice("comment creation attempted")).deliver
       render action: "new" 
@@ -82,7 +81,7 @@ class CommentsController < ApplicationController
   end
 
 
-  # PUT /comments/1
+  # PUT /comments/:id
   def update
     @comment = Comment.find(params[:id])
 
@@ -95,7 +94,7 @@ class CommentsController < ApplicationController
     end
   end
 
-  # DELETE /comments/1
+  # DELETE /comments/:id
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
