@@ -10,7 +10,7 @@ ActionMailer::Base.smtp_settings = {
 }
 ActionMailer::Base.delivery_method = :smtp
 
-else
+elsif Rails.env == 'development' then
 ActionMailer::Base.smtp_settings = {
   :address        => 'smtp.sendgrid.net',
   :port           => '587',
@@ -22,4 +22,6 @@ ActionMailer::Base.smtp_settings = {
 }
 ActionMailer::Base.delivery_method = :smtp
 
+else 
+ActionMailer::Base.delivery_method = :test
 end

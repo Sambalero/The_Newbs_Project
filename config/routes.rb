@@ -1,6 +1,7 @@
 Newbies::Application.routes.draw do
 
-  root to: "visitors#home"
+ # root to: "public/index"
+  root :controller => 'static', :action => '/public/index.html.erb'
 
   get "visitors/welcome"
 
@@ -8,7 +9,9 @@ Newbies::Application.routes.draw do
 
   get "visitors/thank_you"
 
-   get "visitors/help_wanted"
+  get "visitors/help_wanted"
+
+  match '/visitors' => "visitors#home"
 
   match '/join' => 'comments#join'
 
