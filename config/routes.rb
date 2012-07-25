@@ -23,6 +23,12 @@ Newbies::Application.routes.draw do
 
   match '/admin' => 'comments#admin'
 
+  match '/sitemap/show' => "sitemap#show"
+
+  match '/sitemap/send' => "sitemap#send"
+
+  match '/sitemap' => "sitemap#show"
+
 #             root        /                            visitors#welcome
 #     visitors_home GET    /visitors/home(.:format)     visitors#home
 #    visitors_page2 GET    /visitors/page2(.:format)    visitors#page2
