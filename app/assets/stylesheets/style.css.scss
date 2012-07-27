@@ -5,32 +5,7 @@
 /* page layout
 	body header */
 
-#topbar {
-  position: fixed;
-  top: 0;
-
-}
-/*do I need hero unit?*/
-#myhero {
-	padding-bottom: 5px; 
-	padding-top: 5px;
-	margin-top: 48px; 
-	background-color: rgba(164, 77, 193, 0.7);
-}
-
-#topcorner {
-	background-color: rgba(255, 62, 128, 0);
-	height: 100px;
-}
-
-header {
-	text-align: center;
-	margin: 0 0 20px;
-}
-
 body {
-	margin-top: 200px;
-	width: 100%;
 	background: #000000; /* Old browsers */
 	background: -moz-linear-gradient(45deg,  #000000 0%, #000000 0%, #000000 7%, #115659 25%, #2bd9e2 64%, #1e5799 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#000000), color-stop(0%,#000000), color-stop(7%,#000000), color-stop(25%,#115659), color-stop(64%,#2bd9e2), color-stop(100%,#1e5799)); /* Chrome,Safari4+ */
@@ -39,49 +14,10 @@ body {
 	background: -ms-linear-gradient(45deg,  #000000 0%,#000000 0%,#000000 7%,#115659 25%,#2bd9e2 64%,#1e5799 100%); /* IE10+ */
 	background: linear-gradient(45deg,  #000000 0%,#000000 0%,#000000 7%,#115659 25%,#2bd9e2 64%,#1e5799 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#1e5799',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	padding-top: 70px;
 }
-
-footer {
-	padding-top: 100px;
-	margin: 10px 0 10px 0;
-	width: 100%;
-}
-
-.center {
-	text-align: center;
-}
-
-.right {
-	text-align: right;
-}
-
-.container-fluid { 
-	width: 100%;
-}
-
-.floatright { 
-	float: right;
-	margin: 0 10px 0 0;
-}
-
-.floatleft { 
-	float: left;
-	margin: 0 0 0 10px;
-}
-
 
 /* text */
-
-#myhero h1{
-	font-family: "Comic Sans MS", cursive, sans-serif;
-	color: black;
-	font-size: 66px;
-	margin-bottom: -8px;
-}
-
-#myhero p{
-	color: white;
-}
 
 #topcorner p{
 	color: grey;
@@ -96,27 +32,88 @@ footer {
   margin: 50px 0 0 120px;
 }
 
-.navbar .nav > li > a {
-	color: #A9F8F9;
+.home-bullets {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		font-size: 30px;
+		line-height: 36px;
+		font-weight: bold;
+	}
 }
 
-#footer-link {
-	color: #05C;
-	font-weight: normal;
+
+/*do I need hero unit?*/
+.myhero {
+	background-color: rgba(164, 77, 193, 0.7);
+	color: white;
+	padding: 5px;
+
+	h1{
+		color: black;
+		font-family: "Comic Sans MS", cursive, sans-serif;
+		font-size: 66px;
+	}
+}
+
+.sidebox {
+	background-color: rgba(255, 62, 128, 0);
+	height: 100px;
+}
+
+.footer {
+	padding-top: 100px;
+	margin: 10px 0 10px 0;
+
+	#footer-link {
+		color: #05C;
+		font-weight: normal;
+	}
+}
+
+.navbar {
+	.navbar-inner {
+		overflow: auto;
+		width: 100%;
+
+		a {
+			color: #A9F8F9;
+		}
+	}
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.floatright {
+	float: right;
+	margin: 0 10px 0 0;
+}
+
+.floatleft {
+	float: left;
+	margin: 0 0 0 10px;
 }
 
 /* features */
 
-#btn-centered { 
-	float: left; 
-	position: relative; 
+#btn-centered {
+	float: left;
+	position: relative;
 	left: 62%;
 }
 
 /* images */
 
-#newby { 
-	width: 100px; 
+#newby {
+	width: 100px;
 	height: 100px;
 }
 
