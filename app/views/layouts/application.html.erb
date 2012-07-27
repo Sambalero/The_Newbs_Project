@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
   	<meta charset="utf8">
-		<title>Noobies!</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -60,7 +60,7 @@
         <div class="span10">
           <div class="hero-unit myhero center">
             <h1>The Newbs Project</h1>
-            <p>The Company of and for Blossoming Professionals</p>
+            <p>The Company of and for Upcoming Professionals</p>
           </div>
           <div id="main">
             <%= yield %>
