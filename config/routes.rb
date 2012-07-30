@@ -1,7 +1,8 @@
 Newbies::Application.routes.draw do
 
   root to: "visitors#home"
-#  root :controller => 'static', :action => '/public/index.html.erb'
+
+  get "users/new"
 
   get "visitors/welcome"
 

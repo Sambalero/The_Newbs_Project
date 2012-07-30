@@ -6,6 +6,8 @@ gem 'thin'
 gem 'pony' #switch to actionmailer or don't load am
 gem 'jquery-rails'      
 gem 'bootstrap-sass'  
+gem "bcrypt-ruby"
+
 
 ## To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

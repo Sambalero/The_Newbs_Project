@@ -15,6 +15,11 @@ body {
 	background: linear-gradient(45deg,  #000000 0%,#000000 0%,#000000 7%,#115659 25%,#2bd9e2 64%,#1e5799 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#1e5799',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	padding-top: 70px;
+
+	p, h1, h2, h3, h4, h5, h6{
+		color: black;
+	}
+
 }
 
 /* text */
@@ -41,6 +46,7 @@ body {
 		font-size: 30px;
 		line-height: 36px;
 		font-weight: bold;
+		color: black;
 	}
 }
 
@@ -54,7 +60,12 @@ body {
 	h1{
 		color: black;
 		font-family: "Comic Sans MS", cursive, sans-serif;
-		font-size: 66px;
+		font-size: 56px;
+		text-align: left;	
+	}
+	p{
+		text-align: left;	
+		margin: -9px 0 0 0;
 	}
 }
 
@@ -115,5 +126,7 @@ body {
 #newby {
 	width: 100px;
 	height: 100px;
+	float: left;
+	margin: 0 10px 0 0;
 }
 
