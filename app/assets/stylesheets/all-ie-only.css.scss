@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .myhero {
-	background-color: rgb(164, 77, 193);
+	background-color: rgb(164, 77, 193) ! important;
 }
 
 
 body {
 	p, h1, h2, h3, h4, h5, h6{
-		color: white;
+		color: white ! important;
 	}
 }
