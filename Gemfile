@@ -7,6 +7,7 @@ gem 'pony' #switch to actionmailer or don't load am
 gem 'jquery-rails'      
 gem 'bootstrap-sass'  
 gem "bcrypt-ruby"
+gem 'modernizr-rails'
 
 
 ## To use ActiveModel has_secure_password
