@@ -81,10 +81,8 @@ class CommentsControllerTest < ActionController::TestCase
     assert_nil(assigns(:comments))
   end
 
-  test "join, hire show appropriate labels in comments form" do
-    get :join
-    assert_equal(assigns(:button_label), "Sign Me Up!")
-
+  test "hire shows appropriate labels in comments form" do
+ 
     get :hire
     assert_equal(assigns(:button_label), "Send Job Request")   
   end

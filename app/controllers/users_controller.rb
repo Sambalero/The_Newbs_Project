@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :admin_required, except: [:update_password]
+  before_filter :admin_or_self, only: [:update_password]
 
   # GET /users
   def index
@@ -8,6 +10,17 @@ class UsersController < ApplicationController
   # GET /users/:id
   def show
     @user = User.find(params[:id])
+  end
+
+  # GET /join
+  def join
+    @title = "Sign Up Form"
+# add skills    @content = "Please include a brief description of your skill set:"
+    @note = "We may request additional information."
+    @source = "join" #Is this needed?
+    @button_label = "Sign Me Up!"
+    @user = User.new
+    render "users/new"
   end
 
   # GET /users/new
@@ -22,9 +35,12 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(params[:user])
+logger.debug "in create ---------------------------------->"
 
+    @user = User.new(params[:user])
+logger.debug @user.inspect
     if @user.save
+logger.debug "user saved----------------------------------->"
       redirect_to @user, notice: 'User was successfully created.' 
     else
       render action: "new" 

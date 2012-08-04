@@ -1,5 +1,14 @@
 require 'test_helper'
 
+#  in your Functional Tests
+# You should test for things such as:
+
+# was the web request successful?
+# was the user redirected to the right page?
+# was the user successfully authenticated?
+# was the correct object stored in the response template?
+# was the appropriate message displayed to the user in the view?
+
 class UsersControllerTest < ActionController::TestCase
   setup do
     @user = users(:one)
@@ -16,13 +25,28 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create user" do
-    assert_difference('User.count') do
-      post :create, user: { admin: @user.admin, email: @user.email, name: @user.name }
-    end
+  test "signup page has correct title" do
+    get :new
+    assert_response :success
+    assert_select 'title', "Newbies! Registration"
+  end 
 
-    assert_redirected_to user_path(assigns(:user))
+
+  test "join shows appropriate labels in comments form" do
+    get :join
+   
+    assert_equal(assigns(:button_label), "Sign Me Up!")   
   end
+
+
+  # test "should create user" do
+
+  #   assert_difference('User.count') do
+  #     post :create, user: { admin: @user.admin, email: @user.email, name: @user.name }
+  #   end
+
+  #   assert_redirected_to user_path(assigns(:user))
+  # end
 
   test "should show user" do
     get :show, id: @user
@@ -34,10 +58,10 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update user" do
-    put :update, id: @user, user: { admin: @user.admin, email: @user.email, name: @user.name }
-    assert_redirected_to user_path(assigns(:user))
-  end
+  # test "should update user" do
+  #   put :update, id: @user, user: { admin: @user.admin, email: @user.email, name: @user.name }
+  #   assert_redirected_to user_path(assigns(:user))
+  # end
 
   test "should destroy user" do
     assert_difference('User.count', -1) do

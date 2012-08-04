@@ -21,8 +21,8 @@
           <% unless @current_controller + @current_action == "visitorshow_it_works" %>
             <li><%= link_to "How It Works", '/visitors/how_it_works' %></li>
           <% end %>
-          <% unless @current_controller + @current_action == "" %>
-            <li><%= link_to "Sign In", '#' %></li>
+          <% unless @current_controller + @current_action == "sessionsnew" %>
+            <li><%= link_to "Sign In", '/sessions' %></li>
           <% end %>
           <% unless @current_controller + @current_action == "visitorshelp_wanted" %>
             <li><%= link_to "Help Wanted", '/visitors/help_wanted' %></li>

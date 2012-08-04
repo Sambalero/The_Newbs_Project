@@ -2,8 +2,6 @@ Newbies::Application.routes.draw do
 
   root to: "visitors#home"
 
-  get "users/new"
-
   get "visitors/welcome"
 
   get "visitors/how_it_works"
@@ -14,9 +12,11 @@ Newbies::Application.routes.draw do
 
   match '/visitors' => "visitors#home"
 
-  match '/join' => 'comments#join'
+  match '/join' => 'users#join'
 
   match '/hire' => 'comments#hire'
+
+  match '/login' => 'sessions#new'
 
   resources :comments
 
@@ -30,24 +30,33 @@ Newbies::Application.routes.draw do
 
   match '/sitemap' => "sitemap#show"
 
-#             root        /                            visitors#welcome
-#     visitors_home GET    /visitors/home(.:format)     visitors#home
-#    visitors_page2 GET    /visitors/page2(.:format)    visitors#page2
-# visitors_thankYou GET    /visitors/thankYou(.:format) visitors#thank_you
-#          comments GET    /comments(.:format)          comments#index
-#                   POST   /comments(.:format)          comments#create
-#       new_comment GET    /comments/new(.:format)      comments#new
-#      edit_comment GET    /comments/:id/edit(.:format) comments#edit
-#           comment GET    /comments/:id(.:format)      comments#show
-#                   PUT    /comments/:id(.:format)      comments#update
-#                   DELETE /comments/:id(.:format)      comments#destroy
-#             users GET    /users(.:format)             users#index
-#                   POST   /users(.:format)             users#create
-#          new_user GET    /users/new(.:format)         users#new
-#         edit_user GET    /users/:id/edit(.:format)    users#edit
-#              user GET    /users/:id(.:format)         users#show
-#                   PUT    /users/:id(.:format)         users#update
-#                   DELETE /users/:id(.:format)         users#destroy
+#              root        /                                visitors#home
+#      visitors_welcome GET    /visitors/welcome(.:format)      visitors#welcome
+# visitors_how_it_works GET    /visitors/how_it_works(.:format) visitors#how_it_works
+#    visitors_thank_you GET    /visitors/thank_you(.:format)    visitors#thank_you
+#  visitors_help_wanted GET    /visitors/help_wanted(.:format)  visitors#help_wanted
+#              visitors        /visitors(.:format)              visitors#home
+#                  join        /join(.:format)                  comments#join
+#                  hire        /hire(.:format)                  comments#hire
+#                 login        /login(.:format)                 sessions#new
+#              comments GET    /comments(.:format)              comments#index
+#                       POST   /comments(.:format)              comments#create
+#           new_comment GET    /comments/new(.:format)          comments#new
+#          edit_comment GET    /comments/:id/edit(.:format)     comments#edit
+#               comment GET    /comments/:id(.:format)          comments#show
+#                       PUT    /comments/:id(.:format)          comments#update
+#                       DELETE /comments/:id(.:format)          comments#destroy
+#                 users GET    /users(.:format)                 users#index
+#                       POST   /users(.:format)                 users#create
+#              new_user GET    /users/new(.:format)             users#new
+#             edit_user GET    /users/:id/edit(.:format)        users#edit
+#                  user GET    /users/:id(.:format)             users#show
+#                       PUT    /users/:id(.:format)             users#update
+#                       DELETE /users/:id(.:format)             users#destroy
+#                 admin        /admin(.:format)                 comments#admin
+#          sitemap_show        /sitemap/show(.:format)          sitemap#show
+#          sitemap_send        /sitemap/send(.:format)          sitemap#send
+#               sitemap        /sitemap(.:format)               sitemap#show
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

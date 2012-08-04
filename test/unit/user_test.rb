@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
+
+  # test "should downcase email addresses" do
   # end
+
+  # test "can be deactivated" do
+  # end
+
 end

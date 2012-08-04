@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "Name (required):" %><br />
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
+  </div>  
+  <div class="Email (required):">
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label "Password (required):"%><br />
     <%= f.password_field :password %>    
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label "Confirm Password" %><br />
     <%= f.password_field :password_confirmation %>    
   </div>
 
@@ -39,6 +39,7 @@
     <%= f.check_box :approval %>
   </div>
 <% else %>
+  <div><p><%= @note %></p></div>
   <%=f.hidden_field :approval, :value => :false %>
   <%=f.hidden_field :admin, :value => :false %>
 <% end %>

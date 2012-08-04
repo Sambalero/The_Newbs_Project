@@ -1,8 +1,10 @@
 class CommentsController < ApplicationController
+  skip_before_filter :login_required
+  before_filter :admin_required, only: [:edit, :update, :destroy]
  
 
   # GET /admin
-  def admin
+  def admin 
     @admin = true
     @comments = Comment.all
     render "comments/index"
@@ -21,17 +23,6 @@ class CommentsController < ApplicationController
   # GET /comments/:id
   def show
     @comment = Comment.find(params[:id])
-  end
-
-  # GET /join
-  def join
-    @title = "Sign Up Form"
-    @content = "My Skill Set"
-    @note = "We may request additional information."
-    @source = "join"
-    @button_label = "Sign Me Up!"
-    @comment = Comment.new
-    render "comments/new"
   end
 
   # GET /hire
