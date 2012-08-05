@@ -4,9 +4,10 @@
   	<meta charset="utf8">
     <title><%= full_title(yield(:title)) %></title>
     <!--[if IE]>
-    <link rel="stylesheet" type="text/css" href="all-ie-only.css.scss" />
+    <%= stylesheet_link_tag "application-ie", :media => "all" %>
     <![endif]-->
-    <%= stylesheet_link_tag    "application", media: "all" %>
+
+    <%= stylesheet_link_tag    "application-all", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
 	</head>
