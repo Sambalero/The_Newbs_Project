@@ -65,6 +65,7 @@ Newbies::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.assets.precompile += %w( application-all.css.scss application-ie.css.scss )
+  config.assets.precompile += %w( application-all.css.scss )
+  config.assets.precompile += %w( application-ie.css.scss )
 
 end
