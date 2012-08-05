@@ -35,6 +35,6 @@ Newbies::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.assets.precompile += %w( application-all.css.scss application-ie.css.scss )
+  config.assets.precompile += %w( application-all.css application-ie.css )
 
 end

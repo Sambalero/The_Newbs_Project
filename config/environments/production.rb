@@ -14,8 +14,8 @@ Newbies::Application.configure do
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
-  # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  # Fallback to assets pipeline if a precompiled asset is missed
+  config.assets.compile = true # (not)
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -28,7 +28,7 @@ Newbies::Application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
+  config.force_ssl = false
 
   # See everything in the log (default is :info)
   # config.log_level = :debug
@@ -65,7 +65,5 @@ Newbies::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.assets.precompile += %w( application-all.css.scss )
-  config.assets.precompile += %w( application-ie.css.scss )
-
+  config.assets.precompile += %w( application-all.css application-ie.css )
 end
