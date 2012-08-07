@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_required
-#    redirect_to home_path unless current_user.admin? #what about admin as status and ==? think about redirect
+#    redirect_to home_path unless current_user.role == admin 
   end
 
   def admin_or_self

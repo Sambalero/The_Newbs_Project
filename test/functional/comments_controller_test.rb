@@ -119,16 +119,48 @@ class CommentsControllerTest < ActionController::TestCase
 
   end
 
-  test "create sends email" do
-    pending
+  test "create sends appropriate email" do
+    email_count = ActionMailer::Base.deliveries.length
+    post :create, comment: { 
+      approved: @comment1.approved, 
+      comment: @comment1.comment, 
+      contact: @comment1.contact, 
+      name: @comment1.name, 
+      source: "comment"
+    }
+
+    assert ActionMailer::Base.deliveries.length == email_count + 1
+
+    email = ActionMailer::Base.deliveries[email_count]
+    assert_equal 'MyName1 commentcreated', email.subject
+    assert_match(/MyText1/, email.encoded)
   end
 
-  test "create sends appropriate email" do
+  test "upate sends appropriate email" do
+    email_count = ActionMailer::Base.deliveries.length
+    put :update, id: @comment1, comment: { approved: @comment1.approved, 
+                                           comment: "work, baby, work", 
+                                           contact: @comment1.contact, 
+                                           name: @comment1.name }
+
+    assert ActionMailer::Base.deliveries.length == email_count + 1
+
+    email = ActionMailer::Base.deliveries[email_count]
+    assert_equal "MyName1 comment updated", email.subject
+    assert_match(/work, baby, work/, email.encoded)
   end
   
-  test "update sends appropriate email" do
-  end
+
   test "destroy sends appropriate email" do
+    email_count = ActionMailer::Base.deliveries.length
+    delete :destroy, id: @comment1  
+
+    assert ActionMailer::Base.deliveries.length == email_count + 1
+
+    email = ActionMailer::Base.deliveries[email_count]
+    assert_equal "MyName1 comment destroyed", email.subject
+    assert_match(/MyText1/, email.encoded)
+
   end
 
 end
