@@ -120,6 +120,7 @@ class CommentsControllerTest < ActionController::TestCase
   end
 
   test "create sends email" do
+    pending
   end
 
   test "create sends appropriate email" do

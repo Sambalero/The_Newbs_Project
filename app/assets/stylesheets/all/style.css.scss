@@ -6,14 +6,15 @@
 	body header */
 
 body {
-	background: #000000; /* Old browsers */
-	background: -moz-linear-gradient(45deg,  #000000 0%, #000000 0%, #000000 7%, #115659 25%, #2bd9e2 64%, #1e5799 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#000000), color-stop(0%,#000000), color-stop(7%,#000000), color-stop(25%,#115659), color-stop(64%,#2bd9e2), color-stop(100%,#1e5799)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(45deg,  #000000 0%,#000000 0%,#000000 7%,#115659 25%,#2bd9e2 64%,#1e5799 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(45deg,  #000000 0%,#000000 0%,#000000 7%,#115659 25%,#2bd9e2 64%,#1e5799 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(45deg,  #000000 0%,#000000 0%,#000000 7%,#115659 25%,#2bd9e2 64%,#1e5799 100%); /* IE10+ */
-	background: linear-gradient(45deg,  #000000 0%,#000000 0%,#000000 7%,#115659 25%,#2bd9e2 64%,#1e5799 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#1e5799',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #1e5799 0%, #415456 3%, #57d0db 28%, #f4f7f7 70%, #64fafa 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#1e5799), color-stop(3%,#415456), color-stop(28%,#57d0db), color-stop(70%,#f4f7f7), color-stop(100%,#64fafa)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(45deg,  #1e5799 0%,#415456 3%,#57d0db 28%,#f4f7f7 70%,#64fafa 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(45deg,  #1e5799 0%,#415456 3%,#57d0db 28%,#f4f7f7 70%,#64fafa 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(45deg,  #1e5799 0%,#415456 3%,#57d0db 28%,#f4f7f7 70%,#64fafa 100%); /* IE10+ */
+background: linear-gradient(45deg,  #1e5799 0%,#415456 3%,#57d0db 28%,#f4f7f7 70%,#64fafa 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#64fafa',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 	padding-top: 70px;
 
 	p, h1, h2, h3, h4, h5, h6{

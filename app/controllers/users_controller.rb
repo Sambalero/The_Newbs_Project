@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_filter :admin_required, except: [:update_password]
   before_filter :admin_or_self, only: [:update_password]
 
+#it would be nice to double check email if format seems invalid. See h33 for regex  
+
   # GET /users
   def index
     @users = User.all

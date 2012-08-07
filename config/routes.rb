@@ -11,6 +11,7 @@ Newbies::Application.routes.draw do
   get "visitors/help_wanted"
 
   match '/visitors' => "visitors#home"
+#this form creates the vistors_path and visitors_url named routes
 
   match '/join' => 'users#join'
 

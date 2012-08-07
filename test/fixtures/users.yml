@@ -1,11 +1,28 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  email           :string(255)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  approval        :boolean          default(FALSE)
+#  password_digest :string(255)
+#  role            :string(255)
+#  mail            :string(255)
+#  telephone       :string(255)
+#  comment         :text
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
   name: Bill
   email: Bill@Home
-  admin: false
+  role: member
 
 two:
   name: MyString
   email: MyString
-  admin: false
+  role: admin
