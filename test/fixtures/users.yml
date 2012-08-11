@@ -19,8 +19,10 @@
 
 one:
   name: Bill
-  email: Bill@Home
+  email: bill@home
   role: member
+  password_digest: <%= BCrypt::Password.create("password") %>
+  approval: true
 
 two:
   name: MyString

@@ -23,6 +23,8 @@ Newbies::Application.routes.draw do
 
   resources :users
 
+  resources :sessions, only: [:new, :create, :destroy]
+
   match '/admin' => 'comments#admin'
 
   match '/sitemap/show' => "sitemap#show"

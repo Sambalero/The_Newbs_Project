@@ -37,12 +37,8 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-logger.debug "in create ---------------------------------->"
-
     @user = User.new(params[:user])
-logger.debug @user.inspect
     if @user.save
-logger.debug "user saved----------------------------------->"
       redirect_to @user, notice: 'User was successfully created.' 
     else
       render action: "new" 
