@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :admin_required, except: [:update_password]
+  before_filter :admin_required, except: [:update_password, :join]
   before_filter :admin_or_self, only: [:update_password]
   skip_before_filter :login_required, only: [:join]
 
