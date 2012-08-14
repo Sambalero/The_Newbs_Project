@@ -37,4 +37,7 @@ Newbies::Application.configure do
 
   config.assets.precompile += %w( application-all.css application-ie.css )
 
+  #confirm needed
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+
 end

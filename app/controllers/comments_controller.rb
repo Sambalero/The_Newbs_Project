@@ -3,20 +3,14 @@ class CommentsController < ApplicationController
   before_filter :admin_required, only: [:edit, :update, :destroy]
  
 
-  # GET /admin
-  def admin 
-    @admin = true
-    @comments = Comment.all
-    render "comments/index"
-  end
-
   # GET /comments
   def index
     @comments = Comment.all
-
-    @comments.delete_if {|comment| !comment.approved}
-    @comments.delete_if {|comment| comment.source == "hire"}
-    @comments.delete_if {|comment| comment.source == "join"}
+    if current_user.role != "admin"
+      @comments.delete_if {|comment| !comment.approved}
+      @comments.delete_if {|comment| comment.source == "hire"}
+      @comments.delete_if {|comment| comment.source == "join"}
+    end
 
   end
 
@@ -64,7 +58,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       AdminMailer.comment_notice(@comment.notice(@comment.source + "created")).deliver 
-      redirect_to @comment, notice: @comment.source + " was successfully created." 
+      redirect_to @comment, notice: "Message sent." 
     else
       AdminMailer.comment_notice(@comment.notice("comment creation attempted")).deliver
       render action: "new" 

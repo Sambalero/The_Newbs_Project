@@ -16,4 +16,8 @@ class SessionsControllerTest < ActionController::TestCase
   # test "users can mark tasks for attention" do
   #   assert
   # end   
+
+  # test "users are logged out between sessions" do
+  #   assert true
+  # end  
 end

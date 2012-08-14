@@ -1,7 +1,7 @@
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this information from being saved:</h2>
 
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
@@ -31,8 +31,8 @@
 
 <% if @admin then %>
   <div class="field">
-    <%= f.label :admin %><br />
-    <%= f.check_box :admin %>
+    <%= f.label :role %><br />
+    <%= f.check_box :role %>
   </div>
   <div class="field">
     <%= f.label :approval %><br />
@@ -41,11 +41,11 @@
 <% else %>
   <div><p><%= @note %></p></div>
   <%=f.hidden_field :approval, :value => :false %>
-  <%=f.hidden_field :admin, :value => :false %>
+  <%=f.hidden_field :role, :value => 'member' %>
 <% end %>
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit @button_label %>
   </div>
 <% end %>

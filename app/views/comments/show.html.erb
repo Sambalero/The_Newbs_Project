@@ -14,12 +14,12 @@
   <b>Comment:</b>
   <%= @comment.comment %>
 </p>
+  <% if @admin then %>
+		<p>
+		  <b>Approved:</b>
+		  <%= @comment.approved %>
+		</p>
+  <% end %>
 
-<p>
-  <b>Approved:</b>
-  <%= @comment.approved %>
-</p>
-
-
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Edit', edit_comment_path(@comment) %> 
 <%= link_to 'Back', comments_path %>

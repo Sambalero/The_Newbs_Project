@@ -15,11 +15,11 @@ class ApplicationController < ActionController::Base
   end
 
   def login_required
-  #  redirect_to login_path unless current_user #think about redirect
+    redirect_to login_path unless current_user #think about redirect
   end
 
   def admin_required
-#    redirect_to home_path unless current_user.role == admin 
+    render "public/500.html" unless current_user.role == 'admin' 
   end
 
   def admin_or_self
@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
 # session[:user_id].nil? use Keith's syntax. Required? Recommended?
   end
 

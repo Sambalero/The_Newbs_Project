@@ -1,8 +1,10 @@
-
+<% if !current_user.role == 'admin' %>
+  <% redirect_to "/public/500.html" %>
+<% end %>
 
 <div id="adminlinks">
   <ul class="nav">
-    <li style="margin-left: 1px"><a href="/comments/admin"><span>Get Comments</span></a></li>
+    <li style="margin-left: 1px"><a href="/comments"><span>Get Comments</span></a></li>
     <li><a href="/comments/1/edit"><span>Edit Comment</span></a></li>
     <li><a href="/users"><span>Get Users</span></a></li>
     <li><a href="/users/new"><span>Get New User</span></a></li>

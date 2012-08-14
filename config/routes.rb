@@ -25,7 +25,9 @@ Newbies::Application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  match '/admin' => 'comments#admin'
+  resources :password_resets, only: [:new, :edit, :create, :update]
+
+  match '/admin' => 'users#admin'
 
   match '/sitemap/show' => "sitemap#show"
 
@@ -33,33 +35,43 @@ Newbies::Application.routes.draw do
 
   match '/sitemap' => "sitemap#show"
 
-#              root        /                                visitors#home
-#      visitors_welcome GET    /visitors/welcome(.:format)      visitors#welcome
-# visitors_how_it_works GET    /visitors/how_it_works(.:format) visitors#how_it_works
-#    visitors_thank_you GET    /visitors/thank_you(.:format)    visitors#thank_you
-#  visitors_help_wanted GET    /visitors/help_wanted(.:format)  visitors#help_wanted
-#              visitors        /visitors(.:format)              visitors#home
-#                  join        /join(.:format)                  comments#join
-#                  hire        /hire(.:format)                  comments#hire
-#                 login        /login(.:format)                 sessions#new
-#              comments GET    /comments(.:format)              comments#index
-#                       POST   /comments(.:format)              comments#create
-#           new_comment GET    /comments/new(.:format)          comments#new
-#          edit_comment GET    /comments/:id/edit(.:format)     comments#edit
-#               comment GET    /comments/:id(.:format)          comments#show
-#                       PUT    /comments/:id(.:format)          comments#update
-#                       DELETE /comments/:id(.:format)          comments#destroy
-#                 users GET    /users(.:format)                 users#index
-#                       POST   /users(.:format)                 users#create
-#              new_user GET    /users/new(.:format)             users#new
-#             edit_user GET    /users/:id/edit(.:format)        users#edit
-#                  user GET    /users/:id(.:format)             users#show
-#                       PUT    /users/:id(.:format)             users#update
-#                       DELETE /users/:id(.:format)             users#destroy
-#                 admin        /admin(.:format)                 comments#admin
-#          sitemap_show        /sitemap/show(.:format)          sitemap#show
-#          sitemap_send        /sitemap/send(.:format)          sitemap#send
-#               sitemap        /sitemap(.:format)               sitemap#show
+#    root        /                                   visitors#home
+#      visitors_welcome GET    /visitors/welcome(.:format)         visitors#welcome
+# visitors_how_it_works GET    /visitors/how_it_works(.:format)    visitors#how_it_works
+#    visitors_thank_you GET    /visitors/thank_you(.:format)       visitors#thank_you
+#  visitors_help_wanted GET    /visitors/help_wanted(.:format)     visitors#help_wanted
+#              visitors        /visitors(.:format)                 visitors#home
+#                  join        /join(.:format)                     users#join
+#                  hire        /hire(.:format)                     comments#hire
+#                 login        /login(.:format)                     sessions#new
+#              comments GET    /comments(.:format)                 comments#index
+#                       POST   /comments(.:format)                 comments#create
+#           new_comment GET    /comments/new(.:format)             comments#new
+#          edit_comment GET    /comments/:id/edit(.:format)        comments#edit
+#               comment GET    /comments/:id(.:format)             comments#show
+#                       PUT    /comments/:id(.:format)             comments#update
+#                       DELETE /comments/:id(.:format)             comments#destroy
+#                 users GET    /users(.:format)                    users#index
+#                       POST   /users(.:format)                    users#create
+#              new_user GET    /users/new(.:format)                users#new
+#             edit_user GET    /users/:id/edit(.:format)           users#edit
+#                  user GET    /users/:id(.:format)                users#show
+#                       PUT    /users/:id(.:format)                users#update
+#                       DELETE /users/:id(.:format)                users#destroy
+#              sessions POST   /sessions(.:format)                 sessions#create
+#           new_session GET    /sessions/new(.:format)             sessions#new
+#               session DELETE /sessions/:id(.:format)             sessions#destroy
+#       password_resets GET    /password_resets(.:format)          password_resets#index
+#                       POST   /password_resets(.:format)          password_resets#create
+#    new_password_reset GET    /password_resets/new(.:format)      password_resets#new
+#   edit_password_reset GET    /password_resets/:id/edit(.:format) password_resets#edit
+#        password_reset GET    /password_resets/:id(.:format)      password_resets#show
+#                       PUT    /password_resets/:id(.:format)      password_resets#update
+#                       DELETE /password_resets/:id(.:format)      password_resets#destroy
+#                 admin        /admin(.:format)                    comments#admin
+#          sitemap_show        /sitemap/show(.:format)             sitemap#show
+#          sitemap_send        /sitemap/send(.:format)             sitemap#send
+#               sitemap        /sitemap(.:format)                  sitemap#show
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

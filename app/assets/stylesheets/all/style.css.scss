@@ -2,6 +2,12 @@
 
 /* page layout, text, lists, tables, features, images */
 
+@mixin box_sizing {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
 /* page layout
 	body header */
 
@@ -140,4 +146,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
   margin-top: 45px;
   @include box_sizing;
 }
+
+
 

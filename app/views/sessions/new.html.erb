@@ -1,7 +1,11 @@
 <% provide(:title, 'Log In') %>
-<h1>Log in</h1>
+<p id="notice"><%= notice %></p>
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+<h1>Log In</h1>
 
-<%= form_tag login_path do %>
+<%= form_tag sessions_path do %>
   <div class="field">
     <%= label_tag :email %>
     <%= text_field_tag :email, params[:email] %>
@@ -10,5 +14,9 @@
     <%= label_tag :password %>
     <%= password_field_tag :password %>
   </div>
-  <div class="actions"><%= submit_tag "Log in" %></div>
+  <div class="actions"><%= submit_tag "Log In" %></div>
+  <% if @failed then %>
+  	<p><%= link_to "Forgotten password?", new_password_reset_path %></p>
+  <% end %>
+
 <% end %>

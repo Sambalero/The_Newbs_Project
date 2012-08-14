@@ -1,4 +1,4 @@
-<% if @admin then %>
+<% if current_user.role == "admin" then %>
 
 <header><h1>Admin</h1></header>
 
