@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_filter :admin_required, except: [:update_password]
   before_filter :admin_or_self, only: [:update_password]
+  skip_before_filter :login_required. only: [:join]
 
 #it would be nice to double check email if format seems invalid. See h33 for regex  
 
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   # GET /users/new
+#delete this?
   def new
     @user = User.new
   end
@@ -39,7 +41,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to @user, notice: "You have been listed as a new #{@user.role}. An email will be sent to you shortly." 
+      redirect_to root_path, notice: "You have been listed as a new #{@user.role}. An email will be sent to you shortly." 
     else
       render action: "new" 
     end
