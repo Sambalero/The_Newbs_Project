@@ -19,7 +19,6 @@ Newbies::Application.routes.draw do
 
   match '/login' => 'sessions#new'
 
-  match '/news' => 'users#news'
   resources :comments
 
   resources :users
