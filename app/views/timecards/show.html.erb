@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @timecard.name %>
+</p>
+
+<p>
+  <b>Task:</b>
+  <%= @timecard.task %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @timecard.description %>
+</p>
+
+<p>
+  <b>Hours:</b>
+  <%= @timecard.hours %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @timecard.date %>
+</p>
+
+<p>
+  <b>Rate:</b>
+  <%= @timecard.rate %>
+</p>
+
+<p>
+  <b>Approved:</b>
+  <%= @timecard.approved %>
+</p>
+
+
+<%= link_to 'Edit', edit_timecard_path(@timecard) %> |
+<%= link_to 'Back', timecards_path %>

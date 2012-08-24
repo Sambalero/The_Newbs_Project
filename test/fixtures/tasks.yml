@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  task_name: MyString
+  job_name: MyString
+  description: MyText
+  member: MyString
+  master: MyString
+  hours: 1.5
+  skill: MyString
+  start_date: 2012-08-23 18:43:52
+  completion_date: 2012-08-23 18:43:52
+  status: MyString
+  percent_complete: 1
+  comments: MyText
+
+two:
+  task_name: MyString
+  job_name: MyString
+  description: MyText
+  member: MyString
+  master: MyString
+  hours: 1.5
+  skill: MyString
+  start_date: 2012-08-23 18:43:52
+  completion_date: 2012-08-23 18:43:52
+  status: MyString
+  percent_complete: 1
+  comments: MyText

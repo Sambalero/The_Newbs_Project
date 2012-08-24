@@ -1,0 +1,81 @@
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :client_name %><br />
+    <%= f.text_field :client_name %>
+  </div>
+  <div class="field">
+    <%= f.label :client_email %><br />
+    <%= f.text_field :client_email %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :initial_date %><br />
+    <%= f.datetime_select :initial_date %>
+  </div>
+  <div class="field">
+    <%= f.label :task_list_complete %><br />
+    <%= f.datetime_select :task_list_complete %>
+  </div>
+  <div class="field">
+    <%= f.label :proposal_date %><br />
+    <%= f.datetime_select :proposal_date %>
+  </div>
+  <div class="field">
+    <%= f.label :proposer %><br />
+    <%= f.text_field :proposer %>
+  </div>
+  <div class="field">
+    <%= f.label :acceptance_date %><br />
+    <%= f.datetime_select :acceptance_date %>
+  </div>
+  <div class="field">
+    <%= f.label :proposal_amount %><br />
+    <%= f.number_field :proposal_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :responsible_partner %><br />
+    <%= f.text_field :responsible_partner %>
+  </div>
+  <div class="field">
+    <%= f.label :master %><br />
+    <%= f.text_field :master %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :percent_complete %><br />
+    <%= f.number_field :percent_complete %>
+  </div>
+  <div class="field">
+    <%= f.label :member %><br />
+    <%= f.text_field :member %>
+  </div>
+  <div class="field">
+    <%= f.label :completion_date %><br />
+    <%= f.datetime_select :completion_date %>
+  </div>
+  <div class="field">
+    <%= f.label :contract_amount %><br />
+    <%= f.number_field :contract_amount %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

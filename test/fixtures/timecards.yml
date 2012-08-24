@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  task: MyString
+  description: MyText
+  hours: 1.5
+  date: 2012-08-24 07:58:13
+  rate: 1.5
+  approved: false
+
+two:
+  name: MyString
+  task: MyString
+  description: MyText
+  hours: 1.5
+  date: 2012-08-24 07:58:13
+  rate: 1.5
+  approved: false

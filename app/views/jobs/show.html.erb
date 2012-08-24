@@ -1,0 +1,85 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Client name:</b>
+  <%= @job.client_name %>
+</p>
+
+<p>
+  <b>Client email:</b>
+  <%= @job.client_email %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @job.description %>
+</p>
+
+<p>
+  <b>Initial date:</b>
+  <%= @job.initial_date %>
+</p>
+
+<p>
+  <b>Task list complete:</b>
+  <%= @job.task_list_complete %>
+</p>
+
+<p>
+  <b>Proposal date:</b>
+  <%= @job.proposal_date %>
+</p>
+
+<p>
+  <b>Proposer:</b>
+  <%= @job.proposer %>
+</p>
+
+<p>
+  <b>Acceptance date:</b>
+  <%= @job.acceptance_date %>
+</p>
+
+<p>
+  <b>Proposal amount:</b>
+  <%= @job.proposal_amount %>
+</p>
+
+<p>
+  <b>Responsible partner:</b>
+  <%= @job.responsible_partner %>
+</p>
+
+<p>
+  <b>Master:</b>
+  <%= @job.master %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @job.status %>
+</p>
+
+<p>
+  <b>Percent complete:</b>
+  <%= @job.percent_complete %>
+</p>
+
+<p>
+  <b>Member:</b>
+  <%= @job.member %>
+</p>
+
+<p>
+  <b>Completion date:</b>
+  <%= @job.completion_date %>
+</p>
+
+<p>
+  <b>Contract amount:</b>
+  <%= @job.contract_amount %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

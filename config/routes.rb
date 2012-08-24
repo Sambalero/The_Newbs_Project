@@ -1,5 +1,11 @@
 Newbies::Application.routes.draw do
 
+  resources :timecards
+
+  resources :tasks
+
+  resources :jobs
+
   root to: "visitors#home"
 
   get "visitors/welcome"
