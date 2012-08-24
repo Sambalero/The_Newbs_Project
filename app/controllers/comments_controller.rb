@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   # GET /comments
   def index
     @comments = Comment.all
-    if current_user.role != "admin"
+    if !current_user || current_user.role != "admin"
       @comments.delete_if {|comment| !comment.approved}
       @comments.delete_if {|comment| comment.source == "hire"}
       @comments.delete_if {|comment| comment.source == "join"}
