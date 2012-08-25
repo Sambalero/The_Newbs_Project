@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  skip_before_filter :login_required, only: [:new, :create]
   # GET /jobs
   # GET /jobs.json
   def index

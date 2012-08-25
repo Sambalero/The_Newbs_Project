@@ -22,6 +22,10 @@ class ApplicationController < ActionController::Base
     render "public/500.html" unless current_user.role == 'admin' 
   end
 
+  def partner_required
+    render "public/403.html" unless (current_user.role == 'partner') || (current_user.role == 'admin') 
+  end
+
   def admin_or_self
     case
       when params[:user_id] == current_user.id.to_s then true
@@ -34,6 +38,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
 # session[:user_id].nil? use Keith's syntax. Required? Recommended?
   end
+
 
 
 end

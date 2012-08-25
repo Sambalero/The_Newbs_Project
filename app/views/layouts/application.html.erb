@@ -25,12 +25,17 @@
             <li><%= link_to "Help Wanted", '/visitors/help_wanted' %></li>
             <li><%= link_to "Our Story", '/visitors/welcome' %></li>
             <li><%= link_to "Comments", "/comments" %></li>
-
+            <% if current_user && current_user.role == 'admin' %>
+              <li><%= link_to "Admin Page", "/admin" %></li>
+            <% end %>
+            <% if current_user && current_user.role == 'partner'%>
+              <li><%= link_to "Time Card", "/timecard" %></li>
+            <% end %>
         </ul>
 
         <a href="/hire" class="nav pull-right btn btn-primary">Hire Us!</a>
         <ul class="nav pull-right">
-          <li><a href="#">Deployment 0.0.32</a></li>
+          <li><a href="#">Deployment 0.0.36</a></li>
         </ul>
       </div>
     </div>

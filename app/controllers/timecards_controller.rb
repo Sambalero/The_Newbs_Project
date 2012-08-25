@@ -1,4 +1,6 @@
 class TimecardsController < ApplicationController
+  before_filter :partner_required
+
   # GET /timecards
   # GET /timecards.json
   def index

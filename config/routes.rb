@@ -25,6 +25,8 @@ Newbies::Application.routes.draw do
 
   match '/login' => 'sessions#new'
 
+  match '/timecard' => 'timecards#new'
+
   resources :comments
 
   resources :users
