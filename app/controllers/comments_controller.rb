@@ -20,15 +20,15 @@ class CommentsController < ApplicationController
   end
 
   # GET /hire
-  def hire
-    @title = "Job Request"
-    @content = "Job Description"
-    @note = "We may request additional information."
-    @source = "hire"
-    @button_label = "Send Job Request"
-    @comment = Comment.new
-    render "comments/new"
-  end
+  # def hire
+  #   @title = "Job Request"
+  #   @content = "Job Description"
+  #   @note = "We may request additional information."
+  #   @source = "hire"
+  #   @button_label = "Send Job Request"
+  #   @comment = Comment.new
+  #   render "comments/new"
+  # end
 
   # GET /comments/new
   def new

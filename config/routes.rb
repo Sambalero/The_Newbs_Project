@@ -21,7 +21,7 @@ Newbies::Application.routes.draw do
 
   match '/join' => 'users#join'
 
-  match '/hire' => 'comments#hire'
+  match '/hire' => 'jobs#new'
 
   match '/login' => 'sessions#new'
 
