@@ -47,6 +47,7 @@ class JobsController < ApplicationController
       if @job.save
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
         format.json { render json: @job, status: :created, location: @job }
+        AdminMailer.job_notice(@job).deliver
       else
         format.html { render action: "new" }
         format.json { render json: @job.errors, status: :unprocessable_entity }

@@ -14,7 +14,7 @@ class AdminMailer < ActionMailer::Base
 	end
 
 	def join_notice(user)
-		@user = user
+
 	  mail( from: 'Noobs', 
 			  	to: 'kpswallow2@gmail.com', 
 			  	subject: "Newby Alert!", 
@@ -25,7 +25,7 @@ class AdminMailer < ActionMailer::Base
 		@user = user #is this needed?
 	  mail( from: 'Noobs', 
 			  	to: 'kpswallow2@gmail.com', 
-			  	subject: "Newby Alert!", 
-			  	body: "name: " + user.name + "\n \n email: " + user.email + "\n \n description: " + user.description)
+			  	subject: "Job Alert!", 
+			  	body: "name: " + job.client_name + "\n \n email: " + job.client_email + "\n \n description: " + user.description)
 	end
 end
