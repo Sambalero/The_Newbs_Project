@@ -9,7 +9,7 @@ class AdminMailer < ActionMailer::Base
 	end
 
 	def password_reset(user)
-	  @user = user
+	  @user = user #is this needed?
 	  mail :to => user.email, :subject => "Password Reset"
 	end
 
@@ -21,11 +21,11 @@ class AdminMailer < ActionMailer::Base
 			  	body: "name: " + user.name + "\n \n email: " + user.email)
 	end
 
-	def job_notice(user)
-		@user = user #is this needed?
+	def job_notice(job)
+
 	  mail( from: 'Noobs', 
 			  	to: 'kpswallow2@gmail.com', 
 			  	subject: "Job Alert!", 
-			  	body: "name: " + job.client_name + "\n \n email: " + job.client_email + "\n \n description: " + user.description)
+			  	body: "name: " + job.client_name + "\n \n email: " + job.client_email + "\n \n description: " + job.description)
 	end
 end

@@ -19,24 +19,13 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
-  # GET /hire
-  # def hire
-  #   @title = "Job Request"
-  #   @content = "Job Description"
-  #   @note = "We may request additional information."
-  #   @source = "hire"
-  #   @button_label = "Send Job Request"
-  #   @comment = Comment.new
-  #   render "comments/new"
-  # end
 
   # GET /comments/new
   def new
     @title = @title || "Comment Form"
     @content = @content || "Comment"
     @note = @note || ""
-    @source = @source || "comment"
-    @button_label = @button_label || "Send Message"
+    @button_label = @button_label || "Submit Comment"
     @comment = Comment.new
   end
 
@@ -57,8 +46,8 @@ class CommentsController < ApplicationController
 
 
     if @comment.save
-      AdminMailer.comment_notice(@comment.notice(@comment.source + "created")).deliver 
-      redirect_to @comment, notice: "Message sent." 
+      AdminMailer.comment_notice(@comment.notice("Noobs Comment Posted")).deliver 
+      redirect_to @comment, notice: "Comment logged." 
     else
       AdminMailer.comment_notice(@comment.notice("comment creation attempted")).deliver
       render action: "new" 

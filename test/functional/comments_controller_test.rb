@@ -4,7 +4,20 @@ class CommentsControllerTest < ActionController::TestCase
   setup do
     @comment1 = comments(:one)
     @comment2 = comments(:two)
-
+    @user = User.new(name: "Bill",
+                    email: "Bill@Home",
+                    role: "member",
+                    approval: true,
+                    password: "password",
+                    password_confirmation: "password")
+    @user.save
+    @user2 = User.new(name: "Bob",
+                    email: "Bob@Home",
+                    role: "admin",
+                    approval: true,
+                    password: "password",
+                    password_confirmation: "password")
+    @user2.save
   end
 
 #includes application controller test
@@ -43,80 +56,42 @@ class CommentsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit, id: @comment1
-    assert_response :success
-  end
+  # test "should get edit" do
 
-  test "should update comment" do
-    put :update, id: @comment1, comment: { approved: @comment1.approved, comment: @comment1.comment, contact: @comment1.contact, name: @comment1.name }
-    assert_redirected_to comment_path(assigns(:comment))
-  end
+  #   get :edit, id: @comment1
+  #   assert_response :success
+  # end
 
-  test "should destroy comment" do
-    assert_difference('Comment.count', -1) do
-      delete :destroy, id: @comment1
-    end
+  # test "should update comment" do
+  #   put :update, id: @comment1, comment: { approved: @comment1.approved, comment: @comment1.comment, contact: @comment1.contact, name: @comment1.name }
+  #   assert_redirected_to comment_path(assigns(:comment))
+  # end
 
-    assert_redirected_to comments_path
-  end
+  # test "should destroy comment" do
+  #   @current_user = @user2
+
+  #   assert_difference('Comment.count', -1) do
+  #     delete :destroy, id: @comment1
+  #   end
+
+  #   assert_redirected_to comments_path
+  # end
 
 # 
 
-  test "should get admin" do
-    get :admin
-    assert_response :success
-  end
 
-  test "admin sees all comments" do
-    get :admin
-    assert_response :success
-    assert(assigns(:comments).include?(@comment1))
-  end
 
-  test "others don't see hire or join posts" do
-    @comment1[:source] = "hire"
-    @comment2[:source] = "join"
-    assert_response :success
-    assert_nil(assigns(:comments))
-  end
-
-  test "hire shows appropriate labels in comments form" do
- 
-    get :hire
-    assert_equal(assigns(:button_label), "Send Job Request")   
-  end
-
-  test "create redirects with appropriate notices" do
+  test "create redirects with appropriate notice" do
     post :create, comment: { 
       approved: false, 
       comment: "here's a job", 
       contact: @comment1.contact, 
       name: @comment1.name, 
-      source: "hire"
     }
     assert_redirected_to comment_path(assigns(:comment))
-    assert_equal(flash[:notice], "hire was successfully created.")  
+    assert_equal(flash[:notice], "Comment logged." )  
 
-    post :create, comment: { 
-      approved: false, 
-      comment: "hire me", 
-      contact: @comment1.contact, 
-      name: @comment1.name, 
-      source: "join"
-    }
-    assert_redirected_to comment_path(assigns(:comment))
-    assert_equal(flash[:notice], "join was successfully created.")  
-
-    post :create, comment: { 
-      approved: @comment1.approved, 
-      comment: @comment1.comment, 
-      contact: @comment1.contact, 
-      name: @comment1.name, 
-      source: "comment"
-    }
-    assert_equal(flash[:notice], "comment was successfully created.")  
-
+#How to test failure?
   end
 
   test "create sends appropriate email" do
@@ -126,41 +101,40 @@ class CommentsControllerTest < ActionController::TestCase
       comment: @comment1.comment, 
       contact: @comment1.contact, 
       name: @comment1.name, 
-      source: "comment"
     }
 
     assert ActionMailer::Base.deliveries.length == email_count + 1
 
     email = ActionMailer::Base.deliveries[email_count]
-    assert_equal 'MyName1 commentcreated', email.subject
+    assert_equal "MyName1 Noobs Comment Posted", email.subject
     assert_match(/MyText1/, email.encoded)
   end
 
-  test "upate sends appropriate email" do
-    email_count = ActionMailer::Base.deliveries.length
-    put :update, id: @comment1, comment: { approved: @comment1.approved, 
-                                           comment: "work, baby, work", 
-                                           contact: @comment1.contact, 
-                                           name: @comment1.name }
+  # test "upate sends appropriate email" do
+  #   email_count = ActionMailer::Base.deliveries.length
+  #   put :update, id: @comment1, comment: { approved: @comment1.approved, 
+  #                                          comment: "work, baby, work", 
+  #                                          contact: @comment1.contact, 
+  #                                          name: @comment1.name }
 
-    assert ActionMailer::Base.deliveries.length == email_count + 1
+  #   assert ActionMailer::Base.deliveries.length == email_count + 1
 
-    email = ActionMailer::Base.deliveries[email_count]
-    assert_equal "MyName1 comment updated", email.subject
-    assert_match(/work, baby, work/, email.encoded)
-  end
+  #   email = ActionMailer::Base.deliveries[email_count]
+  #   assert_equal "MyName1 comment updated", email.subject
+  #   assert_match(/work, baby, work/, email.encoded)
+  # end
   
 
-  test "destroy sends appropriate email" do
-    email_count = ActionMailer::Base.deliveries.length
-    delete :destroy, id: @comment1  
+  # test "destroy sends appropriate email" do
+  #   email_count = ActionMailer::Base.deliveries.length
+  #   delete :destroy, id: @comment1  
 
-    assert ActionMailer::Base.deliveries.length == email_count + 1
+  #   assert ActionMailer::Base.deliveries.length == email_count + 1
 
-    email = ActionMailer::Base.deliveries[email_count]
-    assert_equal "MyName1 comment destroyed", email.subject
-    assert_match(/MyText1/, email.encoded)
+  #   email = ActionMailer::Base.deliveries[email_count]
+  #   assert_equal "MyName1 comment destroyed", email.subject
+  #   assert_match(/MyText1/, email.encoded)
 
-  end
+  # end
 
 end
