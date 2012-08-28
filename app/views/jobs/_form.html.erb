@@ -12,28 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :client_name %><br />
+    <%= f.label :name %><br />
     <%= f.text_field :client_name %>
   </div>
   <div class="field">
-    <%= f.label :client_email %><br />
+    <%= f.label :email %><br />
     <%= f.text_field :client_email %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
+
+   <% if @admin then %>
+
   <div class="field">
     <%= f.label :initial_date %><br />
-    <%= f.datetime_select :initial_date %>
+    <%= f.date_select :initial_date %>
   </div>
   <div class="field">
     <%= f.label :task_list_complete %><br />
-    <%= f.datetime_select :task_list_complete %>
+    <%= f.date_select :task_list_complete %>
   </div>
   <div class="field">
     <%= f.label :proposal_date %><br />
-    <%= f.datetime_select :proposal_date %>
+    <%= f.date_select :proposal_date %>
   </div>
   <div class="field">
     <%= f.label :proposer %><br />
@@ -41,7 +44,7 @@
   </div>
   <div class="field">
     <%= f.label :acceptance_date %><br />
-    <%= f.datetime_select :acceptance_date %>
+    <%= f.date_select :acceptance_date %>
   </div>
   <div class="field">
     <%= f.label :proposal_amount %><br />
@@ -69,13 +72,16 @@
   </div>
   <div class="field">
     <%= f.label :completion_date %><br />
-    <%= f.datetime_select :completion_date %>
+    <%= f.date_select :completion_date %>
   </div>
   <div class="field">
     <%= f.label :contract_amount %><br />
     <%= f.number_field :contract_amount %>
   </div>
+
+  <% end %>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "SEND" %>
   </div>
 <% end %>

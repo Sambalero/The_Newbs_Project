@@ -20,6 +20,7 @@
     <%= f.text_field :email %>
   </div>
 
+<% if @update_password then %>
   <div class="field">
     <%= f.label "Password (required):"%><br />
     <%= f.password_field :password %>    
@@ -28,6 +29,7 @@
     <%= f.label "Confirm Password" %><br />
     <%= f.password_field :password_confirmation %>    
   </div>
+<% end %>
 
 <% if @admin then %>
   <div class="field">

@@ -1,15 +1,14 @@
 <% if !current_user.role == 'admin' %>
   <% redirect_to "/public/500.html" %>
 <% end %>
-
+<h1>Admin</h1>
 <div id="adminlinks">
   <ul class="nav">
-    <li style="margin-left: 1px"><a href="/comments"><span>Get Comments</span></a></li>
-    <li><a href="/comments/1/edit"><span>Edit Comment</span></a></li>
-    <li><a href="/users"><span>Get Users</span></a></li>
-    <li><a href="/users/new"><span>Get New User</span></a></li>
-    <li><a href="/users/1/edit"><span>Edit User</span></a></li>
-    <li><a href="/users/:id"><span>Show User 1</span></a></li>
+    <li style="margin-left: 1px"><a href="/comments"><span>Comments</span></a></li>
+    <li><a href="/users"><span>Users</span></a></li>
+    <li><a href="/jobs"><span>Jobs</span></a></li>
+    <li><a href="/tasks"><span>Tasks</span></a></li>
+    <li><a href="/timecards"><span>Timecards</span></a></li>
     <li><a href="/sitemap/"><span>Show Sitemap</span></a></li>
   	<li><a href="/sitemap/send"><span>Send Sitemap</span></a></li>
   </ul>

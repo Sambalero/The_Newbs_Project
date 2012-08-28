@@ -28,4 +28,26 @@ class AdminMailer < ActionMailer::Base
 			  	subject: "Job Alert!", 
 			  	body: "name: " + job.client_name + "\n \n email: " + job.client_email + "\n \n description: " + job.description)
 	end
+
+	def time_notice(card)
+
+	  mail( from: 'Noobs', 
+			  	to: timecard.email,
+			  	subject: "Time Posted!", 
+			  	body: "name: " + 
+			  				timecard.name + 
+			  				"\n \n hours: " + 
+			  				timecard.hours + 
+			  				"\n \n description: " + 
+			  				timecard.description)
+	  	  mail( from: 'Noobs', 
+			  	to: 'kpswallow2@gmail.com', 
+			  	subject: "Time Posted!", 
+			  	body: "name: " + 
+			  				timecard.name + 
+			  				"\n \n hours: " + 
+			  				timecard.hours + 
+			  				"\n \n description: " + 
+			  				timecard.description)
+	end
 end

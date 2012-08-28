@@ -16,30 +16,33 @@ class UsersController < ApplicationController
   end
 
   # GET /join
-  def join
+  def join #clean this up!
     @title = "Sign Up Form"
 # add skills    @content = "Please include a brief description of your skill set:"
     @note = "We may request additional information."
     @source = "join" #Is this needed?
     @button_label = "Sign Me Up!"
     @user = User.new
+    @update_password = true
     render "users/new"
   end
 
   # GET /users/new
   def new
+    @update_password = true
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
-    @admin = true
+    @admin = true #confirm this is needed/correct
     @user = User.find(params[:id])
   end
 
   # POST /users
   def create
     @user = User.new(params[:user])
+    
     if @user.save
       redirect_to root_path, notice: "You have been listed as a new #{@user.role}. An email will be sent to you shortly." 
       AdminMailer.join_notice(@user).deliver

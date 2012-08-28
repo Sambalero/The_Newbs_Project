@@ -23,20 +23,26 @@ class User < ActiveRecord::Base
 	before_create { generate_token(:auth_token) }
   before_save { |user| user.email = email.downcase }
 	validates :email, presence: true, uniqueness: true
-	validates :password, presence: true, length: { minimum: 6 }
-	validates :password_confirmation, presence: true 
+	validates :password, presence: true, length: { minimum: 6 }, :if => :should_validate_password?
+	validates :password_confirmation, presence: true, :if => :should_validate_password?
+# move :if to after attribute? 
   attr_accessible :role, :email, :name, :approval, :password, :password_confirmation
+  attr_accessor :update_password
 
-def send_password_reset
-  generate_token(:password_reset_token)
-  self.password_reset_sent_at = Time.zone.now
-  save!
-  AdminMailer.password_reset(self).deliver
-end
+	def send_password_reset
+	  generate_token(:password_reset_token)
+	  self.password_reset_sent_at = Time.zone.now
+	  save!
+	  AdminMailer.password_reset(self).deliver
+	end
 
   def generate_token(column)
 	  begin
 	    self[column] = SecureRandom.urlsafe_base64
 	  end while User.exists?(column => self[column])
+	end
+	
+	def should_validate_password?
+		@update_password || new_record?
 	end
 end
