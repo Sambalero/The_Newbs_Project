@@ -37,7 +37,7 @@ class AdminMailer < ActionMailer::Base
 			  	body: "name: " + 
 			  				card.name + 
 			  				"\n \n hours: " + 
-			  				card.hours + 
+			  				card.hours.to_s + 
 			  				"\n \n description: " + 
 			  				card.description)
 	  	  mail( from: 'Noobs', 
@@ -46,7 +46,7 @@ class AdminMailer < ActionMailer::Base
 			  	body: "name: " + 
 			  				card.name + 
 			  				"\n \n hours: " + 
-			  				card.hours + 
+			  				card.hours.to_s + 
 			  				"\n \n description: " + 
 			  				card.description)
 	end
