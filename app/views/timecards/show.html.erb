@@ -25,15 +25,19 @@
   <%= @timecard.date %>
 </p>
 
-<p>
-  <b>Rate:</b>
-  <%= @timecard.rate %>
-</p>
+<% if current_user.role == 'admin' %>
 
-<p>
-  <b>Approved:</b>
-  <%= @timecard.approved %>
-</p>
+  <p>
+    <b>Rate:</b>
+    <%= @timecard.rate %>
+  </p>
+
+  <p>
+    <b>Approved:</b>
+    <%= @timecard.approved %>
+  </p>
+
+<% end %>
 
 
 <%= link_to 'Edit', edit_timecard_path(@timecard) %> |

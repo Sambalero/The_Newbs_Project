@@ -11,13 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :value => current_user.email %>
   </div>
   <div class="field">
     <%= f.label :task %><br />
@@ -44,6 +41,14 @@
       <%= f.label :approved %><br />
       <%= f.check_box :approved %>
     </div>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+  <% else %>
+    <%=f.hidden_field :approved, :value => :false %>
+    <%=f.hidden_field :rate, :value => '0' %>
+    <%=f.hidden_field :name, :value => current_user.name %>
   <% end %>
   <div class="actions">
     <%= f.submit %>

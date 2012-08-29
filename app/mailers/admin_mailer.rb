@@ -30,9 +30,6 @@ class AdminMailer < ActionMailer::Base
 	end
 
 	def time_confirmation(card)
-puts "--------card.email----------"
-puts card.email.inspect
-puts "----------------------"
 	  mail( from: 'Noobs', 
 			  	to: card.email,
 			  	subject: "Time Posted!", 
@@ -43,7 +40,7 @@ puts "----------------------"
 			  				"\n \n description: " + 
 			  				card.description)
 	end
-	
+
 	def time_notice(card)
 	  mail( from: 'Noobs', 
 			  	to: 'kpswallow2@gmail.com', 
