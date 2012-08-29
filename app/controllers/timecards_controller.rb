@@ -47,6 +47,7 @@ class TimecardsController < ApplicationController
     respond_to do |format|
       if @timecard.save
         AdminMailer.time_notice(@timecard).deliver
+        AdminMailer.time_confirmation(@timecard).deliver
         format.html { redirect_to @timecard, notice: 'Timecard was successfully created.' }
         format.json { render json: @timecard, status: :created, location: @timecard }
       else
