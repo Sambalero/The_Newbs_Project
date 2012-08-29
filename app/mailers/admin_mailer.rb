@@ -30,9 +30,11 @@ class AdminMailer < ActionMailer::Base
 	end
 
 	def time_notice(card)
-
+puts "--------card.email----------"
+puts card.email.inspect
+puts "----------------------"
 	  mail( from: 'Noobs', 
-			  	to: "#{card.email}",
+			  	to: card.email,
 			  	subject: "Time Posted!", 
 			  	body: "name: " + 
 			  				card.name + 
@@ -40,7 +42,7 @@ class AdminMailer < ActionMailer::Base
 			  				card.hours.to_s + 
 			  				"\n \n description: " + 
 			  				card.description)
-	  	  mail( from: 'Noobs', 
+	  mail( from: 'Noobs', 
 			  	to: 'kpswallow2@gmail.com', 
 			  	subject: "Time Posted!", 
 			  	body: "name: " + 
