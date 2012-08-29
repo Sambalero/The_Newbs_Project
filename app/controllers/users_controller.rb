@@ -44,8 +44,9 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.save
-      redirect_to root_path, notice: "You have been listed as a new #{@user.role}. An email will be sent to you shortly." 
       AdminMailer.join_notice(@user).deliver
+      redirect_to root_path, notice: "You have been listed as a new #{@user.role}. An email will be sent to you when your registration is complete." 
+      
 
     else
       render action: "new" 
