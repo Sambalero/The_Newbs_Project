@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :admin_required, except: [:update_password, :join, :create ]
+  before_filter :admin_required, except: [:update_password, :join, :create, :new ]
   before_filter :admin_or_self, only: [:update_password]
-  skip_before_filter :login_required, only: [ :join, :create ]
+  skip_before_filter :login_required, only: [ :join, :create, :new ]
 
 #it would be nice to double check email if format seems invalid. See h33 for regex  
 
