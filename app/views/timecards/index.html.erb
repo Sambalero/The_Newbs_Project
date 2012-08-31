@@ -8,26 +8,27 @@
     <th>Hours</th>
     <th>Date</th>
     <th>Rate</th>
-    <th>Approved</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <% if current_user.role == 'admin' %>
+        <th>Approved</th>
+    <% end %>
   </tr>
 
-<% @timecards.each do |timecard| %>
-  <tr>
-    <td><%= timecard.name %></td>
-    <td><%= timecard.task %></td>
-    <td><%= timecard.description %></td>
-    <td><%= timecard.hours %></td>
-    <td><%= timecard.date %></td>
-    <td><%= timecard.rate %></td>
-    <td><%= timecard.approved %></td>
-    <td><%= link_to 'Show', timecard %></td>
-    <td><%= link_to 'Edit', edit_timecard_path(timecard) %></td>
-    <td><%= link_to 'Destroy', timecard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+    <% @timecards.each do |timecard| %>
+      <tr>
+        <td><%= timecard.name %></td>
+        <td><%= timecard.task %></td>
+        <td><%= timecard.description %></td>
+        <td><%= timecard.hours %></td>
+        <td><%= timecard.date %></td>
+        <td><%= timecard.rate %></td>
+        <% if current_user.role == 'admin' %>
+            <td><%= timecard.approved %></td>
+            <td><%= link_to 'Show', timecard %></td>
+            <td><%= link_to 'Edit', edit_timecard_path(timecard) %></td>
+            <td><%= link_to 'Destroy', timecard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
 </table>
 
 <br />

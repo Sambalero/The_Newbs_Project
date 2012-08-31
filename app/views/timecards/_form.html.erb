@@ -32,11 +32,12 @@
     <%= f.label :date %><br />
     <%= f.date_select :date %>
   </div>
+  <div class="field">
+    <%= f.label "Rate: A decimal multiplier between 0 and 1" %><br />
+    <%= f.text_field :rate %>
+  </div>
+
   <% if current_user.role == 'admin' %>
-    <div class="field">
-      <%= f.label :rate %><br />
-      <%= f.text_field :rate %>
-    </div>
     <div class="field">
       <%= f.label :approved %><br />
       <%= f.check_box :approved %>
@@ -47,7 +48,6 @@
     </div>
   <% else %>
     <%=f.hidden_field :approved, :value => :false %>
-    <%=f.hidden_field :rate, :value => '0' %>
     <%=f.hidden_field :name, :value => current_user.name %>
   <% end %>
   <div class="actions">
