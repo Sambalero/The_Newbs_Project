@@ -3,11 +3,13 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.6'
 gem 'pg'
 gem 'thin'
-gem 'pony' #switch to actionmailer or don't load am
+#gem 'pony' #switch to actionmailer or don't load am
 gem 'jquery-rails'      
 gem 'bootstrap-sass'  
 gem "bcrypt-ruby"
 gem 'modernizr-rails'
+#gem 'carrierwave'
+#gem "fog", "~> 1.3.1"
 
 
 ## To use ActiveModel has_secure_password

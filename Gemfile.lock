@@ -94,8 +94,6 @@ GEM
     nokogiri (1.5.5)
     pg (0.14.0)
     polyglot (0.3.3)
-    pony (1.4)
-      mail (> 2.0)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -176,7 +174,6 @@ DEPENDENCIES
   mocha
   modernizr-rails
   pg
-  pony
   rails (= 3.2.6)
   sass-rails (~> 3.2.3)
   simplecov

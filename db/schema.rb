@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120825002704) do
+ActiveRecord::Schema.define(:version => 20120903180403) do
 
   create_table "comments", :force => true do |t|
     t.string   "name"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(:version => 20120825002704) do
     t.datetime "updated_at",          :null => false
     t.string   "job_name"
     t.text     "comments"
+    t.string   "attachment"
+    t.binary   "binary_attachment"
   end
 
   create_table "tasks", :force => true do |t|

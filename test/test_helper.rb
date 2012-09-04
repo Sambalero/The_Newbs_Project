@@ -4,8 +4,10 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require "capybara/rails" #delete this if capybara is not used; config capybara if it is
 require 'rails/test_help'
+require "mocha"
 require "simplecov"
 require "minitest/autorun"
+
 #why minitest/autorun, why not minitest?
 
 class ActiveSupport::TestCase
