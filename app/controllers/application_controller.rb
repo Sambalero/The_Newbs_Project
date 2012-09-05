@@ -6,7 +6,9 @@ class ApplicationController < ActionController::Base
   before_filter :instantiate_controller_and_action_names
   before_filter :login_required
 
-  helper_method :current_user #confirm this is required as helper; also when put helpers here instead of in helpers folder?
+  helper_method :current_user
+  helper_method :signed_in?  #when put helpers here instead of in helpers folder?
+
 	private
 
   def instantiate_controller_and_action_names
@@ -37,6 +39,10 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
 # session[:user_id].nil? use Keith's syntax. Required? Recommended?
+  end
+
+  def signed_in?
+    !current_user.nil?
   end
 
 

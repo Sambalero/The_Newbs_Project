@@ -21,7 +21,11 @@
 
             <li><%= link_to "Home", '/' %></li>
             <li><%= link_to "How It Works", '/visitors/how_it_works' %></li>
-            <li><%= link_to "Sign In", '/login' %></li>
+            <% if signed_in? %>
+              <li><%= link_to "Sign Out", signout_path, method: "delete" %> </li>
+            <% else %>
+              <li><%= link_to "Sign In", '/login' %></li>
+            <% end %>
             <li><%= link_to "Help Wanted", '/visitors/help_wanted' %></li>
             <li><%= link_to "Our Story", '/visitors/welcome' %></li>
             <li><%= link_to "Comments", "/comments" %></li>
@@ -36,7 +40,7 @@
 
         <a href="/hire" class="nav pull-right btn btn-primary">Hire Us!</a>
         <ul class="nav pull-right">
-          <li><a href="#">Deployment 0.0.40</a></li>
+          <li><a href="#">Deployment 0.0.41</a></li>
         </ul>
       </div>
     </div>
