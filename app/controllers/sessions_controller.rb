@@ -12,7 +12,9 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email].downcase)
     if user && user.approval && user.authenticate(params[:password])
 
-      cookies[:auth_token] = user.auth_token
+      cookies[:auth_token] = {:value => user.auth_token, :expires => 8.hours.from_now }
+# consider http://stackoverflow.com/questions/249797/how-to-i-dynamically-set-the-expiry-time-for-a-cookie-based-session-in-rails
+
       if user.role == "admin"
         redirect_to admin_path
       else
