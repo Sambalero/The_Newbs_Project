@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120903180403) do
+ActiveRecord::Schema.define(:version => 20120904234743) do
 
   create_table "comments", :force => true do |t|
     t.string   "name"
@@ -92,6 +92,24 @@ ActiveRecord::Schema.define(:version => 20120903180403) do
     t.string   "auth_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.integer  "PHP"
+    t.integer  "Ruby_on_rails"
+    t.integer  "Javascript"
+    t.integer  "HTML"
+    t.integer  "CSS"
+    t.integer  "Flash"
+    t.integer  "jquery"
+    t.integer  "MySQL"
+    t.integer  "Postgresql"
+    t.integer  "GitHub"
+    t.integer  "WordPress"
+    t.integer  "Graphics"
+    t.integer  "Video"
+    t.integer  "Audio"
+    t.integer  "Adobe_photoshop"
+    t.integer  "Gimp"
+    t.integer  "SEO"
+    t.integer  "SEM"
   end
 
 end
