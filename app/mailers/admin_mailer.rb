@@ -10,7 +10,9 @@ class AdminMailer < ActionMailer::Base
 
 	def password_reset(user)
 	  @user = user #is this needed?
-	  mail :to => user.email, :subject => "Password Reset"
+	  mail( from: 'Noobs', 
+	  			to: user.email, 
+	  			:subject => "Password Reset")
 	end
 
 	def join_notice(user)

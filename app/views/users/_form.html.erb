@@ -11,43 +11,83 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label "Name (required):" %><br />
-    <%= f.text_field :name, :value => (current_user ? current_user.name : "") %>
-  </div>  
-  <div class="Email (required):">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+<p id="notice"><%= notice %></p>
+</br>
+</br>
+<div class="row-fluid">
+  <div class="span6 center">
+    <div class = "leftside control-group">
+
+      <div class="controls">
+        <p><%= f.label "Name (required):" %>
+        <%= f.text_field :name, 
+            :value => (current_user ? current_user.name : "") %></p>
+      </div>
+
+      <div class="controls">
+        <p><%= f.label "Email (required):" %>
+        <%= f.text_field :email %></p>
+      </div>
+ 
+
+      <% if @update_password then %>
+        <div class="controls">
+          <p><%= f.label "Password (required):"%>
+          <%= f.password_field :password %></p>    
+        </div>
+        <div class="controls">
+          <p><%= f.label "Confirm Password" %>
+          <%= f.password_field :password_confirmation %></p>    
+        </div>
+      <% end %>
+
+      <% if @admin then %>
+        <div class="field">
+          <%= f.label :role %><br />
+          <%= f.text_field :role %>
+        </div>
+        <div class="field">
+          <%= f.label :approval %><br />
+          <%= f.check_box :approval %>
+        </div>
+      <% else %>
+        <div>
+          <p><%= @note %></p>
+        </div>
+        <%=f.hidden_field :approval, :value => :false %>
+        <%=f.hidden_field :role, :value => 'member' %>
+      <% end %>
+
+
+      <div class="actions">
+        <%= f.submit @button_label %>
+      </div>
+    </div>
   </div>
 
-<% if @update_password then %>
-  <div class="field">
-    <%= f.label "Password (required):"%><br />
-    <%= f.password_field :password %>    
-  </div>
-  <div class="field">
-    <%= f.label "Confirm Password" %><br />
-    <%= f.password_field :password_confirmation %>    
-  </div>
-<% end %>
 
-<% if @admin then %>
-  <div class="field">
-    <%= f.label :role %><br />
-    <%= f.text_field :role %>
-  </div>
-  <div class="field">
-    <%= f.label :approval %><br />
-    <%= f.check_box :approval %>
-  </div>
-<% else %>
-  <div><p><%= @note %></p></div>
-  <%=f.hidden_field :approval, :value => :false %>
-  <%=f.hidden_field :role, :value => 'member' %>
-<% end %>
+  <div class="span6 center">
+    <h3>Tell Us About Your Skilz!</h3>
+    <div class = "rightside control-group">
+      <div class="row-fluid">
+      <% [:PHP, :Ruby_on_rails, :Javascript, :HTML,:CSS, :Flash, 
+          :jquery, :MySQL, :Postgresql, :GitHub, :WordPress, 
+          :Graphics, :Video, :Audio, :Adobe_photoshop, 
+          :Gimp, :SEO, :SEM].each do |skill| %>
+      <p>
+      <%= f.label skill %>
+      <%= f.radio_button skill, '0' %> NONE
+
+  <input id="user_PHP_0" name="user[PHP]" type="radio" value="0">
+      <%= f.radio_button skill, '1' %> SOME
+      <%= f.radio_button skill, '2' %> LOTS
+      <%= f.radio_button skill, '3' %> TONS </p>
+      <% end %>
+    </div>
 
 
-  <div class="actions">
-    <%= f.submit @button_label %>
+    </div>
   </div>
+</div>
+
 <% end %>

@@ -16,6 +16,24 @@
 #  auth_token             :string(255)
 #  password_reset_token   :string(255)
 #  password_reset_sent_at :datetime
+#  PHP                    :integer
+#  Ruby_on_rails          :integer
+#  Javascript             :integer
+#  HTML                   :integer
+#  CSS                    :integer
+#  Flash                  :integer
+#  jquery                 :integer
+#  MySQL                  :integer
+#  Postgresql             :integer
+#  GitHub                 :integer
+#  WordPress              :integer
+#  Graphics               :integer
+#  Video                  :integer
+#  Audio                  :integer
+#  Adobe_photoshop        :integer
+#  Gimp                   :integer
+#  SEO                    :integer
+#  SEM                    :integer
 #
 
 require 'test_helper'
@@ -70,7 +88,8 @@ class UserTest < ActiveSupport::TestCase
 
   test "password and confirmation are not blank" do
   	assert @user.valid?
-
+Rails.logger.info @user.password.inspect
+Rails.logger.info "----------------------"
   	@user.password = @user.password_confirmation = " "
   	assert_equal false, @user.valid?
   end
