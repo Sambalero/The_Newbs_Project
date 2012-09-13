@@ -68,25 +68,22 @@
 
   <div class="span6 center">
     <h3>Tell Us About Your Skilz!</h3>
-    <div class = "rightside control-group">
-      <div class="row-fluid">
+    <table class="table">
+      
       <% [:PHP, :Ruby_on_rails, :Javascript, :HTML,:CSS, :Flash, 
           :jquery, :MySQL, :Postgresql, :GitHub, :WordPress, 
           :Graphics, :Video, :Audio, :Adobe_photoshop, 
           :Gimp, :SEO, :SEM].each do |skill| %>
-      <p>
-      <%= f.label skill %>
-      <%= f.radio_button skill, '0' %> NONE
-
-  <input id="user_PHP_0" name="user[PHP]" type="radio" value="0">
-      <%= f.radio_button skill, '1' %> SOME
-      <%= f.radio_button skill, '2' %> LOTS
-      <%= f.radio_button skill, '3' %> TONS </p>
+      <tr>
+      <td><%= f.label skill %>
+      <td><%= f.radio_button skill, '0' %> NONE</td>
+      <td><%= f.radio_button skill, '1' %> SOME</td>
+      <td><%= f.radio_button skill, '2' %> LOTS</td>
+      <td><%= f.radio_button skill, '3' %> TONS</td>
+      </tr>
+    
       <% end %>
-    </div>
-
-
-    </div>
+    </table>
   </div>
 </div>
 
