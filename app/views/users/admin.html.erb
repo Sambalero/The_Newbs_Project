@@ -2,6 +2,7 @@
   <% redirect_to "/public/500.html" %>
 <% end %>
 <h1>Admin</h1>
+<p><%= current_user.email %></p>
 <div id="adminlinks">
   <ul class="nav">
     <li style="margin-left: 1px"><a href="/comments"><span>Comments</span></a></li>

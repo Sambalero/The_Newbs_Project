@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  	<meta charset="utf8">
+    <title><%= full_title(yield(:title)) %></title>
+
+    <%= stylesheet_link_tag "application-all", media: "all" %>
+    <%= stylesheet_link_tag "siteindex", media: "all" %>
+
+    <!--[if IE]>
+      <%= stylesheet_link_tag "application-ie", media: "all" %>
+    <![endif]-->
+
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+	</head>
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+
+        <ul class="nav">
+            <li><%= link_to "Join Us!", '/join' %></li>
+            <li><%= link_to "Home", '/' %></li>
+            <li><%= link_to "How It Works", '/visitors/how_it_works' %></li>
+            <% if signed_in? %>
+              <li><%= link_to "Sign Out", signout_path, method: "delete" %> </li>
+            <% else %>
+              <li><%= link_to "Sign In", '/login' %></li>
+            <% end %>
+            <li><%= link_to "Help Wanted", '/visitors/help_wanted' %></li>
+            <li><%= link_to "Our Story", '/visitors/welcome' %></li>
+            <li><%= link_to "Comments", "/comments" %></li>
+            <% if current_user && current_user.role == 'admin' %>
+              <li><%= link_to "Admin Page", "/admin" %></li>
+              <li><%= link_to "Time Card", "/timecard" %></li>
+            <% end %>
+            <% if current_user && current_user.role == 'partner'%>
+              <li><%= link_to "Time Card", "/timecard" %></li>
+            <% end %>
+            <li><%= link_to "Hire Us!", '/hire' %></li>
+        </ul>
+
+        <ul class="nav pull-right">
+          <li><a href="#">Deployment 0.0.41</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+<!--  -->
+        <div class="span2">
+          <div class="sidebox">
+          </div>
+        </div>
+<!-- end span 2 -->
+        <div class="span8">
+          <div class="hero-unit myhero center">
+            <h1>The Newbs Project</h1>
+            <p>The Company of and for Upcoming Professionals</p>
+          </div>
+
+          <div id="main">
+            <div class="wrapper span6">
+              <%= yield %>
+          
+            </div>
+
+            <div class="row-fluid inner-footer">
+              <h2 class="center">If you have a comment or suggestion, please share it! <a href="/comments/new" id="footer-link"><span>Click Here</span></a></h2>
+              <p class="center">(If appropriate we'll respond or post it on the commentary page.)</p> 
+            </div>
+          </div>
+<!-- end main -->
+        </div>
+<!-- end span 8 -->        
+        <div class="span2 top130">
+          <%= yield :rightside %>
+        </div>
+<!-- end span 2 -->
+      </div>
+<!-- end row fluid --> 
+    </div> 
+    <div class="row-fluid footer">
+      <img class="floatleft" id="newby" alt: "Noo Power!" src="/assets/bkg.jpg">
+      <p id="left-small"><small>Image taken from http://hdwallpaperpics.com/picture/stock-photo/abstract. Let me know if you find something more appropriate. Thanks!</small></p>  
+    </div>
+
+    
+	</body>
+</html>
+
+

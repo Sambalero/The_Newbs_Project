@@ -45,6 +45,8 @@ Newbies::Application.routes.draw do
 
   match '/sitemap' => "sitemap#show"
 
+  match '/site' => "siteindex#show"
+
 #    root        /                                   visitors#home
 #      visitors_welcome GET    /visitors/welcome(.:format)         visitors#welcome
 # visitors_how_it_works GET    /visitors/how_it_works(.:format)    visitors#how_it_works

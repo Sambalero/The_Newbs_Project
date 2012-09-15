@@ -1,5 +1,6 @@
 class VisitorsController < ApplicationController
   skip_before_filter :login_required
+  layout "application"
   def home
   end
 
