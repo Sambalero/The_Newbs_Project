@@ -60,7 +60,7 @@ module Newbies
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.assets.precompile += %w( application-all.css application-ie.css )
+    config.assets.precompile += %w( application-all.css application-ie.css siteindex.css.scss )
 
     # Required by Heroku(?) ref http://guides.rubyonrails.org/asset_pipeline.html
     config.assets.initialize_on_precompile = false

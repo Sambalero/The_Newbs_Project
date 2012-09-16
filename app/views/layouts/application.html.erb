@@ -29,6 +29,7 @@
             <li><%= link_to "Help Wanted", '/visitors/help_wanted' %></li>
             <li><%= link_to "Our Story", '/visitors/welcome' %></li>
             <li><%= link_to "Comments", "/comments" %></li>
+            <li><%= link_to "SiteMap", "/site" %></li>
             <% if current_user && current_user.role == 'admin' %>
               <li><%= link_to "Admin Page", "/admin" %></li>
               <li><%= link_to "Time Card", "/timecard" %></li>
