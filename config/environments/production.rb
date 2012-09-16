@@ -65,7 +65,7 @@ Newbies::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.assets.precompile += %w( application-all.css application-ie.css )
+  config.assets.precompile += %w( application-all.css application-ie.css siteindex.css.scss )
 
   #confirm needed
   config.action_mailer.default_url_options = { :host => "noobs.herokuapp.com" }
