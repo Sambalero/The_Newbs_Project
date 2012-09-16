@@ -23,6 +23,29 @@ class TimecardsController < ApplicationController
     end
   end
 
+  def summary
+    @summation = []
+    @total_net_hours = 0
+    partners = User.where ("role = 'partner'")
+logger.info ",----------------->>>>>>>>>"
+logger.info partners.inspect
+    partners.each do |partner|
+      timecards = Timecard.where ("email = '#{partner.email}'")
+logger.info timecards.inspect    
+      net_hours = 0
+      hours = 0
+      timecards.each do |timecard|
+        net = timecard.hours * timecard.rate
+        net_hours += net
+        hours += timecard.hours
+      end 
+      @summation << [partner.name, hours, net_hours]
+logger.info @summation.inspect
+      @total_net_hours += net_hours
+    end   
+    @total_hours = Timecard.sum('hours')
+  end
+#       
   # GET /timecards/new
   # GET /timecards/new.json
   def new

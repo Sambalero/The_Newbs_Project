@@ -29,6 +29,8 @@ Newbies::Application.routes.draw do
 
   match '/timecard' => 'timecards#new'
 
+  match '/timecard/summary' => 'timecards#summary'
+
   resources :comments
 
   resources :users

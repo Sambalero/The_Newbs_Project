@@ -1,26 +1,31 @@
-<h1>Listing timecards</h1>
+<h1>All Timecards</h1>
 
-<table>
-  <tr>
+
+
+<table class="table">
+  <thead>
+    <th>Date</th>
     <th>Name</th>
+    <th>Net</th>
+    <th>Hours</th>    
+    <th>Rate</th>
     <th>Task</th>
     <th>Description</th>
-    <th>Hours</th>
-    <th>Date</th>
-    <th>Rate</th>
     <% if current_user.role == 'admin' %>
         <th>Approved</th>
     <% end %>
-  </tr>
-
+  </thead>
+<tbody>
     <% @timecards.each do |timecard| %>
       <tr>
-        <td><%= timecard.name %></td>
-        <td><%= timecard.task %></td>
-        <td><%= timecard.description %></td>
-        <td><%= timecard.hours %></td>
         <td><%= timecard.date %></td>
+        <td><%= timecard.name %></td>
+        <td><%= timecard.hours * timecard.rate %></td>
+        <td><%= timecard.hours %></td>
         <td><%= timecard.rate %></td>
+        <td>Task<span><%= timecard.task %></span></td>
+        <td>Description<span><%= timecard.description %></span></td>
+  
         <% if current_user.role == 'admin' %>
             <td><%= timecard.approved %></td>
             <td><%= link_to 'Show', timecard %></td>
@@ -29,8 +34,9 @@
         <% end %>
       </tr>
     <% end %>
+</tbody>
 </table>
 
 <br />
-
+<%= link_to 'Summary', "/timecard/summary" %> |
 <%= link_to 'New Timecard', new_timecard_path %>

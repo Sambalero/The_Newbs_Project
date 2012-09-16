@@ -154,6 +154,10 @@ body {
 	rows: 10;
 }
 
+/* tables */
+td span{display: none;}
+td:hover span{display: block;}
+
 /* images */
 
 #newby {
