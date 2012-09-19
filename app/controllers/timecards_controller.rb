@@ -24,7 +24,7 @@ class TimecardsController < ApplicationController
   end
 
   def summary
-    timecard_names = Timecard.all.collect(&:name)
+    timecard_names = Timecard.all.collect(&:name).uniq
     @summation = []
     @total_net_hours = 0
     @total_hours = 0
@@ -37,13 +37,11 @@ class TimecardsController < ApplicationController
         cards.each do |card|
           net += card.hours * card.rate
         end
-
-
+        
       @summation << [n, hours, net]
       @total_net_hours += net
       @total_hours += hours   
     end
-
   end 
 
   # GET /timecards/new

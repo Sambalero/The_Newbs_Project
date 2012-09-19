@@ -13,12 +13,13 @@
     <th>Description</th>
     <% if current_user.role == 'admin' %>
         <th>Approved</th>
+        <th>Email</th>
     <% end %>
   </thead>
 <tbody>
     <% @timecards.each do |timecard| %>
       <tr>
-        <td><%= timecard.date %></td>
+        <td><%= timecard.date.to_s(:simple) %></td>
         <td><%= timecard.name %></td>
         <td><%= timecard.hours * timecard.rate %></td>
         <td><%= timecard.hours %></td>
@@ -28,6 +29,7 @@
   
         <% if current_user.role == 'admin' %>
             <td><%= timecard.approved %></td>
+            <td><%= timecard.email %></td>
             <td><%= link_to 'Show', timecard %></td>
             <td><%= link_to 'Edit', edit_timecard_path(timecard) %></td>
             <td><%= link_to 'Destroy', timecard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
