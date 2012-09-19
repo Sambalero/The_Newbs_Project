@@ -10,16 +10,16 @@
 <tbody>
   <tr>
     <td>Everybody</td>
-    <td><%= @total_hours.round(2) %></td>
     <td><%= @total_net_hours.round(2) %></td>
+    <td><%= @total_hours.round(2) %></td>
     <td>100.0</td>
   </tr>
 
     <% @summation.each do |sum| %>
       <tr>
         <td><%= sum[0] %></td>
-        <td><%= sum[1] %></td>
         <td><%= sum[2].round(2) %></td>
+        <td><%= sum[1] %></td>
         <td><%= @total_net_hours>0 ? (sum[2]/@total_net_hours*100).round(2) : "error" %></td>
  
       </tr>
