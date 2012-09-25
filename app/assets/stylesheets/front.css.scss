@@ -1,0 +1,105 @@
+body {
+  padding: 0;
+  margin: 0;
+  background:rgb(220, 220, 220);
+}
+
+
+.navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: rgb(169, 169, 169);
+  height: 20px;
+  text-align: center;
+  padding-top: 2px;
+  /* Adds shadow to the bottom of the bar */
+  -webkit-box-shadow: 0px 0px 8px 0px #000000;
+  -moz-box-shadow: 0px 0px 8px 0px #000000;
+  box-shadow: 0px 0px 8px 0px #000000;
+  /* Adds the transparent background */
+  background-color: rgba(169, 169, 169, 0.8);
+  color: rgba(169, 169, 169, 0.8);
+}
+
+.navigation a {
+  font-size: 14px;
+  padding: 0 10px 0 10px;
+
+  color: white;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  color: grey;
+} 
+
+.pull-right{
+  color: black;
+  padding: 0 20px 0 20px;
+}
+
+.header{
+  width: 100%;
+  margin: 20px 0 0 0;
+  background: rgb(164, 77, 193);
+  height: 40px;
+}
+
+.content{
+  width: 100%;
+  background: rgb(169, 169, 169);
+  height: 320px;
+  /* Adds shadow to the bottom of the bar */
+  -webkit-box-shadow: 2px 0px 8px 0px #000000;
+  -moz-box-shadow: 2px 0px 8px 0px #000000;
+  box-shadow: 2px 0px 8px 0px #000000;
+}
+
+td{
+  padding: 0;
+}
+
+.leftside{
+  margin: 120px 0 0 250px;
+  float: left;
+}
+
+.rightside{
+  margin: 120px 250px 0 0;
+  float: right;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  margin: -105px 0 0 10px;
+  height: 105px;
+  clear:both;
+  float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

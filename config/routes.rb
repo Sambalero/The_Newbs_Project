@@ -49,6 +49,7 @@ Newbies::Application.routes.draw do
 
   match '/site' => "siteindex#show"
 
+  match '/front' => "front#show"
 #    root        /                                   visitors#home
 #      visitors_welcome GET    /visitors/welcome(.:format)         visitors#welcome
 # visitors_how_it_works GET    /visitors/how_it_works(.:format)    visitors#how_it_works

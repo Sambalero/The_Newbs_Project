@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf8">
+    <title><%= full_title(yield(:title)) %></title>
+
+    <%= stylesheet_link_tag "application-all", media: "all" %>
+    <%= stylesheet_link_tag "front", media: "all" %>
+    
+    <!--[if IE]>
+      <%= stylesheet_link_tag "application-ie", media: "all" %>
+    <![endif]-->
+
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="navigation">
+      <div class="nav pull-left">
+            <a><%= link_to "Join Us!", '/join' %></a>
+            <a><%= link_to "Home", '/' %></a>
+            <a><%= link_to "How It Works", '/visitors/how_it_works' %></a>
+
+            <% if signed_in? %>
+              <a><%= link_to "Sign Out", signout_path, method: "delete" %> </a>
+            <% else %>
+              <a><%= link_to "Sign In", '/login' %></a>
+            <% end %>
+
+            <a><%= link_to "Help Wanted", '/visitors/help_wanted' %></a>
+            <a><%= link_to "Our Story", '/visitors/welcome' %></a>
+            <a><%= link_to "Comments", "/comments" %></a>
+
+            <% if current_user && current_user.role == 'admin' %>
+              <a><%= link_to "Admin Page", "/admin" %></a>
+              <a><%= link_to "Time Card", "/timecard" %></a>
+            <% end %>
+
+            <% if current_user && current_user.role == 'partner'%>
+              <a><%= link_to "Time Card", "/timecard" %></a>
+            <% end %>
+
+            <a><%= link_to "Hire Us!", '/hire' %></a>    
+      </div><!--end nav pull-left-->
+        <div class="pull-right">
+           Deployment 0.0.48
+        </div><!--end nav pull-right-->
+    </div><!--end navigation-->
+    <div class="header">
+    </div><!--end header-->
+    <div class="content">
+      <%= yield %>
+    </div><!--end content-->
+    
+    <div>
+
+    <div class="leftside">
+      <%= yield :leftside %>
+    </div><!--end leftside-->
+    <div class="rightside">
+      <%= yield :rightside %>
+    </div><!--end rightside-->
+    </div>
+
+    <div class="footer">
+      <%= yield :footer %>
+    </div><!--end footer-->
+
+
+    
+
+
+  </body>
+</html>
+
+
+

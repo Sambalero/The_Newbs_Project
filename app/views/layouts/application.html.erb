@@ -37,6 +37,7 @@
             <% if current_user && current_user.role == 'partner'%>
               <li><%= link_to "Time Card", "/timecard" %></li>
             <% end %>
+            <li><%= link_to "Front", '/front' %></li>
         </ul>
 
         <a href="/hire" class="nav pull-right btn btn-primary">Hire Us!</a>
