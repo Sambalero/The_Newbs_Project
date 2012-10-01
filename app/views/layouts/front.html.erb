@@ -44,32 +44,46 @@
             <a><%= link_to "Hire Us!", '/hire' %></a>    
       </div><!--end nav pull-left-->
         <div class="pull-right">
-           Deployment 0.0.48
+           Deployment 0.0.53
         </div><!--end nav pull-right-->
     </div><!--end navigation-->
-    <div class="header">
-    </div><!--end header-->
-    <div class="content">
-      <%= yield %>
-    </div><!--end content-->
-    
-    <div>
 
-    <div class="leftside">
-      <%= yield :leftside %>
-    </div><!--end leftside-->
-    <div class="rightside">
-      <%= yield :rightside %>
-    </div><!--end rightside-->
-    </div>
+
+
+    <div class="content">
+
+      <div class="header">
+
+        <div class="headerleft">
+          <%= yield :headerleft %>
+        </div><!--end headerleft-->
+        <div class="headerright">
+          <%= yield :headerright %>
+        </div><!--end headerright-->
+        
+      </div><!--end header-->
+
+      <div class="logo">
+        <img src="/assets/GWDLogo2.png" alt="logo" width="1524" height="100" />
+      </div>
+
+      <div class="leftside">
+        <%= yield :leftside %>
+      </div><!--end leftside-->
+
+      <div class="leftover">
+        <div class="centercolumn">
+          <%= yield :centercolumn %>
+        </div><!--end centercolumn-->
+
+        <div class="rightside">
+          <%= yield :rightside %>
+        </div><!--end rightside-->
+      </div><!--end leftover-->
 
     <div class="footer">
       <%= yield :footer %>
     </div><!--end footer-->
-
-
-    
-
 
   </body>
 </html>

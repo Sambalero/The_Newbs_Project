@@ -6,7 +6,7 @@ Newbies::Application.routes.draw do
 
   resources :jobs
 
-  root to: "visitors#home"
+  root to: "front#show"  
 
   get "visitors/welcome"
 
@@ -16,7 +16,7 @@ Newbies::Application.routes.draw do
 
   get "visitors/help_wanted"
 
-  match '/visitors' => "visitors#home"
+  match '/visitors' => "visitors#front"
 #this form creates the vistors_path and visitors_url named routes
 
   match '/join' => 'users#join'
@@ -49,7 +49,7 @@ Newbies::Application.routes.draw do
 
   match '/site' => "siteindex#show"
 
-  match '/front' => "front#show"
+  match '/front' => "visitors#front"
 #    root        /                                   visitors#home
 #      visitors_welcome GET    /visitors/welcome(.:format)         visitors#welcome
 # visitors_how_it_works GET    /visitors/how_it_works(.:format)    visitors#how_it_works
