@@ -64,22 +64,35 @@
       </div><!--end header-->
 
       <div class="logo">
-        <img src="/assets/GWDLogo2.png" alt="logo" width="1524" height="100" />
+        <img src="/assets/GWDLogo2.png" alt="logo" width="1524" height="75" />
       </div>
 
+<div class="bottomhalf">
+
       <div class="leftside">
-        <%= yield :leftside %>
+        <div class="box">
+          <%= yield :leftside %>
+        </div><!--end box-->
+        <a href="#" class="blue button">Learn About Code Quality</a>
       </div><!--end leftside-->
 
       <div class="leftover">
         <div class="centercolumn">
-          <%= yield :centercolumn %>
+          <div class="box">
+            <%= yield :centercolumn %>
+          </div><!--end box-->
+          <a href="#" class="blue button">Learn How It Works</a>
         </div><!--end centercolumn-->
 
         <div class="rightside">
-          <%= yield :rightside %>
+          <div class="box">
+            <%= yield :rightside %>
+          </div><!--end box-->
+          <a href="#" class="blue button">Let Us Make You A Proposal</a>
         </div><!--end rightside-->
       </div><!--end leftover-->
+      
+</div><!--end bottomhalf-->
 
     <div class="footer">
       <%= yield :footer %>
