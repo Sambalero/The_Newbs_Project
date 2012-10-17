@@ -1,0 +1,31 @@
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <a href="/join" class="nav btn btn-primary">Join Us!</a>
+        <ul class="nav">
+
+            <li><%= link_to "Home", '/' %></li>
+
+            <% if signed_in? %>
+              <li><%= link_to "Sign Out", signout_path, method: "delete" %> </li>
+            <% else %>
+              <li><%= link_to "Sign In", '/login' %></li>
+            <% end %>
+            <li><%= link_to "Our Story", '/visitors/welcome' %></li>
+            <li><%= link_to "Comments", "/comments" %></li>
+            <li><%= link_to "SiteMap", "/site" %></li>
+            <% if current_user && current_user.role == 'admin' %>
+              <li><%= link_to "Admin Page", "/admin" %></li>
+              <li><%= link_to "Time Card", "/timecard" %></li>
+            <% end %>
+            <% if current_user && current_user.role == 'partner'%>
+              <li><%= link_to "Time Card", "/timecard" %></li>
+            <% end %>
+            <li><%= link_to "Front", '/front' %></li>
+        </ul>
+
+        <a href="/hire" class="nav pull-right btn btn-primary">Hire Us!</a>
+        <ul class="nav pull-right">
+          <li><a href="#">Deployment 0.0.55</a></li>
+        </ul>
+      </div>
+    </div>
