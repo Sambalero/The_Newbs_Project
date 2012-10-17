@@ -18,30 +18,32 @@
   <body>
     <div class="navigation">
       <div class="nav pull-left">
-            <a><%= link_to "Join Us!", '/join' %></a>
-            <a><%= link_to "Home", '/' %></a>
-            <a><%= link_to "How It Works", '/visitors/how_it_works' %></a>
 
-            <% if signed_in? %>
-              <a><%= link_to "Sign Out", signout_path, method: "delete" %> </a>
-            <% else %>
-              <a><%= link_to "Sign In", '/login' %></a>
+            <%= link_to "Join Us!", '/join' %>
+            <%= link_to "Home", '/' %>
+            <%= link_to "How It Works", '/visitors/how_it_works' %>
+            <%= link_to "Help Wanted", '/visitors/help_wanted' %>
+            <%= link_to "Our Story", '/visitors/welcome' %>
+            <%= link_to "Comments", "/comments" %>
+
+            <% if signed_in? %> 
+              <%= link_to "Sign Out", signout_path, method: "delete" %> 
+            <% end %> 
+            
+            <% if !signed_in? %>
+              <%= link_to "Sign In", '/login' %>
             <% end %>
 
-            <a><%= link_to "Help Wanted", '/visitors/help_wanted' %></a>
-            <a><%= link_to "Our Story", '/visitors/welcome' %></a>
-            <a><%= link_to "Comments", "/comments" %></a>
-
             <% if current_user && current_user.role == 'admin' %>
-              <a><%= link_to "Admin Page", "/admin" %></a>
-              <a><%= link_to "Time Card", "/timecard" %></a>
+              <%= link_to "Admin Page", "/admin" %>
+              <%= link_to "Time Card", "/timecard" %>
             <% end %>
 
             <% if current_user && current_user.role == 'partner'%>
-              <a><%= link_to "Time Card", "/timecard" %></a>
+              <%= link_to "Time Card", "/timecard" %>
             <% end %>
 
-            <a><%= link_to "Hire Us!", '/hire' %></a>    
+            <%= link_to "Hire Us!", '/hire' %>    
       </div><!--end nav pull-left-->
         <div class="pull-right">
            Deployment 0.0.53
