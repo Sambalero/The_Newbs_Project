@@ -17,8 +17,9 @@
     <% end %>
   </thead>
 <tbody>
-<!--
     <% @timecards.each do |timecard| %>
+    <% if timecard.hours.nil? then timecard.hours = 0 end %>
+    <% if timecard.rate.nil? then timecard.rate = 0 end %>
       <tr>
         <td><%= timecard.date.to_s(:simple) %></td>
         <td><%= timecard.name %></td>
@@ -37,7 +38,6 @@
         <% end %>
       </tr>
     <% end %>
--->
 </tbody>
 </table>
 
