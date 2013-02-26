@@ -23,7 +23,6 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @title = @title || "Comment Form"
-    @content = @content || "Comment"
     @note = @note || ""
     @button_label = @button_label || "Submit Comment"
     @comment = Comment.new
@@ -36,7 +35,6 @@ class CommentsController < ApplicationController
   def edit
     @admin = true
     @comment = Comment.find(params[:id])
-    @content = "content"
   end
 
   # POST /comments

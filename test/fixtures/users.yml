@@ -41,7 +41,7 @@
 one:
   name: Bill
   email: bill@home
-  role: member
+  role: admin
   password_digest: <%= BCrypt::Password.create("password") %>
   approval: true
 

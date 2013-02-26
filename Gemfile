@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'pg'
 gem 'thin'
-#gem 'pony' #switch to actionmailer or don't load am
 gem 'jquery-rails'      
 gem 'bootstrap-sass'  
 gem "bcrypt-ruby"
