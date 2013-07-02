@@ -4,61 +4,50 @@
     <%= render 'layouts/head' %> 
     <%= stylesheet_link_tag "front", media: "all" %>
   </head>
-
   <body>
     <%= render 'layouts/nav' %>
+    <div class="container-fluid">
+      <div class="row-fluid outer">
+          <div class="row-fluid">
+            <div class="span4 figure">
+              <p><img src="../assets/GWDLogo2.png" alt="" /> </p>
+            </div><!--/span-->
+            <div class="span4 noshow">     
+              <p></p><p></p>
+            </div><!--/span-->
+            <div class="span4 padr">
+              <%= yield :headerright %>
+            </div><!--/span-->
+          </div><!--/row1-->
 
+          <div class="hero-unit noshow">
+            <h1></h1>
+          </div><!--/hero-->
+          <div class="hero-unit skinny">
+            <p>With just a couple more of the right people Group Web Design will be ready to launch.
+            <a href="/hire" class="btn btn-primary btn-large">Join Us</a></p>
+          </div><!--/hero-->
+          <div class="hero-unit noshow">
+            <p></p>
+          </div><!--/heros123row234-->
 
-
-
-    <div class="content">
-
-      <div class="header">
-
-        <div class="headerleft">
-          <%= yield :headerleft %>
-        </div><!--end headerleft-->
-        <div class="headerright">
-          <%= yield :headerright %>
-        </div><!--end headerright-->
-        
-      </div><!--end header-->
-
-      <div class="logo">
-        <img src="/assets/GWDLogo2.png" alt="logo" width="1524" height="75" />
-      </div>
-
-<div class="bottomhalf">
-
-      <div class="leftside">
-        <div class="box">
-          <%= yield :leftside %>
-        </div><!--end box-->
-        <a href="#" class="blue button">Learn About Code Quality</a>
-      </div><!--end leftside-->
-
-      <div class="leftover">
-        <div class="centercolumn">
-          <div class="box">
-            <%= yield :centercolumn %>
-          </div><!--end box-->
-          <a href="#" class="blue button">Learn How It Works</a>
-        </div><!--end centercolumn-->
-
-        <div class="rightside">
-          <div class="box">
-            <%= yield :rightside %>
-          </div><!--end box-->
-          <a href="#" class="blue button">Let Us Make You A Proposal</a>
-        </div><!--end rightside-->
-      </div><!--end leftover-->
-      
-</div><!--end bottomhalf-->
+          <div class="row-fluid low">
+            <div class="span4">
+              <%= yield :leftside %>
+            </div><!--/span-->
+            <div class="span4"> 
+              <%= yield :centercolumn %>
+            </div><!--/span-->
+            <div class="span4">
+              <%= yield :rightside %>
+            </div><!--/span-->
+          </div><!--/row5-->
+      </div><!--/outer row fluid-->
 
     <div class="footer">
-      <%= yield :footer %>
+          <%= yield :footer %>
     </div><!--end footer-->
-
+    </div><!--/.fluid-container-->
   </body>
 </html>
 

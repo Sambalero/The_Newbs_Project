@@ -1,19 +1,47 @@
+@import "bootstrap-responsive"; 
 
+/* My style */
+
+/*
+
+  By Kevin Swallow
+
+  ---
+
+  1.  Layout
+  2.  Typography
+  3.  Other Elements
+  4.  Media Queries & Responsiveness
+  5.  Fonts
+
+*/
+
+/*--------------------------------------------------------------------------
+  1.  Layout  
+/*------------------------------------------------------------------------*/
+/* > * > * { border: solid white 1px; }*/
+
+html {
+  height: 100%;
+}
 
 body {
-  padding: 0;
-  margin: 0;
-  width: 100%;
   height: 100%;
-  background: #ccc; 
+  background-image: image-url("group-meeting-silh-612x407.jpg");
+  background-size: auto 100%;
+  background-repeat: no-repeat; 
+  background-position: center;
+  padding-top: 35px; 
+  padding-bottom: 67px; 
 
-  h1{
+
+  h1{ /**/
     padding: 5px 0 0 0;
     text-align: center;
     font-size: 18px;
 
   }
-  p{
+  p{  /**/
    font-size: 12px;
    text-indent:50px;
    padding: 0 10px 0 10px;
@@ -23,7 +51,8 @@ body {
 }
 
 
-.navigation {
+
+.navigation { /*may need to be updated*/
   position: fixed;
   top: 0;
   width: 100%;
@@ -57,181 +86,48 @@ body {
   padding: 0 20px 0 20px;
 }
 
-.content{
-  margin: 22px 0 0 0;
-  width: 80%;
-  height: 100%;
-  position: fixed; left: 10%;
-}
-
-.logo{
-  position: absolute;
-  top: 35px;
-  left: 20px;
-}
-
-.header{
-  width: 100%;
-  margin: 35px 0 18px 0;
-  height: 360px;
-}
-
-.headerleft{
-  width: 60%;
-  float: left;
+.container-fluid{
   height: 100%;
 }
 
-.headerright{
-  width: 38%;
-  float: right;
-  height: 100%;
+img {
+  max-width: 200%;
 }
 
-.bottomhalf{
-  height:42%;
+.noshow {
+  visibility: hidden;
 }
 
-.leftside{
-  margin: -150px 0 0 0;
-  position:relative;
-  top: 50%;
-  width: 31%;
-  float: left;
-  height: 300px;
-  background: rgb(214, 155, 242);
+.skinny {
+  padding: 0 0 0 15px;
+  margin: 10px;
+  background: rgba(238, 238, 238, 0.56);
 }
 
-.leftover{
-  margin: -150px 0 0 0;
-  position:relative;
-  top: 50%;
-  width: 65%;
-  float: right;
-  height: 300px;
-}
-
-.centercolumn{
-  width: 47%;
-  float: left;
-  height: 300px;
-  background: rgb(178, 240, 129);
-}
-
-.rightside{
-  width: 47%;
-  float: right;
-  height: 300px;
-  background: rgb(255, 165, 165);
-}
-
-.box{
-  height:230px;
-  width:100%;
-}
-
-.footer{
-  position: absolute;
-  bottom: 10px;
-  margin: -45px 0 0 0;
-  height: 35px;
-  width: 100%;
-  clear:both;
-  float: left;
-  background: rgb(230, 230, 230);
-}
-
-.circle-button{
-    margin: -165px -125px; 
-    position:relative; 
-    left:50%;
-    top:50%;
-  display:block;
-  width:250px;
-  height:250px;
-  border-radius:125px;
-  font-size:18px;
-  line-height:26px;
-  color:black;
-  text-align:center;
-  padding:50px 30px 30px 30px;
-  background:#CEE3F8;
+.skinny   p {
+    margin: 0;
   }
 
-.button {
-  display: inline-block;
-  width:230px;
-  height:28px;
-  padding: 10px 0 0 0;
-    margin: 10px -115px; 
-    position:relative; 
-    left:50%; 
-    bottom:0px;
-  outline: none;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  font: 16px/100% Arial, Helvetica, sans-serif;
- 
-  text-shadow: 0 1px 1px rgba(0,0,0,.3);
-  -webkit-border-radius: .5em; 
-  -moz-border-radius: .5em;
-  border-radius: .5em;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-  box-shadow: 0 1px 2px rgba(0,0,0,.2);
-}
-.button:hover {
-  text-decoration: none;
-}
-.button:active {
-  position: relative;
-  top: 1px;
+.skinny .btn.btn-primary.btn-large {
+margin-left: 30px;
+
 }
 
-
-
-/* blue http://www.webdesignerwall.com/demo/css-buttons.html */
-.blue {
-  color: white;
-  border: solid 1px #0076a3;
-  background: #0095cd;
-  background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
-  background: -moz-linear-gradient(top,  #00adee,  #0078a5);
-  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
-}
-.blue:hover {
-  background: #007ead;
-  background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
-  background: -moz-linear-gradient(top,  #0095cc,  #00678e);
-  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
-}
-.blue:active {
-  color: #80bed6;
-  background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
-  background: -moz-linear-gradient(top,  #0078a5,  #00adee);
-  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
+.low p{
+  background: rgba(238, 238, 238, 0.56);
 }
 
+.low h1{
+  background: rgba(238, 238, 238, 0.56);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.footer {
+   position:fixed;
+   bottom:0;
+   height:25px;
+   width:100%;
+   background:white;
+   line-height: 1.5;
+   margin: -25px 0 0 0;
+}
 
