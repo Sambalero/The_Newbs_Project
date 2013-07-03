@@ -1,12 +1,20 @@
 Newbies::Application.routes.draw do
 
+  root to: "front#show"  
+ 
   resources :timecards
 
   resources :tasks
 
   resources :jobs
 
-  root to: "front#show"  
+  resources :comments
+
+  resources :users
+
+  resources :sessions, only: [:new, :create, :destroy]
+
+  resources :password_resets, only: [:new, :edit, :create, :update]
 
   get "visitors/welcome"
 
@@ -31,25 +39,15 @@ Newbies::Application.routes.draw do
 
   match '/timecard/summary' => 'timecards#summary'
 
-  resources :comments
-
-  resources :users
-
-  resources :sessions, only: [:new, :create, :destroy]
-
-  resources :password_resets, only: [:new, :edit, :create, :update]
-
   match '/admin' => 'users#admin'
-
-  match '/sitemap/show' => "sitemap#show"
-
-  match '/sitemap/send' => "sitemap#send"
-
-  match '/sitemap' => "sitemap#show"
 
   match '/site' => "siteindex#show"
 
   match '/front' => "visitors#front"
+
+  match '/sitemap1.xml.gz' => 'sitemaps#show'
+
+
 #    root        /                                   visitors#home
 #      visitors_welcome GET    /visitors/welcome(.:format)         visitors#welcome
 # visitors_how_it_works GET    /visitors/how_it_works(.:format)    visitors#how_it_works

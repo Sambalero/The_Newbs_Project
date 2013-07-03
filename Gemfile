@@ -8,8 +8,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'  
 gem "bcrypt-ruby"
 gem 'modernizr-rails'
-#gem 'carrierwave'
-#gem "fog", "~> 1.3.1"
+gem 'sitemap_generator'
 
 
 ## To use ActiveModel has_secure_password

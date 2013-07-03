@@ -1,24 +1,16 @@
-# /app/controllers/sitemap_controller.rb
-# from http://blog.dynamic50.com/2010/09/09/creating-a-sitemap-for-rails-and-heroku/
+# /app/controllers/siteindex_controller.rb
 
-class SitemapController < ApplicationController
-  respond_to :xml
-  caches_page :show
+
+class SitemapsController < ApplicationController
+skip_before_filter :login_required
+layout "siteindex"
+
 
   def show
-#    @posts = Post.all
-# future: ?add priority?
-    @routes = ["/",                       
-											"/visitors/welcome",
-											"/visitors/how_it_works",
-											"/visitors/thank_you",
-											"/visitors/help_wanted",
-											"/comments",
-											"/sitemap"]
-    respond_to do |format|
-      format.xml
-    end
+    # Redirect to CloudFront and S3
+    redirect_to "http://d2qncrnfsbjjvn.cloudfront.net/sitemaps/sitemap1.xml.gz"
   end
 
-# future: add send method to update search engines. ?on change? ?track frequency? 
+
 end
+
