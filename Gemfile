@@ -9,7 +9,7 @@ gem 'bootstrap-sass'
 gem "bcrypt-ruby"
 gem 'modernizr-rails'
 gem 'sitemap_generator'
-
+gem 'fog'
 
 ## To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
