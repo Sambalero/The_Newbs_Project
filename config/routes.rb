@@ -48,15 +48,28 @@ Newbies::Application.routes.draw do
   match '/sitemap1.xml.gz' => 'sitemaps#show'
 
 
-#    root        /                                   visitors#home
-#      visitors_welcome GET    /visitors/welcome(.:format)         visitors#welcome
-# visitors_how_it_works GET    /visitors/how_it_works(.:format)    visitors#how_it_works
-#    visitors_thank_you GET    /visitors/thank_you(.:format)       visitors#thank_you
-#  visitors_help_wanted GET    /visitors/help_wanted(.:format)     visitors#help_wanted
-#              visitors        /visitors(.:format)                 visitors#home
-#                  join        /join(.:format)                     users#join
-#                  hire        /hire(.:format)                     comments#hire
-#                 login        /login(.:format)                     sessions#new
+#               root        /                                   front#show
+#             timecards GET    /timecards(.:format)                timecards#index
+#                       POST   /timecards(.:format)                timecards#create
+#          new_timecard GET    /timecards/new(.:format)            timecards#new
+#         edit_timecard GET    /timecards/:id/edit(.:format)       timecards#edit
+#              timecard GET    /timecards/:id(.:format)            timecards#show
+#                       PUT    /timecards/:id(.:format)            timecards#update
+#                       DELETE /timecards/:id(.:format)            timecards#destroy
+#                 tasks GET    /tasks(.:format)                    tasks#index
+#                       POST   /tasks(.:format)                    tasks#create
+#              new_task GET    /tasks/new(.:format)                tasks#new
+#             edit_task GET    /tasks/:id/edit(.:format)           tasks#edit
+#                  task GET    /tasks/:id(.:format)                tasks#show
+#                       PUT    /tasks/:id(.:format)                tasks#update
+#                       DELETE /tasks/:id(.:format)                tasks#destroy
+#                  jobs GET    /jobs(.:format)                     jobs#index
+#                       POST   /jobs(.:format)                     jobs#create
+#               new_job GET    /jobs/new(.:format)                 jobs#new
+#              edit_job GET    /jobs/:id/edit(.:format)            jobs#edit
+#                   job GET    /jobs/:id(.:format)                 jobs#show
+#                       PUT    /jobs/:id(.:format)                 jobs#update
+#                       DELETE /jobs/:id(.:format)                 jobs#destroy
 #              comments GET    /comments(.:format)                 comments#index
 #                       POST   /comments(.:format)                 comments#create
 #           new_comment GET    /comments/new(.:format)             comments#new
@@ -74,17 +87,25 @@ Newbies::Application.routes.draw do
 #              sessions POST   /sessions(.:format)                 sessions#create
 #           new_session GET    /sessions/new(.:format)             sessions#new
 #               session DELETE /sessions/:id(.:format)             sessions#destroy
-#       password_resets GET    /password_resets(.:format)          password_resets#index
-#                       POST   /password_resets(.:format)          password_resets#create
+#       password_resets POST   /password_resets(.:format)          password_resets#create
 #    new_password_reset GET    /password_resets/new(.:format)      password_resets#new
 #   edit_password_reset GET    /password_resets/:id/edit(.:format) password_resets#edit
-#        password_reset GET    /password_resets/:id(.:format)      password_resets#show
-#                       PUT    /password_resets/:id(.:format)      password_resets#update
-#                       DELETE /password_resets/:id(.:format)      password_resets#destroy
-#                 admin        /admin(.:format)                    comments#admin
-#          sitemap_show        /sitemap/show(.:format)             sitemap#show
-#          sitemap_send        /sitemap/send(.:format)             sitemap#send
-#               sitemap        /sitemap(.:format)                  sitemap#show
+#        password_reset PUT    /password_resets/:id(.:format)      password_resets#update
+#      visitors_welcome GET    /visitors/welcome(.:format)         visitors#welcome
+# visitors_how_it_works GET    /visitors/how_it_works(.:format)    visitors#how_it_works
+#    visitors_thank_you GET    /visitors/thank_you(.:format)       visitors#thank_you
+#  visitors_help_wanted GET    /visitors/help_wanted(.:format)     visitors#help_wanted
+#              visitors        /visitors(.:format)                 visitors#front
+#                  join        /join(.:format)                     users#join
+#                  hire        /hire(.:format)                     jobs#new
+#                 login        /login(.:format)                    sessions#new
+#               signout DELETE /signout(.:format)                  sessions#destroy
+#                              /timecard(.:format)                 timecards#new
+#      timecard_summary        /timecard/summary(.:format)         timecards#summary
+#                 admin        /admin(.:format)                    users#admin
+#                  site        /site(.:format)                     siteindex#show
+#                 front        /front(.:format)                    visitors#front
+#                              /sitemap1.xml.gz(.:format)          sitemaps#show
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
