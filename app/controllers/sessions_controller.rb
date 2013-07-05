@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_filter :login_required, only: [:new, :create]
+#before filter is in the application controller. 
   def new
   end
 

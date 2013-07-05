@@ -32,6 +32,7 @@ Newbies::Application.routes.draw do
   match '/hire' => 'jobs#new'
 
   match '/login' => 'sessions#new'
+#  get "login" => "sessions#new", :as => "login"
 
   match '/signout', to: 'sessions#destroy', via: :delete
 

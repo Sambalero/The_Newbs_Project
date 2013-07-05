@@ -12,8 +12,8 @@
   <% end %>
 
 <p id="notice"><%= notice %></p>
-</br>
-</br>
+<br>
+<br>
 <div class="row-fluid">
   <div class="span6 center">
     <div class = "leftside control-group">
@@ -29,7 +29,6 @@
         <%= f.text_field :email %></p>
       </div>
  
-
       <% if @update_password then %>
         <div class="controls">
           <p><%= f.label "Password (required):"%>
@@ -58,13 +57,11 @@
         <%=f.hidden_field :role, :value => 'member' %>
       <% end %>
 
-
       <div class="actions">
         <%= f.submit @button_label %>
       </div>
     </div>
   </div>
-
 
   <div class="span6 center">
     <h3>Tell Us About Your Skilz!</h3>
@@ -75,7 +72,7 @@
           :Graphics, :Video, :Audio, :Adobe_photoshop, 
           :Gimp, :SEO, :SEM].each do |skill| %>
       <tr>
-      <td><%= f.label skill %>
+      <td><%= f.label skill %></td>
       <td><%= f.radio_button skill, '0' %> NONE</td>
       <td><%= f.radio_button skill, '1' %> SOME</td>
       <td><%= f.radio_button skill, '2' %> LOTS</td>

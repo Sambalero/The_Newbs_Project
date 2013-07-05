@@ -1,3 +1,7 @@
+Group Web Design / The Noobs Project
+  This is a startup base site and project management utility.
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
