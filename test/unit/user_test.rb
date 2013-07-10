@@ -53,14 +53,50 @@ class UserTest < ActiveSupport::TestCase
   	assert(@user.name && @user.email && @user.password)
   end
 
+  test "won't save without email" do
+
+    assert !@baduser.save
+  end
+
+  test "will save with email" do
+    @baduser.email = "bad@good.com"
+
+    assert @baduser.save
+  end
+
+  test "won't save without password" do
+    @baduser.password = ""
+
+    assert !@baduser.save
+  end
+
+  test "won't save if password and confirmation don't match" do
+    @baduser.password = "password"
+
+    assert !@baduser.save
+  end
+
+  test "won't save without password confirmation" do
+    @baduser.password_confirmation = ""
+  
+    assert !@baduser.save
+  end
+
   test "validates presence of email & password" do
   	assert_equal true, @user.valid?
    	assert_equal false, @baduser.valid?
    	assert_equal false, @baduser2.valid?
   end
 
-  test "requires unique email" do
+  test "won't save with duplicate email" do
+    @dupuser.email = @user.email
+
+     assert !@dupuser.save
+  end   
+
+  test "validates unique email" do
   	@dupuser.save
+
   	assert_equal false, @dupuser.valid?
   end
 
@@ -68,9 +104,6 @@ class UserTest < ActiveSupport::TestCase
   	assert_equal "user@example.com", @user.email
   end
 
-  test "if password & confirmation don't match" do
-
-  end
 
   test "if password & confirmation match" do
   	@user.password_confirmation = "otherword"
@@ -82,21 +115,12 @@ class UserTest < ActiveSupport::TestCase
   test "password and confirmation are not nil" do
   	assert @user.valid?
 
-
   	assert_equal false,  @user.password_confirmation.blank?
   end
 
   test "password is not blank" do
   	assert @user.valid?
-Rails.logger.info @user.password.inspect
-Rails.logger.info "----------------------"
 
   	assert_equal false, @user.password.blank?
   end
-
-
-
-  # test "can be deactivated" do
-  # end
-
 end

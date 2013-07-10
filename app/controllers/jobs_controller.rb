@@ -1,85 +1,44 @@
 class JobsController < ApplicationController
   skip_before_filter :login_required, only: [:new, :create]
-  # GET /jobs
-  # GET /jobs.json
-  def index
+  
+  def index # GET /jobs
     @jobs = Job.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @jobs }
-    end
   end
-
-  # GET /jobs/1
-  # GET /jobs/1.json
-  def show
+ 
+  def show # GET /jobs/1
     @job = Job.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @job }
-    end
   end
-
-  # GET /jobs/new
-  # GET /jobs/new.json
-  def new
+ 
+  def new # GET /jobs/new
     @job = Job.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @job }
-    end
   end
 
-  # GET /jobs/1/edit
-  def edit
+  def edit # GET /jobs/1/edit
     @job = Job.find(params[:id])
   end
 
-  # POST /jobs
-  # POST /jobs.json
-  def create
+  def create # POST /jobs
     @job = Job.new(params[:job])
-
-    respond_to do |format|
-      if @job.save
-        format.html { redirect_to @job, notice: 'Job was successfully created.' }
-        format.json { render json: @job, status: :created, location: @job }
-        AdminMailer.job_notice(@job).deliver
-      else
-        format.html { render action: "new" }
-        format.json { render json: @job.errors, status: :unprocessable_entity }
-      end
+    if @job.save
+      AdminMailer.job_notice(@job).deliver
+      redirect_to @job, notice: 'Job was successfully created.' 
+    else
+      render action: "new" 
     end
   end
 
-  # PUT /jobs/1
-  # PUT /jobs/1.json
-  def update
+  def update # PUT /jobs/1
     @job = Job.find(params[:id])
-
-    respond_to do |format|
-      if @job.update_attributes(params[:job])
-        format.html { redirect_to @job, notice: 'Job was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @job.errors, status: :unprocessable_entity }
-      end
+    if @job.update_attributes(params[:job])
+      redirect_to @job, notice: 'Job was successfully updated' 
+    else
+      render action: "edit" 
     end
   end
-
-  # DELETE /jobs/1
-  # DELETE /jobs/1.json
-  def destroy
+  
+  def destroy # DELETE /jobs/1
     @job = Job.find(params[:id])
     @job.destroy
-
-    respond_to do |format|
-      format.html { redirect_to jobs_url }
-      format.json { head :no_content }
-    end
+    redirect_to jobs_url 
   end
 end

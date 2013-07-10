@@ -1,26 +1,12 @@
 class TimecardsController < ApplicationController
   before_filter :partner_required
-
-  # GET /timecards
-  # GET /timecards.json
-  def index
+  
+  def index # GET /timecards
     @timecards = Timecard.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @timecards }
-    end
   end
 
-  # GET /timecards/1
-  # GET /timecards/1.json
-  def show
+  def show # GET /timecards/1
     @timecard = Timecard.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @timecard }
-    end
   end
 
   def summary
@@ -36,73 +22,44 @@ class TimecardsController < ApplicationController
         net = 0
         cards.each do |card|
           net += card.hours * card.rate
-        end
-        
+        end      
       @summation << [n, hours, net]
       @total_net_hours += net
       @total_hours += hours   
     end
   end 
 
-  # GET /timecards/new
-  # GET /timecards/new.json
-  def new
+  def new # GET /timecards/new
     @timecard = Timecard.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @timecard }
-    end
   end
 
-  # GET /timecards/1/edit
-  def edit
+  def edit # GET /timecards/1/edit
     @timecard = Timecard.find(params[:id])
   end
 
-  # POST /timecards
-  # POST /timecards.json
-  def create
+  def create # POST /timecards
     @timecard = Timecard.new(params[:timecard])
-
-    respond_to do |format|
-      if @timecard.save
-        AdminMailer.time_notice(@timecard).deliver
-        AdminMailer.time_confirmation(@timecard).deliver
-        format.html { redirect_to @timecard, notice: 'Timecard was successfully created.' }
-        format.json { render json: @timecard, status: :created, location: @timecard }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @timecard.errors, status: :unprocessable_entity }
-      end
+    if @timecard.save
+      AdminMailer.time_notice(@timecard).deliver
+      AdminMailer.time_confirmation(@timecard).deliver
+      redirect_to @timecard, notice: 'Timecard was successfully created.' 
+    else
+      render action: "new" 
+    end
+  end
+  
+  def update # PUT /timecards/1
+    @timecard = Timecard.find(params[:id])    
+    if @timecard.update_attributes(params[:timecard])
+      redirect_to @timecard, notice: 'Timecard was successfully updated.' 
+    else
+      render action: "edit" 
     end
   end
 
-  # PUT /timecards/1
-  # PUT /timecards/1.json
-  def update
-    @timecard = Timecard.find(params[:id])
-
-    respond_to do |format|
-      if @timecard.update_attributes(params[:timecard])
-        format.html { redirect_to @timecard, notice: 'Timecard was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @timecard.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /timecards/1
-  # DELETE /timecards/1.json
-  def destroy
+  def destroy # DELETE /timecards/1
     @timecard = Timecard.find(params[:id])
     @timecard.destroy
-
-    respond_to do |format|
-      format.html { redirect_to timecards_url }
-      format.json { head :no_content }
-    end
+    redirect_to timecards_url 
   end
 end

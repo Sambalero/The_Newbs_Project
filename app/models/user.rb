@@ -43,11 +43,8 @@ class User < ActiveRecord::Base
 	validates :email, presence: true, uniqueness: true
 	validates :password, presence: true, length: { minimum: 6 }, :if => :should_validate_password?
 	validates :password_confirmation, presence: true, :if => :should_validate_password?
-	attr_protected
-# move :if to after attribute? 
-#  attr_accessible :role, :email, :name, :approval, 
-#  								:password, :password_confirmation
   attr_accessor :update_password
+  attr_protected
 
 	def send_password_reset
 	  generate_token(:password_reset_token)

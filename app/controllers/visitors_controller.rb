@@ -7,6 +7,6 @@ class VisitorsController < ApplicationController
   def thank_you
   end
 
-  def welcome #delete this? add others?
+  def welcome 
   end
 end

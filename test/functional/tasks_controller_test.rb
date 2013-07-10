@@ -1,50 +1,29 @@
 require 'test_helper'
 
 class TasksControllerTest < ActionController::TestCase
-#   setup do
-#     @task = tasks(:one)
-#   end
 
-#   test "should get index" do
-#     get :index
-#     assert_response :success
-#     assert_not_nil assigns(:tasks)
-#   end
+  setup do
+    @task = tasks(:one)
+  end
 
-#   test "should get new" do
-#     get :new
-#     assert_response :success
-#   end
+  test "all routes redirect public to login page" do
 
-#   test "should create task" do
-#     assert_difference('Task.count') do
-#       post :create, task: { comments: @task.comments, completion_date: @task.completion_date, description: @task.description, hours: @task.hours, job_name: @task.job_name, master: @task.master, member: @task.member, percent_complete: @task.percent_complete, skill: @task.skill, start_date: @task.start_date, status: @task.status, task_name: @task.task_name }
-#     end
+      get :index
+      assert_redirected_to login_path
 
-#     assert_redirected_to task_path(assigns(:task))
-#   end
+      get :new
+      assert_redirected_to login_path
 
-#   test "should show task" do
-#     get :show, id: @task
-#     assert_response :success
-#   end
-
-#   test "should get edit" do
-#     get :edit, id: @task
-#     assert_response :success
-#   end
-
-#   test "should update task" do
-# error:  No route matches
-#     put :update, id: @task, task: { comments: @task.comments, completion_date: @task.completion_date, description: @task.description, hours: @task.hours, job_name: @task.job_name, master: @task.master, member: @task.member, percent_complete: @task.percent_complete, skill: @task.skill, start_date: @task.start_date, status: @task.status, task_name: @task.task_name }
-#     assert_redirected_to task_path(assigns(:task))
-#   end
-
-#   test "should destroy task" do
-#     assert_difference('Task.count', -1) do
-#       delete :destroy, id: @task
-#     end
-
-#     assert_redirected_to tasks_path
-#   end
+      get :show, id: @task
+      assert_redirected_to login_path
+      
+      get :edit, id: @task
+      assert_redirected_to login_path
+      
+      put :update, id: @task
+      assert_redirected_to login_path
+      
+      delete :destroy, id: @task
+      assert_redirected_to login_path
+  end
 end

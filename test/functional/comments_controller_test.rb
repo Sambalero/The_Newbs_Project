@@ -30,7 +30,6 @@ class CommentsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:current_action)    
   end
 
-#rails-built tests
 
   test "should get new" do
     get :new
@@ -56,28 +55,7 @@ class CommentsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  # test "should get edit" do
-
-  #   get :edit, id: @comment1
-  #   assert_response :success
-  # end
-
-  # test "should update comment" do
-  #   put :update, id: @comment1, comment: { approved: @comment1.approved, comment: @comment1.comment, contact: @comment1.contact, name: @comment1.name }
-  #   assert_redirected_to comment_path(assigns(:comment))
-  # end
-
-  # test "should destroy comment" do
-  #   @current_user = @user2
-
-  #   assert_difference('Comment.count', -1) do
-  #     delete :destroy, id: @comment1
-  #   end
-
-  #   assert_redirected_to comments_path
-  # end
-
-# 
+ 
 
 
 
@@ -90,8 +68,6 @@ class CommentsControllerTest < ActionController::TestCase
     }
     assert_redirected_to comment_path(assigns(:comment))
     assert_equal(flash[:notice], "Comment logged." )  
-
-#How to test failure?
   end
 
   test "create sends appropriate email" do
@@ -110,31 +86,6 @@ class CommentsControllerTest < ActionController::TestCase
     assert_match(/MyText1/, email.encoded)
   end
 
-  # test "upate sends appropriate email" do
-  #   email_count = ActionMailer::Base.deliveries.length
-  #   put :update, id: @comment1, comment: { approved: @comment1.approved, 
-  #                                          comment: "work, baby, work", 
-  #                                          contact: @comment1.contact, 
-  #                                          name: @comment1.name }
 
-  #   assert ActionMailer::Base.deliveries.length == email_count + 1
-
-  #   email = ActionMailer::Base.deliveries[email_count]
-  #   assert_equal "MyName1 comment updated", email.subject
-  #   assert_match(/work, baby, work/, email.encoded)
-  # end
-  
-
-  # test "destroy sends appropriate email" do
-  #   email_count = ActionMailer::Base.deliveries.length
-  #   delete :destroy, id: @comment1  
-
-  #   assert ActionMailer::Base.deliveries.length == email_count + 1
-
-  #   email = ActionMailer::Base.deliveries[email_count]
-  #   assert_equal "MyName1 comment destroyed", email.subject
-  #   assert_match(/MyText1/, email.encoded)
-
-  # end
 
 end
