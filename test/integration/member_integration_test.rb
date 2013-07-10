@@ -1,6 +1,11 @@
 require 'test_helper'
 
-class SessionsControllerTest < ActionController::TestCase
+class MemberIntegrationTest < ActionDispatch::IntegrationTest
+
+    #login redirects to correct page with correct message
+
+  #login failure redirects to correct page with correct message
+
   # test "members can update their passwords" do
   #   assert
   # end

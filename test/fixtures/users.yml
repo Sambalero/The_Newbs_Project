@@ -44,6 +44,7 @@ one:
   role: admin
   password_digest: <%= BCrypt::Password.create("password") %>
   approval: true
+  auth_token: billyrocks
 
 two:
   name: MyString

@@ -14,3 +14,8 @@ NoobsRelated*
 db/development.db
 .rvmrc
 requirements*.txt
+
+#Ignore my notes files(?)
+notes
+testTechniques
+todo

@@ -82,16 +82,16 @@ class UserTest < ActiveSupport::TestCase
   test "password and confirmation are not nil" do
   	assert @user.valid?
 
-  	@user.password = @user.password_confirmation = nil
-  	assert_equal false, @user.valid?
+
+  	assert_equal false,  @user.password_confirmation.blank?
   end
 
-  test "password and confirmation are not blank" do
+  test "password is not blank" do
   	assert @user.valid?
 Rails.logger.info @user.password.inspect
 Rails.logger.info "----------------------"
-  	@user.password = @user.password_confirmation = " "
-  	assert_equal false, @user.valid?
+
+  	assert_equal false, @user.password.blank?
   end
 
 
