@@ -19,7 +19,13 @@
             <h1>The Newbs Project</h1>
             <p>The Company of and for Upcoming Professionals</p>
           </div>
-<div>Hi <%= @current_user ? @current_user.name : "stranger!" %> You are <%= @current_user ? @current_user.role : "not signed in" %> </div>
+          <div>Hi <%= current_user ? current_user.name : "stranger" %>! <br/>
+            <% if current_user then %> 
+              You are signed in with <%= current_user.role %> privileges.
+            <% else %>
+              You are not signed in.
+            <% end %>
+          </div>
           <div id="main">
             <div class="wrapper">
               <%= yield %>

@@ -36,17 +36,49 @@
 #  SEM                    :integer
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+# Read about fixtures at http://api.rubyonrails.org/v3.1.1/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: Bill
-  email: bill@home
+  id: 1
+  name: admin
+  email: admin@newbs.com
   role: admin
   password_digest: <%= BCrypt::Password.create("password") %>
   approval: true
   auth_token: billyrocks
 
 two:
-  name: MyString
-  email: MyString
-  role: admin
+  id: 2
+  name: member
+  email: member@newbs.com
+  role: member
+  password_digest: <%= BCrypt::Password.create("password") %>
+  approval: true
+  auth_token: sesame
+
+three:
+  id: 3
+  name: partner
+  email: partner@newbs.com
+  role: partner
+  password_digest: <%= BCrypt::Password.create("password") %>
+  approval: true
+  auth_token: billyocks
+
+four:
+  id: 4
+  name: master
+  email: master@newbs.com
+  role: master
+  password_digest: <%= BCrypt::Password.create("password") %>
+  approval: true
+  auth_token: bildlyrocks
+
+five:
+  id: 5
+  name: test
+  email: test@newbs.com
+  role: 
+  password_digest: <%= BCrypt::Password.create("password") %>
+  approval: 
+  auth_token: default

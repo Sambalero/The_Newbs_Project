@@ -40,8 +40,9 @@
         </div>
       <% end %>
 
-      <% if @admin then %>
-        <div class="field">
+    
+ <% if current_user && current_user.role == 'admin' %>
+         <div class="field">
           <%= f.label :role %><br />
           <%= f.text_field :role %>
         </div>

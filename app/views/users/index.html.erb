@@ -1,6 +1,6 @@
 <h1>Listing users</h1>
 
-<table>
+<table id="table">
   <tr>
     <th>Name</th>
     <th>Email</th>
@@ -16,8 +16,8 @@
     <td><%= user.email %></td>
     <td><%= user.role %></td>
     <% if current_user.role == 'admin' %>
-      <td><%= link_to 'Show', user %></td>
-      <td><%= link_to 'Edit', edit_user_path(user) %></td>
+      <td><%= link_to 'Show' + user.id.to_s , user %></td>
+      <td><%= link_to 'Edit', edit_user_path(user), :id => 'edit' + user.id.to_s %></td>
       <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
   </tr>
@@ -26,6 +26,8 @@
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<%= 
+link_to 'New User', new_user_path %>
+
 <br />
 <%= link_to 'Admin Page', admin_path %>

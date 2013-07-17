@@ -3,16 +3,50 @@ require 'test_helper'
 class AdminIntegrationTest < ActionDispatch::IntegrationTest
   fixtures :users #:all
 
+  setup do
+    @admin = users(:one)
+    visit login_path
+    fill_in 'email', :with => @admin.email
+    fill_in 'password', :with => "password"
+    click_button 'Log In'
+  end
+
   test "Admins can log in" do
-    visit login_path 
 
-      fill_in 'email', :with => users(:one).email
-      fill_in 'password', :with => "password"
-      click_button 'Log In'
+#    assert page.has_content? ("Admin")
+  end
 
-    assert page.has_content? ("Admin")
-  end  
+ test "admin can get to edit user page" do
+    visit users_path
+    page.find('#edit2').click  
+
+#    assert page.has_content? ("Editing user")
+  end 
+
+ test "admin can update users' info" do
+    visit users_path
+    page.find('#edit2').click
+    fill_in 'user_name', :with => "Kidzo"
+    check 'user_approval'
+    click_button 'Update User' 
+
+#    assert page.has_content? ('Your  information was successfully updated.')
+#    assert page.has_content? ("Name: Kidzo")
+  end 
+
+  test "admin can create user" do
+    visit users_path
+    click_link 'New User' 
+    fill_in 'user_name', :with => "Io"
+    fill_in 'user_email', :with => 'email'
+    fill_in 'user_password', :with => 'password'
+    fill_in 'user_password_confirmation', :with => 'password'
+    click_button 'Create User'
+
+    assert page.has_content? ('New user created') 
+  end
 end
+
   # test "admin-only paths are not accessible to members, clients, and masters" do
   #   assert
   # end
@@ -21,9 +55,7 @@ end
   #   assert
   # end
 
-  # test "admin can update users' info" do
-  #   assert
-  # end
+
 
   # test "admin can update users' hidden fields" do
   #   assert

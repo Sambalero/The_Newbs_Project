@@ -12,10 +12,13 @@ class UsersController < ApplicationController
   end
 
   def create   # POST /users
+
     @user = User.new(params[:user])
-    if @user.save
+    if @user.save && !current_user
       AdminMailer.join_notice(@user).deliver
       redirect_to root_path, notice: "You have been listed as a new user. Your account will take some time to set up. An email will be sent to you when your registration is complete." 
+    elsif @user.save 
+      redirect_to @user, notice: "New user created: #{@user.name}"
     else
       render action: "new" 
     end
@@ -28,6 +31,8 @@ class UsersController < ApplicationController
 
   def edit # GET /users/1/edit
     @user = User.find(params[:id])
+        
+
   end
 
   def update_password
