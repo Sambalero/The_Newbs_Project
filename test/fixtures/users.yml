@@ -78,7 +78,7 @@ five:
   id: 5
   name: test
   email: test@newbs.com
-  role: 
+  role: member
   password_digest: <%= BCrypt::Password.create("password") %>
-  approval: 
+  approval:   
   auth_token: default

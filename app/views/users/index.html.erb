@@ -16,9 +16,9 @@
     <td><%= user.email %></td>
     <td><%= user.role %></td>
     <% if current_user.role == 'admin' %>
-      <td><%= link_to 'Show' + user.id.to_s , user %></td>
+      <td><%= link_to 'Show', user %></td>
+      &nbsp
       <td><%= link_to 'Edit', edit_user_path(user), :id => 'edit' + user.id.to_s %></td>
-      <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
   </tr>
 <% end %>

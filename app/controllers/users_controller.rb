@@ -31,11 +31,6 @@ class UsersController < ApplicationController
 
   def edit # GET /users/1/edit
     @user = User.find(params[:id])
-        
-
-  end
-
-  def update_password
   end
 
   def index # GET /users
@@ -59,9 +54,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to users_url 
-  end
-
-  def admin
   end
 end
 
