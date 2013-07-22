@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class AdminIntegrationTest < ActionDispatch::IntegrationTest
-  fixtures :users #:all
+class AdminUsersIntegrationTest < ActionDispatch::IntegrationTest
+  fixtures :users 
 
   setup do
     @admin = users(:one)

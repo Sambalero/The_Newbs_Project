@@ -4,6 +4,6 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-require 'sitemap_generator/tasks'
+#require 'sitemap_generator/tasks'
 
 Newbies::Application.load_tasks
