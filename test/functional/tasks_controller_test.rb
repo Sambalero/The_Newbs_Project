@@ -25,5 +25,6 @@ class TasksControllerTest < ActionController::TestCase
       
       delete :destroy, id: @task
       assert_redirected_to login_path
+      
   end
 end

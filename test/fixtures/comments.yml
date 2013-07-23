@@ -1,3 +1,17 @@
+one:
+  name: MyName1
+  contact: MyContact1
+  comment: MyText1
+  approved: false
+  source: comment
+
+two:
+  name: MyName2
+  contact: MyContact2 
+  comment: MyText2
+  approved: true
+  source: comment
+  
 # == Schema Information
 #
 # Table name: comments
@@ -14,19 +28,7 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyName1
-  contact: MyContact1
-  comment: MyText1
-  approved: false
-  source: comment
 
-two:
-  name: MyName2
-  contact: MyContact2 
-  comment: MyText2
-  approved: true
-  source: comment
 
 
 

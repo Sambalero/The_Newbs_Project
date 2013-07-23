@@ -1,43 +1,3 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id                     :integer          not null, primary key
-#  name                   :string(255)
-#  email                  :string(255)
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
-#  approval               :boolean          default(FALSE)
-#  password_digest        :string(255)
-#  role                   :string(255)
-#  mail                   :string(255)
-#  telephone              :string(255)
-#  comment                :text
-#  auth_token             :string(255)
-#  password_reset_token   :string(255)
-#  password_reset_sent_at :datetime
-#  PHP                    :integer
-#  Ruby_on_rails          :integer
-#  Javascript             :integer
-#  HTML                   :integer
-#  CSS                    :integer
-#  Flash                  :integer
-#  jquery                 :integer
-#  MySQL                  :integer
-#  Postgresql             :integer
-#  GitHub                 :integer
-#  WordPress              :integer
-#  Graphics               :integer
-#  Video                  :integer
-#  Audio                  :integer
-#  Adobe_photoshop        :integer
-#  Gimp                   :integer
-#  SEO                    :integer
-#  SEM                    :integer
-#
-
-# Read about fixtures at http://api.rubyonrails.org/v3.1.1/classes/ActiveRecord/Fixtures.html
-
 one:
   id: 1
   name: admin
@@ -82,3 +42,45 @@ five:
   password_digest: <%= BCrypt::Password.create("password") %>
   approval:   
   auth_token: default
+
+  # == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  name                   :string(255)
+#  email                  :string(255)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  approval               :boolean          default(FALSE)
+#  password_digest        :string(255)
+#  role                   :string(255)
+#  mail                   :string(255)
+#  telephone              :string(255)
+#  comment                :text
+#  auth_token             :string(255)
+#  password_reset_token   :string(255)
+#  password_reset_sent_at :datetime
+#  PHP                    :integer
+#  Ruby_on_rails          :integer
+#  Javascript             :integer
+#  HTML                   :integer
+#  CSS                    :integer
+#  Flash                  :integer
+#  jquery                 :integer
+#  MySQL                  :integer
+#  Postgresql             :integer
+#  GitHub                 :integer
+#  WordPress              :integer
+#  Graphics               :integer
+#  Video                  :integer
+#  Audio                  :integer
+#  Adobe_photoshop        :integer
+#  Gimp                   :integer
+#  SEO                    :integer
+#  SEM                    :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/v3.1.1/classes/ActiveRecord/Fixtures.html
+
+

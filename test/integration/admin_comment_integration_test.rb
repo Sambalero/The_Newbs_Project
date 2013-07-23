@@ -18,17 +18,12 @@ class AdminCommentsIntegrationTest < ActionDispatch::IntegrationTest
     assert page.has_content? ("OK?")
   end
 
-  test "Admins can edit comments" do
-    visit comments_path 
-    page.all('a', :text =>"EDIT")[1].click 
+  test "Admins can unapprove comments" do
+    visit comments_path
+    page.all('a', :text =>"EDIT")[1].click
+    uncheck 'Approved'
     click_button 'Update Comment'
 
     assert page.has_content? ("Comment was successfully updated.")
   end
-
-
-
-
-
-  # test "admin can unapprove comments
 end

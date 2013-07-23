@@ -25,12 +25,12 @@
     <%= f.text_area :comment %>
   </div>
 
-  <% if @admin then %>
+  <% if current_user && current_user.role == 'admin' %>
 
-  <div class="field">
-    <%= f.label :approved %><br />
-    <%= f.text_field :approved %>
-  </div>
+        <div class="field">
+          <%= f.label :approved %><br />
+          <%= f.check_box :approved %>
+        </div>
 
   <% else %>
   <div><p><%= @note %></p></div>

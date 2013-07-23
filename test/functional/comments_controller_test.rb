@@ -20,19 +20,18 @@ class CommentsControllerTest < ActionController::TestCase
     @user2.save
   end
 
-#includes application controller test
-
   test "should get index" do
     get :index
+
     assert_response :success
     assert_not_nil assigns(:comments)
     assert_not_nil assigns(:current_controller)
     assert_not_nil assigns(:current_action)    
   end
 
-
   test "should get new" do
     get :new
+
     assert_response :success
   end
 
@@ -52,12 +51,9 @@ class CommentsControllerTest < ActionController::TestCase
 
   test "should show comment" do
     get :show, id: @comment1
+
     assert_response :success
   end
-
- 
-
-
 
   test "create redirects with appropriate notice" do
     post :create, comment: { 
@@ -66,6 +62,7 @@ class CommentsControllerTest < ActionController::TestCase
       contact: @comment1.contact, 
       name: @comment1.name, 
     }
+
     assert_redirected_to comment_path(assigns(:comment))
     assert_equal(flash[:notice], "Comment logged." )  
   end
@@ -82,10 +79,8 @@ class CommentsControllerTest < ActionController::TestCase
     assert ActionMailer::Base.deliveries.length == email_count + 1
 
     email = ActionMailer::Base.deliveries[email_count]
+
     assert_equal "MyName1 Noobs Comment Posted", email.subject
     assert_match(/MyText1/, email.encoded)
   end
-
-
-
 end
