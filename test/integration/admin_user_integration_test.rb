@@ -4,7 +4,6 @@ class AdminUsersIntegrationTest < ActionDispatch::IntegrationTest
   fixtures :users 
 
   setup do
-
     visit login_path
     fill_in 'email', :with => users(:one).email
     fill_in 'password', :with => "password"
