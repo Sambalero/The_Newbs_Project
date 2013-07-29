@@ -11,6 +11,12 @@ class MemberIntegrationTest < ActionDispatch::IntegrationTest
 
   test "Members can log in" do
 
-    assert page.has_content? ("Logged in!")
+    assert page.has_content?("Logged in!")
+  end
+
+  test "Members can't go to admin page" do
+    visit admin_path
+
+    assert page.has_content?("We're sorry, but something went wrong.")
   end
 end

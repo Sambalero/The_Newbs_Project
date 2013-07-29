@@ -12,14 +12,14 @@ class AdminUsersIntegrationTest < ActionDispatch::IntegrationTest
 
   test "Admins can log in" do
 
-    assert page.has_content? ("Admin")
+    assert page.has_content?("Admin")
   end
 
  test "admin can get to edit user page" do
     visit users_path
     page.find('#edit2').click  
 
-    assert page.has_content? ("Editing user")
+    assert page.has_content?("Editing user")
   end 
 
  test "admin can update users' info" do
@@ -28,8 +28,8 @@ class AdminUsersIntegrationTest < ActionDispatch::IntegrationTest
     fill_in 'user_name', :with => "Kidzo"
     click_button 'Update User' 
 
-    assert page.has_content? ('Your  information was successfully updated.')
-    assert page.has_content? ("Name: Kidzo")
+    assert page.has_content?('Your  information was successfully updated.')
+    assert page.has_content?("Name: Kidzo")
   end 
 
  test "admin can un-approve user" do
@@ -50,7 +50,7 @@ class AdminUsersIntegrationTest < ActionDispatch::IntegrationTest
     fill_in 'user_password_confirmation', :with => 'password'
     click_button 'Create User'
 
-    assert page.has_content? ('New user created') 
+    assert page.has_content?('New user created') 
   end
 
   test "admin must be approved" do
