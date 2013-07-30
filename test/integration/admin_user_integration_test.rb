@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class AdminUsersIntegrationTest < ActionDispatch::IntegrationTest
-  fixtures :users 
 
   setup do
     visit login_path
@@ -51,15 +50,5 @@ class AdminUsersIntegrationTest < ActionDispatch::IntegrationTest
     click_button 'Create User'
 
     assert page.has_content?('New user created') 
-  end
-
-  test "admin must be approved" do
-    @disapproved = users(:five)
-    visit login_path
-    fill_in 'email', :with => @disapproved.email
-    fill_in 'password', :with => 'password'
-    click_button 'Log In'
-
-    assert page.has_content? ('Log In')
   end
 end

@@ -36,6 +36,15 @@ four:
 
 five:
   id: 5
+  name: client
+  email: client@newbs.com
+  role: client
+  password_digest: <%= BCrypt::Password.create("password") %>
+  approval: true  
+  auth_token: sure
+
+six:
+  id: 6
   name: test
   email: test@newbs.com
   role: member

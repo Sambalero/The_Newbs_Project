@@ -14,6 +14,15 @@ class MemberIntegrationTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Logged in!")
   end
 
+  test "Members must be approved" do 
+    visit login_path
+    fill_in 'email', :with => users(:six).email
+    fill_in 'password', :with => 'password'
+    click_button 'Log In'
+
+    assert page.has_content? ('Log In')
+  end
+
   test "Members can't go to admin page" do
     visit admin_path
 
