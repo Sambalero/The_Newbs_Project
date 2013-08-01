@@ -6,7 +6,7 @@ class VisitorIntegrationTest < ActionDispatch::IntegrationTest
     visit login_path
     fill_in 'email', :with => "email@host.com"
     fill_in 'password', :with => "password"
-    click_button 'Log In'
+    click_button 'Log In' 
 
     assert page.has_content?("Log in failed.")
   end

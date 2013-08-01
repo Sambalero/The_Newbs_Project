@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :login_required
 
   helper_method :current_user
-  helper_method :signed_in?  #when put helpers here instead of in helpers folder?
+  helper_method :signed_in? 
 
 	private
 
@@ -17,15 +17,15 @@ class ApplicationController < ActionController::Base
   end
 
   def login_required
-    redirect_to login_path unless current_user #think about redirect
+    redirect_to login_path unless current_user 
   end
 
   def admin_required
-    render "public/500.html" unless current_user.role == 'admin' 
+    render "public/500.html" unless current_user && current_user.role == 'admin' 
   end
 
   def partner_required
-    render "public/403.html" unless (current_user.role == 'partner') || (current_user.role == 'admin') 
+    render "public/403.html" unless current_user && (current_user.role == 'partner') || (current_user.role == 'admin') 
   end
 
   def admin_or_self
@@ -38,7 +38,6 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
-# session[:user_id].nil? use Keith's syntax. Required? Recommended?
   end
 
   def signed_in?
