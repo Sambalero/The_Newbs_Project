@@ -46,16 +46,16 @@ class AdminCommentsIntegrationTest < ActionDispatch::IntegrationTest
     assert page.has_content?("We're sorry, but something went wrong.")
   end
 
-  # test "Admin can publish comments" do
-  #   visit login_path
-  #   fill_in 'email', :with => users(:one).email
-  #   fill_in 'password', :with => "password"
-  #   click_button 'Log In'
-
-  #   visit comments path
-  #   assert page.has_content?("Comment was successfully updated.")
-
-  # end
-
-  #visitor can't (NoMethodError)
+  test "Admins can delete comments" do
+    visit login_path
+    fill_in 'email', :with => users(:one).email
+    fill_in 'password', :with => "password"
+    click_button 'Log In' 
+    visit comments_path
+    assert page.has_content?("MyText1") 
+    click_button( 'DELETE1' )
+    assert page.has_content?("Admin")   
+  
+    refute page.has_content?("MyText1")  
+  end
 end

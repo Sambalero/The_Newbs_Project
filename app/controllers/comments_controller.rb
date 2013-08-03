@@ -50,6 +50,7 @@ class CommentsController < ApplicationController
   
   def destroy # DELETE /comments/:id
     @comment = Comment.find(params[:id])
+
     @comment.destroy
     AdminMailer.comment_notice(@comment.notice("comment destroyed")).deliver
     redirect_to comments_url

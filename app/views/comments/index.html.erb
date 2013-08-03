@@ -22,6 +22,7 @@
     <td><%= comment.contact %></td>
     <td><%= comment.created_at %></td>
     <td><%= comment.approved %></td>
+    <td><%= button_to "DELETE"+comment.id.to_s, comment, :method=>:delete, :class=>:destroy %></td>
   </tr>
   <tr>
     <td><%= comment.comment %></td>
