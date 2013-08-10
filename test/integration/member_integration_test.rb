@@ -34,4 +34,11 @@ class MemberIntegrationTest < ActionDispatch::IntegrationTest
 
     refute page.has_content?("EDIT")
   end
+
+  test "Members can't delete comments" do
+    visit comments_path
+
+    assert page.has_content?("MyText2") 
+    refute page.has_content?( 'DELETE2' )
+  end
 end
