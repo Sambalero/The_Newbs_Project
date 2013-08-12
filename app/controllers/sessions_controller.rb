@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
       end
     else
       flash.now[:alert] = "Log in failed."
+      @failed = true
       render "new"
     end
   end
