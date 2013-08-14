@@ -1,9 +1,10 @@
 class PasswordResetsController < ApplicationController
 	skip_before_filter :login_required
+
   def new
   end
 
-  def create
+  def create #password_resets POST  
 	  user = User.find_by_email(params[:email])
 	  user.send_password_reset if user
 	  redirect_to root_url, :notice => "Email sent with password 
