@@ -23,7 +23,7 @@
 }
 
 body {
-	background-image: none;
+	background-image: url('BlueGradient.jpg');
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	background-attachment: fixed;
