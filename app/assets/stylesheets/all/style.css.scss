@@ -11,6 +11,41 @@
 /* page layout
 	navbar body hero main wrapper sidebox inner-footer footer*/
 
+.navigation { 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: rgb(169, 169, 169);
+  height: 20px;
+  text-align: center;
+  padding-top: 2px;
+  /* Adds shadow to the bottom of the bar */
+  -webkit-box-shadow: 0px 0px 8px 0px #000000;
+  -moz-box-shadow: 0px 0px 8px 0px #000000;
+  box-shadow: 0px 0px 8px 0px #000000;
+  /* Adds the transparent background */
+ /* background-color: rgba(169, 169, 169, 0.8);
+  color: rgba(169, 169, 169, 0.8);*/
+}
+
+.navigation a {
+  font-size: 14px;
+  padding: 0 10px 0 10px;
+
+  color: black;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  color: grey;
+} 
+
+.pull-right{
+  color: black;
+  padding: 0 20px 0 20px;
+}
+/*************************/
+
 .navbar {
 	.navbar-inner {
 		overflow: auto;
