@@ -13,12 +13,12 @@ class VisitorsController < ApplicationController
   private
     def resolve_layout
       case action_name
-      when 'welcome'
-        'welcome'
-      when 'front'
-        'front'
-      else
-        'visitors'
+        when 'welcome'
+          'welcome'
+        when 'front'
+          'front'
+        else
+          'visitors'
       end
     end
 end

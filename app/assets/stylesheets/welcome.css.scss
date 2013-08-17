@@ -1,6 +1,7 @@
 @import "bootstrap";
 
 /* mixins page layout, text, lists, tables, features, images */
+/*http://aozora.github.io/bootplus/examples/sticky-footer.html*/
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -9,7 +10,7 @@
 }
 
 /* page layout
-	navbar body hero main wrapper sidebox inner-footer footer*/
+	navbar body hero main wrapper sidebox inner-footer footer*/			
 
 .navbar {
 	.navbar-inner {
@@ -21,17 +22,16 @@
 		}
 	}
 }
+html {height: 100%;}
 
 body {
+	max-height: 100%;
 	background-image: url('BlueGradient.jpg');
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	background-attachment: fixed;
 	background-size: cover;
-
-	padding-top: 70px;
-
-
+	overflow-y: hidden;
 	p{
 		font-size: 18px;
 		line-height: 26px;
@@ -42,11 +42,13 @@ body {
 		color: black;
 	}
 }
-
+.container-fluid {height:100%;
+overflow: hidden;}
 .myhero {
 	background-color: rgba(164, 77, 193, 0.7);
 	color: white;
 	padding: 5px;
+	margin: 70px 0 0 0;
 
 	h1{
 		color: black;
@@ -63,15 +65,17 @@ body {
 #main {
 	padding: 20px 20px 0 20px; 
 	background: rgba(250, 255, 255, 0.7); 
-	height: 563px; 
-	overflow-y: auto;
+	height: 90%; 
+
 }
 
 .wrapper {
+
+
     min-height: 100%;
     height: auto !important; /* ie7 fix */
     height: 100%;
-    margin: 0 0 40px 0;
+    margin: 0 auto -40px 0;
 }
 		
 .sidebox {		/* future? */
