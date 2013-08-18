@@ -123,4 +123,20 @@ class UserTest < ActiveSupport::TestCase
 
   	assert_equal false, @user.password.blank?
   end
-end
+
+  test "generates unique password password_reset_tokens" do
+    @user.send_password_reset
+    last_token = @user.password_reset_token
+    @user.send_password_reset
+
+    assert @user.password_reset_token != last_token
+  end
+
+  test "saves time reset was sent" do
+    @user.send_password_reset
+
+    assert @user.password_reset_sent_at
+  end
+
+
+end 

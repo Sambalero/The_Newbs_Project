@@ -6,7 +6,7 @@ require "capybara/rails" #delete this if capybara is not used; config capybara i
 require 'rails/test_help'
 require "mocha/setup"
 require "simplecov"
-require "minitest/autorun" #why minitest/autorun, why not minitest?
+require "minitest/autorun" 
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.

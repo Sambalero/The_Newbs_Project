@@ -32,4 +32,9 @@ class UsersControllerTest < ActionController::TestCase
     assert_equal "You have been listed as a new user. Your account will take some time to set up. An email will be sent to you when your registration is complete." , flash[:notice]
     end
   end
+
+  test "can find by email" do
+
+    assert_equal( User.find_by_email(users(:two).email).id, 2 )
+  end  
 end

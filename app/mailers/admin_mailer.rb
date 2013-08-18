@@ -9,7 +9,8 @@ class AdminMailer < ActionMailer::Base
 	end
 
 	def password_reset(user)
-	  @user = user #is this needed?
+
+		@user = user
 	  mail( from: 'Noobs', 
 	  			to: user.email, 
 	  			:subject => "Password Reset")
