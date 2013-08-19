@@ -19,7 +19,7 @@
 
 #main {
   padding: 20px 20px 0 20px; 
-  width: 45%;
+  width: 69%;
   background: rgba(250, 255, 255, 0.7); 
   height: 100%;
   overflow-y: hidden;
@@ -29,12 +29,15 @@
 
 
 img {
-  max-width: 200%;
+  max-width: 100%;
+  position: fixed;
+  top: 24px;
+ background: rgb(240, 240, 240); 
 }
 
 body {
-  padding-top: 25px;
-  background: rgba(200, 200, 200, 0.7); 
+  padding-top: 100px;
+  background: rgb(240, 240, 240); 
 }
 
 .bottom {
