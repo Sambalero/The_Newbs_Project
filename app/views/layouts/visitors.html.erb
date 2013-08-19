@@ -8,24 +8,13 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-<!--  -->
-        <div class="span2">
-          <div class="sidebox">
-          </div>
-        </div>
+            <div class="span4 figure">
+              <p id="notice"><%= notice %></p>
+
+            </div><!--/span-->
+
 <!-- end span 2 -->
         <div class="span8">
-          </div>
-          <div>
-          <br>
-          </div>
-          <div>Hi <%= current_user ? current_user.name : "stranger" %>! 
-            <% if current_user then %> 
-              You are signed in with <%= current_user.role %> privileges.
-            <% else %>
-              You are not signed in.
-            <% end %>
-          </div>
           <div id="main">
             <div class="wrapper">
               <%= yield %>
@@ -34,15 +23,13 @@
 
             <div class="row-fluid inner-footer">
               <h2 class="center">If you have a comment or suggestion, please share it! <a href="/comments/new" id="footer-link"><span>Click Here</span></a></h2>
-              <p class="center">(If appropriate we'll respond or post it on the commentary page.)</p> 
+              <p class="center bottom">(If appropriate we'll respond or post it on the commentary page.)</p> 
             </div>
           </div>
 <!-- end main -->
         </div>
 <!-- end span 8 -->        
-        <div class="span2 top130">
-          <%= yield :rightside %>
-        </div>
+
 <!-- end span 2 -->
       </div>
 <!-- end row fluid --> 

@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 /* mixins page layout, text, lists, tables, features, images */
-//* {border: blue 1px solid}
+/*http://aozora.github.io/bootplus/examples/sticky-footer.html*/
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -10,41 +10,7 @@
 }
 
 /* page layout
-	navbar body hero main wrapper sidebox inner-footer footer*/
-
-.navigation { 
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgb(240, 240, 240);
-  height: 20px;
-  text-align: center;
-  padding-top: 2px;
-  /* Adds shadow to the bottom of the bar */
-  -webkit-box-shadow: 0px 0px 8px 0px #000000;
-  -moz-box-shadow: 0px 0px 8px 0px #000000;
-  box-shadow: 0px 0px 8px 0px #000000;
-
-}
-
-
-.navigation a {
-  font-size: 14px;
-  padding: 0 10px 0 10px;
-
-  color: black;
-  text-decoration: none;
-}
-
-.navigation a:hover {
-  color: grey;
-} 
-
-.pull-right{
-  color: black;
-  padding: 0 20px 0 20px;
-}
-/*************************/
+	navbar body hero main wrapper sidebox inner-footer footer*/			
 
 .navbar {
 	.navbar-inner {
@@ -56,16 +22,15 @@
 		}
 	}
 }
+html {height: 100%;}
 
 body {
-	background-image: none;
+	max-height: 100%;
+	background-image: url('BlueGradient.jpg');
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	background-attachment: fixed;
 	background-size: cover;
-
-	padding-top: 100px;
-
 
 	p{
 		font-size: 18px;
@@ -78,10 +43,15 @@ body {
 	}
 }
 
+.container-fluid {
+height:100%;
+}
+
 .myhero {
 	background-color: rgba(164, 77, 193, 0.7);
 	color: white;
 	padding: 5px;
+	margin: 70px 0 0 0;
 
 	h1{
 		color: black;
@@ -98,26 +68,22 @@ body {
 #main {
 	padding: 20px 20px 0 20px; 
 	background: rgba(250, 255, 255, 0.7); 
-	height: 563px; 
-  width: 69%;
-	overflow-y: auto;
+	height: 90%; 
+
 }
 
 .wrapper {
+
+
     min-height: 100%;
     height: auto !important; /* ie7 fix */
     height: 100%;
-    margin: 0 0 40px 0;
+    margin: 0 auto -40px 0;
 }
 		
 .sidebox {		/* future? */
 	background-color: rgba(255, 62, 128, 0);
 	height: 100px;
-}
-
-.img-wrap {
-  width: 100%;
-  background: rgb(240, 240, 240);
 }
 
 .top130 { margin: 130px 0 0 0;}

@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//* {border: blue 1px solid}
+//http://www.456bereastreet.com/lab/developing_with_web_standards/csslayout/2-col/
+
 .span5 { 
 	margin: 45px 0 0 0;
 }
@@ -12,4 +15,31 @@
 
 .span5 p{ 
 	text-align: center;
+}
+
+#main {
+  padding: 20px 20px 0 20px; 
+  width: 69%;
+  background: rgba(250, 255, 255, 0.7); 
+  height: 100%;
+  overflow-y: hidden;
+}
+
+/*** check if the above is used....*/
+
+
+img {
+  max-width: 100%;
+  position: fixed;
+  top: 24px;
+ background: rgb(240, 240, 240); 
+}
+
+body {
+  padding-top: 100px;
+  background: rgb(240, 240, 240); 
+}
+
+.bottom {
+  padding-bottom: 10px;
 }
