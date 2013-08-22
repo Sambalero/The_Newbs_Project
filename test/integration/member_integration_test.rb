@@ -41,4 +41,11 @@ class MemberIntegrationTest < ActionDispatch::IntegrationTest
     assert page.has_content?("MyText2") 
     refute page.has_content?( 'DELETE2' )
   end
+
+  test "Admin-only methods don't work for members" do
+    memPath = '/users/'+users(:two).id.to_s+'/edit'
+    visit memPath
+
+    refute page.has_content?("EDIT")
+  end
 end

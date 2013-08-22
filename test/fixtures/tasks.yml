@@ -1,30 +1,30 @@
 one:
-  task_name: MyString
-  job_name: MyString
-  description: MyText
-  member: MyString
-  master: MyString
+  task_name: task_1a
+  job_name: dirty_job
+  description: get_er_started
+  member: member
+  master: master
   hours: 1.5
-  skill: MyString
+  skill: PHP
   start_date: 2012-08-23 18:43:52
   completion_date: 2012-08-23 18:43:52
-  status: MyString
-  percent_complete: 1
-  comments: MyText
+  status: in process
+  percent_complete: 70
+  comments: ''
 
 two:
-  task_name: MyString
-  job_name: MyString
-  description: MyText
-  member: MyString
-  master: MyString
-  hours: 1.5
-  skill: MyString
+  task_name: task_1b
+  job_name: dirty_job
+  description: get_er_done
+  member: member
+  master: master
+  hours: 3
+  skill: PHP
   start_date: 2012-08-23 18:43:52
   completion_date: 2012-08-23 18:43:52
-  status: MyString
-  percent_complete: 1
-  comments: MyText
+  status: in process
+  percent_complete: 10
+  comments: ''
 
 
 # == Schema Information
