@@ -35,7 +35,7 @@ MiniTest::Spec.register_spec_type /integration$/i, RequestSpec
 class ActionDispatch::IntegrationTest
   # Make the Capybara DSL available in all integration tests
   include Capybara::DSL
-#  Capybara.current_driver = :selenium #trying to see what's going on2/19/13
+  Capybara.current_driver = :selenium #trying to see what's going on2/19/13
 #---- unable to obtain stable firefox connection...(127.0.0.1:7055)
 # 
 
