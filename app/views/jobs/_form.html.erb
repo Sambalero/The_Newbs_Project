@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :client_name %>
+    <%= f.text_field :client_name, :style => "width:380px;" %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :client_email %>
+    <%= f.text_field :client_email, :style => "width:380px;" %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, rows: 10, :style => "width:800px;" %>
   </div>
   <div>
     <%= f.label "Attachment (5MB limit)" %>

@@ -2,22 +2,13 @@
 
 <table>
   <tr>
+
     <th>Client name</th>
-    <th>Client email</th>
-    <th>Description</th>
-    <th>Initial date</th>
-    <th>Task list complete</th>
-    <th>Proposal date</th>
-    <th>Proposer</th>
-    <th>Acceptance date</th>
-    <th>Proposal amount</th>
-    <th>Responsible partner</th>
-    <th>Master</th>
-    <th>Status</th>
-    <th>Percent complete</th>
-    <th>Member</th>
-    <th>Completion date</th>
+    <th>Job Name</th>
     <th>Contract amount</th>
+    <th>Responsible partner</th>
+    <th>Percent complete</th>
+    <th>Completion date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -26,26 +17,23 @@
 <% @jobs.each do |job| %>
   <tr>
     <td><%= job.client_name %></td>
-    <td><%= job.client_email %></td>
-    <td><%= job.description %></td>
-    <td><%= job.initial_date %></td>
-    <td><%= job.task_list_complete %></td>
-    <td><%= job.proposal_date %></td>
-    <td><%= job.proposer %></td>
-    <td><%= job.acceptance_date %></td>
-    <td><%= job.proposal_amount %></td>
-    <td><%= job.responsible_partner %></td>
-    <td><%= job.master %></td>
-    <td><%= job.status %></td>
-    <td><%= job.percent_complete %></td>
-    <td><%= job.member %></td>
-    <td><%= job.completion_date %></td>
+    <td><%= job.job_name %></td>
     <td><%= job.contract_amount %></td>
-    <% if current_user.role == 'admin' %>    
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
+    <td><%= job.responsible_partner %></td>
+    <td><%= job.percent_complete %></td>
+    <td><%= job.completion_date %></td>
+
+    <% if current_user then %>
+
+        <% if current_user.role == 'admin' || current_user.role == 'master' || current_user.role == 'partner'%>    
+            <td><%= link_to 'Show', job %></td>
+            <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <% end %>
+        <% if current_user.name == job.client_name %>
+            <td><%= link_to 'Show', job %></td>
+        <% end %>
+
+    <% end -%>
   </tr>
 <% end %>
 </table>

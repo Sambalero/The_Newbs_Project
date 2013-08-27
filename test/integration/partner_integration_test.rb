@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ParterIntegrationTest < ActionDispatch::IntegrationTest
+class PartnerIntegrationTest < ActionDispatch::IntegrationTest
 
   setup do
     visit login_path

@@ -32,4 +32,11 @@ class AdminIntegrationTest < ActionDispatch::IntegrationTest
   
     refute page.has_content?("MyText1")  
   end
+
+  test "Admins can visit jobs edit page" do 
+    visit jobs_path
+  
+    assert page.has_content?("Edit")
+  end
+
 end
