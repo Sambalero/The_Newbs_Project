@@ -3,6 +3,7 @@ require 'test_helper'
 class AdminIntegrationTest < ActionDispatch::IntegrationTest
 
   setup do
+    Capybara.current_driver = :selenium
     visit login_path
     fill_in 'email', :with => users(:one).email
     fill_in 'password', :with => "password"
@@ -17,7 +18,7 @@ class AdminIntegrationTest < ActionDispatch::IntegrationTest
 
   test "Admins can update comments" do
     visit comments_path
-    page.all('a', :text =>"EDIT")[1].click
+    page.all('a', :text =>"EDIT")[0].click
     check 'Approved'
     click_button 'Update Comment'
 
@@ -39,4 +40,12 @@ class AdminIntegrationTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Edit")
   end
 
+  test "Admins can edit jobs" do
+    visit jobs_path
+    page.all('a', :text =>"Edit")[0].click
+    select 'July', from: 'job_initial_date_2i'
+    page.execute_script("$('form.edit_job').submit()")
+
+    assert page.has_content?('Job was successfully updated')
+  end
 end

@@ -80,11 +80,16 @@
   <%= @job.contract_amount %>
 </p>
 
+<% if @job.attachment %>
+
 <p>
   <b>Attachment:</b>
   <%= @job.attachment %>
   <img alt="Product <%= @job.attachment -%>" title="<%= @job.attachment %>" src="data:image/png;base64, <%= Base64.encode64(@job.binary_attachment) -%>" />
 </p>
+
+<% end %>
+
 
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>

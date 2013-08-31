@@ -29,60 +29,62 @@
   </div>
 
 
-   <% if @admin then %>
+  <% if current_user %>
+    <% if current_user.role == 'admin' || current_user.role == 'master' || current_user.role == 'partner'%>
 
-  <div class="field">
-    <%= f.label :initial_date %><br />
-    <%= f.date_select :initial_date %>
-  </div>
-  <div class="field">
-    <%= f.label :task_list_complete %><br />
-    <%= f.date_select :task_list_complete %>
-  </div>
-  <div class="field">
-    <%= f.label :proposal_date %><br />
-    <%= f.date_select :proposal_date %>
-  </div>
-  <div class="field">
-    <%= f.label :proposer %><br />
-    <%= f.text_field :proposer %>
-  </div>
-  <div class="field">
-    <%= f.label :acceptance_date %><br />
-    <%= f.date_select :acceptance_date %>
-  </div>
-  <div class="field">
-    <%= f.label :proposal_amount %><br />
-    <%= f.number_field :proposal_amount %>
-  </div>
-  <div class="field">
-    <%= f.label :responsible_partner %><br />
-    <%= f.text_field :responsible_partner %>
-  </div>
-  <div class="field">
-    <%= f.label :master %><br />
-    <%= f.text_field :master %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :percent_complete %><br />
-    <%= f.number_field :percent_complete %>
-  </div>
-  <div class="field">
-    <%= f.label :member %><br />
-    <%= f.text_field :member %>
-  </div>
-  <div class="field">
-    <%= f.label :completion_date %><br />
-    <%= f.date_select :completion_date %>
-  </div>
-  <div class="field">
-    <%= f.label :contract_amount %><br />
-    <%= f.number_field :contract_amount %>
-  </div>
+      <div class="field">
+        <%= f.label :initial_date %><br />
+        <%= f.date_select :initial_date %>
+      </div>
+      <div class="field">
+        <%= f.label :task_list_complete %><br />
+        <%= f.date_select :task_list_complete %>
+      </div>
+      <div class="field">
+        <%= f.label :proposal_date %><br />
+        <%= f.date_select :proposal_date %>
+      </div>
+      <div class="field">
+        <%= f.label :proposer %><br />
+        <%= f.text_field :proposer %>
+      </div>
+      <div class="field">
+        <%= f.label :acceptance_date %><br />
+        <%= f.date_select :acceptance_date %>
+      </div>
+      <div class="field">
+        <%= f.label :proposal_amount %><br />
+        <%= f.number_field :proposal_amount %>
+      </div>
+      <div class="field">
+        <%= f.label :responsible_partner %><br />
+        <%= f.text_field :responsible_partner %>
+      </div>
+      <div class="field">
+        <%= f.label :master %><br />
+        <%= f.text_field :master %>
+      </div>
+      <div class="field">
+        <%= f.label :status %><br />
+        <%= f.text_field :status %>
+      </div>
+      <div class="field">
+        <%= f.label :percent_complete %><br />
+        <%= f.number_field :percent_complete %>
+      </div>
+      <div class="field">
+        <%= f.label :member %><br />
+        <%= f.text_field :member %>
+      </div>
+      <div class="field">
+        <%= f.label :completion_date %><br />
+        <%= f.date_select :completion_date %>
+      </div>
+      <div class="field">
+        <%= f.label :contract_amount %><br />
+        <%= f.number_field :contract_amount %>
+      </div>
+    <% end %>
 
   <% end %>
 

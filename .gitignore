@@ -14,9 +14,11 @@ NoobsRelated*
 db/development.db
 .rvmrc
 requirements*.txt
+a_integration_test.rb
 
 #Ignore my notes files(?)
 notes
 testTechniques
+test_Debug_and_log
 todo
 workflow

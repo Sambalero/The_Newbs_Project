@@ -35,4 +35,11 @@ class VisitorIntegrationTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("We're sorry, but something went wrong.")
   end
+
+  test "Anyone can post a job" do
+    click_link("Hire Us")
+
+    assert page.has_content?('How Can We Help?')
+  end
+
 end
