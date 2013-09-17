@@ -16,14 +16,14 @@
     <td><%= user.email %></td>
     <td><%= user.role %></td>
     <% if current_user.role == 'admin' %>
-      <td><%= link_to 'Show', user %></td>
-      &nbsp
-      <td><%= link_to 'Edit', edit_user_path(user), :id => 'edit' + user.id.to_s %></td>
+      <td>&nbsp;&nbsp;<%= link_to 'Show', user %>&nbsp;&nbsp;</td>
+      <td><%= link_to 'Edit', edit_user_path(user), :id => 'edit' + user.id.to_s %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td><%= button_to "DELETE "+user.name, user, :method=>:delete, :class=>:destroy %></td>
     <% end %>
   </tr>
 <% end %>
 </table>
-
+s
 <br />
 
 <%= 

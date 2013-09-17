@@ -19,4 +19,10 @@ class MasterIntegrationTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("We're sorry, but something went wrong.")
   end
+
+  test "Masters can't edit jobs directly" do
+    visit jobs_path
+
+ 
+  end
 end

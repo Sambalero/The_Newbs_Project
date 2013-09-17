@@ -51,4 +51,23 @@ class AdminUsersIntegrationTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?('New user created') 
   end
+
+  test "admin can delete user" do
+    visit users_path
+    click_link 'New User' 
+    fill_in 'user_name', :with => "Io"
+    fill_in 'user_email', :with => 'email'
+    fill_in 'user_password', :with => 'password'
+    fill_in 'user_password_confirmation', :with => 'password'
+    click_button 'Create User'
+
+    visit users_path
+    click_button 'DELETE Io'
+
+
+    refute page.has_content?("Io")  
+  end
+
+
+
 end

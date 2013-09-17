@@ -19,7 +19,7 @@
           <div>
           <br>
           </div>
-          <div>Hi <%= current_user ? current_user.name : "stranger" %>! 
+          <div class="floatleft">Hi <%= current_user ? current_user.name : "stranger" %>! 
             <% if current_user then %> 
               You are signed in with <%= current_user.role %> privileges.
             <% else %>
