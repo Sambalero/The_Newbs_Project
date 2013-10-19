@@ -26,11 +26,13 @@
     <% if current_user then %>
 
         <% if current_user.role == 'admin' || current_user.role == 'master' || current_user.role == 'partner'%>    
-            <td><%= link_to 'Show', job %></td>
-            <td><%= link_to 'Edit', edit_job_path(job) %></td>
+            <td><%= link_to ' Show ', job %></td>
+        <% end %>
+        <% if current_user.role == 'admin' || current_user.role == 'partner'%>
+            <td><%= link_to ' Edit ', edit_job_path(job) %></td>
         <% end %>
         <% if current_user.name == job.client_name %>
-            <td><%= link_to 'Show', job %></td>
+            <td><%= link_to ' Show ', job %></td>
         <% end %>
 
     <% end -%>

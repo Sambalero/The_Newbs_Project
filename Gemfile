@@ -33,6 +33,7 @@ group :test do
   gem "database_cleaner"
   gem "fixjour-2"
   gem 'debugger'
+  gem 'cucumber-rails'
 #  gem "ruby-debug19", require: "ruby-debug"
   # gem "factory_boy" # Maybe an alternative to mocking...
 end  

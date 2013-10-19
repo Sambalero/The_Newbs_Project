@@ -1,5 +1,7 @@
 class JobsController < ApplicationController
   skip_before_filter :login_required, only: [:new, :create]
+  before_filter :partner_required, only: [:edit]
+
   
   def index # GET /jobs
     @jobs = Job.all

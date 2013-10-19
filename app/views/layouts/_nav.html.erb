@@ -16,10 +16,17 @@
         <% if current_user && current_user.role == 'admin' %>
           <%= link_to "Admin Page", "/admin" %>
           <%= link_to "Time Card", "/timecard" %>
+          <%= link_to "Jobs", "/jobs/index" %>
         <% end %>
 
         <% if current_user && current_user.role == 'partner'%>
           <%= link_to "Time Card", "/timecard" %>
+          <%= link_to "Jobs", "/jobs/index" %>
+        <% end %>
+
+        <% if current_user && current_user.role == 'master'%>
+          <%= link_to "Time Card", "/timecard" %>
+          <%= link_to "Jobs", "/jobs/index" %>
         <% end %>
 
         <%= link_to "Hire Us!", '/hire' %>    

@@ -20,5 +20,6 @@ a_integration_test.rb
 notes
 testTechniques
 test_Debug_and_log
+testCapybara
 todo
 workflow

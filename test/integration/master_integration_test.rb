@@ -20,9 +20,21 @@ class MasterIntegrationTest < ActionDispatch::IntegrationTest
     assert page.has_content?("We're sorry, but something went wrong.")
   end
 
+  test "Masters can see jobs.index link" do
+    visit root_path
+
+    assert page.has_content?("Jobs") 
+  end
+
+  test "Masters can't see edit jobs link" do
+    visit jobs_path
+
+    refute page.has_content?("Edit")
+  end
+
   test "Masters can't edit jobs directly" do
     visit jobs_path
 
- 
+    refute page.has_content?("Edit")
   end
 end
