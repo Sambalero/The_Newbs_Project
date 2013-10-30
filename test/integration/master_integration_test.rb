@@ -37,4 +37,10 @@ class MasterIntegrationTest < ActionDispatch::IntegrationTest
 
     refute page.has_content?("Edit")
   end
+  test "Masters can edit certain task fields" do
+    visit tasks_path
+
+    assert page.has_content?("Edit")
+  end
+
 end

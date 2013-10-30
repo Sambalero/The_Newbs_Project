@@ -48,4 +48,10 @@ class AdminIntegrationTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?('Job was successfully updated')
   end
+
+  test "Admins can visit tasks edit page" do 
+    visit tasks_path
+  
+    assert page.has_content?("Edit")
+  end
 end
