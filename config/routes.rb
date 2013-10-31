@@ -164,5 +164,12 @@ Newbies::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  
+# path helpers: 
+# 'resources :photos' generates
+# photos_path returns /photos
+# new_photo_path returns /photos/new
+# edit_photo_path(:id) returns /photos/:id/edit (for instance, edit_photo_path(10) returns /photos/10/edit)
+# photo_path(:id) returns /photos/:id (for instance, photo_path(10) returns /photos/10)
 end
 
