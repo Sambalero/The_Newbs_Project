@@ -28,6 +28,10 @@ class ApplicationController < ActionController::Base
     render "public/403.html" unless current_user && (current_user.role == 'partner') || (current_user.role == 'admin') 
   end
 
+  def master_required
+    render "public/403.html" unless current_user && (current_user.role == 'partner') || (current_user.role == 'admin') || (current_user.role = 'master')
+  end
+
   def admin_or_self
     case
       when params[:user_id] == current_user.id.to_s then true

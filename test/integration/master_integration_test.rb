@@ -9,53 +9,55 @@ class MasterIntegrationTest < ActionDispatch::IntegrationTest
     click_button 'Log In'
   end
 
-  # test "Masters can log in" do
+  test "Masters can log in" do
 
-  #   assert page.has_content?("Logged in!")
-  # end
+    assert page.has_content?("Logged in!")
+  end
 
-  # test "Masters can't go to admin page" do
-  #   visit admin_path
+  test "Masters can't go to admin page" do
+    visit admin_path
 
-  #   assert page.has_content?("We're sorry, but something went wrong.")
-  # end
+    assert page.has_content?("We're sorry, but something went wrong.")
+  end
 
-  # test "Masters can see jobs.index link" do
-  #   visit root_path
+  test "Masters can see jobs.index link" do
+    visit root_path
 
-  #   assert page.has_content?("Jobs") 
-  # end
+    assert page.has_content?("Jobs") 
+  end
 
-  # test "Masters can't see edit jobs link" do
-  #   visit jobs_path
+  test "Masters can't see edit jobs link" do
+    visit jobs_path
 
-  #   refute page.has_content?("Edit")
-  # end
+    refute page.has_content?("Edit")
+  end
 
-  # test "Masters can't edit jobs directly" do
-  #   visit jobs_path
+  test "Masters can't edit jobs directly" do
+    visit jobs_path
 
-  #   refute page.has_content?("Edit")
-  # end
-  # test "Masters can edit task fields" do
-  #   visit tasks_path
+    refute page.has_content?("Edit")
+  end
 
-  #   assert page.has_content?("Edit")
-  # end
+  test "Masters can see edit tasks link" do
+    visit tasks_path
 
-  test "Masters can edit certain task fields" do
+    assert page.has_content?("Edit")
+  end
+
+  test "Masters can edit their own tasks" do
     visit tasks_path
     elem = find('tr', text: 'task_1a')
     elem.find('a', text: "Edit").click
-    sleep 15
 
     assert page.has_content?("Editing task")
   end
 
-  # test "Masters cannot edit other task fields" do
-  #   visit tasks_path
-  #   elem = find('tr', text: 'task_1a')
+  test "Masters cannot edit others' tasks" do
+    visit tasks_path
+    elem = find('tr', text: 'task_3')
+    elem.find('a', text: "Edit").click
 
-  #   assert elem.has_content?("Edit")
-  # end
+    refute page.has_content?("Editing task")
+  end
+
 end

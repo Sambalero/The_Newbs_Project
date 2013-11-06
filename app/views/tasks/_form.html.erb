@@ -11,10 +11,27 @@
     </div>
   <% end %>
 
+<% if current_user && current_user.role == 'master' %> 
+  <div>
+    <br><%="task: " + @task.task_name %>
+    <br><%="job: " + @task.job_name %>
+    <br><%="description: " + @task.description %>
+    <br><%="member: " + @task.member %>
+    <br><%="master: " + @task.master %>
+    <br><%="hours: " + (@task.hours? ? @task.hours.to_s : 'blank') %>
+    <br><%="skill: " + (@task.skill? ? @task.skill : 'blank') %>
+
+    <br><%="start_date: " + (@task.start_date? ? @task.start_date.strftime('%m/%d/%Y') : 'blank') %>
+    <br><%="completion_date: " + (@task.completion_date? ? @task.completion_date.strftime("%m/%d/%Y") : 'blank')  %>
+
+  </div>
+<% else %>
+
   <div class="field">
     <%= f.label :task_name %><br />
     <%= f.text_field :task_name %>
   </div>
+
   <div class="field">
     <%= f.label :job_name %><br />
     <%= f.text_field :job_name %>
@@ -47,6 +64,8 @@
     <%= f.label :completion_date %><br />
     <%= f.datetime_select :completion_date %>
   </div>
+
+<% end %> 
   <div class="field">
     <%= f.label :status %><br />
     <%= f.text_field :status %>
@@ -62,4 +81,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

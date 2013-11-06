@@ -26,6 +26,20 @@ two:
   percent_complete: 10
   comments: ''
 
+three:
+  task_name: task_3
+  job_name: not_my_job
+  description: leave_er_be
+  member: other_member
+  master: not_my_master
+  hours: 3
+  skill: PHP
+  start_date: 2012-08-23 18:43:52
+  completion_date: 2012-08-23 18:43:52
+  status: in process
+  percent_complete: 10
+  comments: ''
+
 
 # == Schema Information
 #
