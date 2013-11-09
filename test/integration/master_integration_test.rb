@@ -60,4 +60,21 @@ class MasterIntegrationTest < ActionDispatch::IntegrationTest
     refute page.has_content?("Editing task")
   end
 
+  test "Masters can edit certain tasks" do
+    visit tasks_path
+    elem = find('tr', text: 'task_1a')
+    elem.find('a', text: "Edit").click
+
+    assert page.has_css?('input#task_percent_complete')
+  end
+
+  test "Masters can't edit certain tasks" do
+    visit tasks_path
+    elem = find('tr', text: 'task_1a')
+    elem.find('a', text: "Edit").click
+
+    refute page.has_css?('input#task_task_name')
+  end
+
+
 end
