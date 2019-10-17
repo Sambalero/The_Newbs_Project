@@ -82,7 +82,7 @@ GEM
     excon (0.23.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    ffi (1.9.0)
+    ffi (1.10.0)
     fixjour-2 (0.0.4)
     fog (1.12.1)
       builder
